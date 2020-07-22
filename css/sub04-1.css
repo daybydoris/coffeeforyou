@@ -498,6 +498,9 @@ main > p{
 
 
 .popup .roasting{}
+.popup .roasting .r_mobile{
+    display: none;
+}
 .popup .roasting .roast_bar{
     position: relative;
 }
@@ -751,9 +754,82 @@ footer .f_container .top:hover a:before{
     }
     .bean_block{
         width:100%;
-        margin-right:0;
+        margin:2vh 0;
     }
   
+    .popup .bean_block{
+        width:90vw;
+        height:auto;
+        overflow: hidden;
+        max-width:580px;
+    }
+    .popup .bean_block p{
+        font-size:15px;
+    }
+    .popup .bean_block .bean_top{
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+    .popup .bean_block .bean_top img{
+        width:20%;
+        margin-bottom:2vh;
+    }
+    .popup .bean_block table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+    .popup .bean_block table tr th{
+        padding:1vh;
+        width:100%;
+    }
+    .popup .bean_block table tr td{
+        padding:1vh 2vw;
+        width:100%;
+        
+        text-align: center;
+    }
+    .popup .bean_block .bean_bar{
+        flex-direction: column;
+    }
+    .popup .bean_block .bean_bar .bar_left{
+        width:100%;
+    }
+    .popup .bean_block .bean_bar .bar_right{
+        width:100%;
+    }
+    .popup .roasting .r_mobile:before{
+        content:'√';
+        font-size:15px;
+    }
+    .popup .roasting .r_mobile{
+        display: block;
+        text-transform: uppercase;
+        font-size:12px;
+        font-weight:bold;
+        text-align: center;
+        margin-bottom:2vh;
+    }
+    .popup .taste_icon ul{
+        justify-content: space-between;
+    }
+    .popup .taste_icon ul li{
+        width:20%;
+    }
+    .popup .taste_icon ul li p{
+        font-size:12px;
+    }
+    .popup .roast_lev .back_lev{
+        display: none;
+    }
+    .popup .bean_block .roast_lev .float_lev li{
+        display: none;
+    }
+    .popup .bean_block .roast_lev .float_lev li span{
+        display: none;
+    }
 
 
 
@@ -834,6 +910,78 @@ footer .f_container .top:hover a:before{
     }
     .bean_block:nth-of-type(2n){
       margin-right:0;
+    }
+    
+    
+    .popup .bean_block{
+        width:80vw;
+        height:auto;
+        overflow: hidden;
+        max-width:580px;
+    }
+    .popup .bean_block p{
+        font-size:15px;
+    }
+    .popup .bean_block .bean_top{
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items: flex-start;
+    }
+    .popup .bean_block .bean_top img{
+        width:20%;
+        margin-bottom:2vh;
+    }
+    .popup .bean_block table tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:100%;
+    }
+    .popup .bean_block table tr th{
+        padding:1vh;
+        width:100%;
+    }
+    .popup .bean_block table tr td{
+        padding:1vh 2vw;
+        width:100%;
+        
+        text-align: center;
+    }
+    .popup .bean_block .bean_bar{
+        flex-direction: column;
+    }
+    .popup .bean_block .bean_bar .bar_left{
+        width:100%;
+    }
+    .popup .bean_block .bean_bar .bar_right{
+        width:100%;
+    }
+    .popup .roasting .r_mobile:before{
+        content:'√';
+        font-size:15px;
+    }
+    .popup .roasting .r_mobile{
+        display: block;
+        text-transform: uppercase;
+        font-size:12px;
+        font-weight:bold;
+        text-align: center;
+        margin-bottom:2vh;
+    }
+    .popup .taste_icon ul li{
+        width:20%;
+    }
+    .popup .taste_icon ul li p{
+        font-size:12px;
+    }
+    .popup .roast_lev .back_lev{
+        display: none;
+    }
+    .popup .bean_block .roast_lev .float_lev li{
+        display: none;
+    }
+    .popup .bean_block .roast_lev .float_lev li span{
+        display: none;
     }
 }
 
