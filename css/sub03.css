@@ -6,6 +6,7 @@ body{
     width:100%;
     position: relative;
 }
+
 header{
     background:#1c1c1c;
     border-bottom:1px solid rgba(255,255,255,0.2);
@@ -171,7 +172,7 @@ main > p{
 
 .bean_list{
     width:100%;
-    margin:0 auto;
+    margin:0 0 5vh auto;
 }
 .bean_list > ul{
     width:100%;
@@ -589,12 +590,13 @@ main > p{
 .body_wrap{
     width:100%;
     height:100%;
-    background:rgba(0,0,0,0.4);
+    background:rgba(0,0,0,0.5);
     
     display: none;
     position: absolute;
     
     z-index: 2;
+    transition:.5s;
 }
 .body_wrap.active{
     display: block;
@@ -896,12 +898,13 @@ footer .f_container .top:hover a:before{
     .s_1{
         width:80vw;
         padding: 5vh 0;
+        margin:0 auto 10vh auto;
     }
     .bean_block{
         width:48%;
         max-width:320px;
         padding:30px 20px;
-        
+        margin:2vh 0;
     }
     .bean_block:nth-of-type(3n){
       margin-right:0;
@@ -910,11 +913,6 @@ footer .f_container .top:hover a:before{
       margin-right:0;
     }
     
-    .bean_block{
-        width:100%;
-        margin:2vh 0;
-    }
-  
     .popup .bean_block{
         width:80vw;
         height:auto;

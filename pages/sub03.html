@@ -583,7 +583,8 @@
         const nav = document.querySelector('nav');
         const moreBtn = document.querySelector('.bean_block .more');
         const popup = document.querySelector('.popup');
-        const exit = document.querySelector('.exit')
+        const exit = document.querySelector('.exit');
+        const wrap = document.querySelector('.body_wrap');
 
         menu.addEventListener('click', function() {
             menu.classList.toggle('active');
@@ -592,9 +593,11 @@
 
         moreBtn.addEventListener('click', function() {
             popup.classList.toggle('active');
+            wrap.classList.toggle('active');
         });
         exit.addEventListener('click', function() {
             popup.classList.toggle('active');
+            wrap.classList.toggle('active');
         });
     </script>
 
