@@ -749,7 +749,7 @@ position: absolute;
 
 .s_4{
     width:65vw;
-    margin:200px auto 400px auto;
+    margin:200px auto;
 }
 .s_4 h2{
     text-transform: uppercase;
@@ -792,6 +792,7 @@ position: absolute;
     transform: translate3d(0, 0, 0);
     position: relative;
 }
+/*
 .s_4 .news_container article .img_box .wave{
     width:1000px;
     height:900px;
@@ -812,9 +813,13 @@ position: absolute;
     from{transform:rotate(0deg);}
     from{transform:rotate(360deg);}
 }
-.s_4 .news_container article img{
+*/
+.s_4 .news_container article .img_box img{
     width:100%;
-    transition:.7s;
+    transition:.5s;
+}
+.s_4 .news_container article .img_box:hover img{
+    transform: scale(1.1);
 }
 .s_4 .news_container article h3{
     font-weight: 700;
@@ -1483,7 +1488,7 @@ footer .f_container .top:hover a:before{
     
     
     .s_3{
-        margin:100px auto;
+       
     }
     .s_3 .img_container{
         text-align: center;
