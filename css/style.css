@@ -1440,7 +1440,7 @@ footer .f_container .top:hover a:before{
         top:85%; left:20%;
     }
     
-    /* ------------------ s_2 ---------------------*/
+    /* ------------------ s_3 ---------------------*/
     .s_3{
         display: block;
     }
@@ -1466,6 +1466,19 @@ footer .f_container .top:hover a:before{
     .s_3 article .wave:nth-of-type(2){
         top:60%;
         animation:rotate 2500ms infinite linear;
+    }
+    
+    
+    
+    /* ------------------ s_4 ---------------------*/
+    .s_4 .news_container{
+        flex-wrap: wrap;
+        margin:5vh auto;
+    }
+    
+    .s_4 .news_container article{
+        width:30vw;
+        margin:0 0 3vh 0;
     }
 }
 
