@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+<!--    <link rel="stylesheet" type="text/css" href="../css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/sub02.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+    <title>COFFEE FOR YOU</title>
+</head>
+<body>
+<!---------------  header  --------------->
+    <header>
+       <div class="h_container">
+            <h1>
+               <a href="../index.html">
+                    <img src="../img/logo.png" alt="">
+                </a>
+            </h1>
+            <nav>
+                <a href="sub01.html">
+                    what is coffee?
+                </a>
+                <a href="sub02.html">
+                    bean to coffee
+                </a>
+                <a href="sub03.html">
+                    coffee beans
+                </a>
+                <a href="sub04.html">
+                    coffee for you
+                </a>
+                <a href="sub05.html">
+                    coffee story
+                </a>
+            </nav>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+    
+    
+<!----------------  main  ---------------->    
+    <main class="center">
+            <p class="f_basic">
+              Main > Bean to Coffee
+            </p>
+           <section class="s_1 sub01_1 center">
+               <h2 class="orange">bean to coffee</h2>
+               
+        </section>    
+    </main>
+        
+        
+    <!---------------  footer  --------------->        
+    <footer>
+       
+        <div class="f_container center">
+           <div class="contact">
+               <h3 class="f_basic">contact</h3>
+               <a href="#" class="f_basic">info@coffeeforyou.com</a>
+           </div>
+            <span class="sns">
+                <a href="#">tw</a>
+                <a href="#">fb</a>
+                <a href="#">in</a>
+            </span>
+            
+            <!----------- top 버튼 ----------->
+            
+            <span class="top">
+                <a href="#" class="f_basic">top</a>
+            </span>
+        </div>
+        
+    </footer>      
+    
+    <script>
+        const menu = document.querySelector('.menu-trigger');
+        const nav = document.querySelector('nav');
+
+        
+        menu.addEventListener('click',function(){
+            menu.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+    </script>                      
+           
+</body>
+</html>

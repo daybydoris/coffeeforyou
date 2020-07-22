@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--    <link rel="stylesheet" type="text/css" href="../css/style.css">-->
+    <link rel="stylesheet" type="text/css" href="../css/sub05-1.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
+    <title>COFFEE FOR YOU</title>
+</head>
+
+<body>
+
+    <!---------------  header  --------------->
+    <header>
+        <div class="h_container">
+            <h1>
+                <a href="../index.html">
+                    <img src="../img/logo.png" alt="">
+                </a>
+            </h1>
+            <nav>
+                <a href="sub01.html">
+                    what is coffee?
+                </a>
+                <a href="sub02.html">
+                    bean to coffee
+                </a>
+                <a href="sub03.html">
+                    coffee beans
+                </a>
+                <a href="sub04.html">
+                    coffee for you
+                </a>
+                <a href="sub05.html">
+                    coffee story
+                </a>
+            </nav>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+
+    <!----------------  main  ---------------->
+    <main class="center">
+        <p class="f_basic">
+            Main > Coffee story
+        </p>
+        <section class="s_1 center">
+            <div class="news_container">
+                <article>
+                    <h2>커피, 트렌드를 입다</h2>
+                    <div class="a_desc">
+                        <p class="f_15">
+                            2020-06-15
+                        </p>
+                        <a href="#">
+                            <img src="../img/icon_share.png" class="share_icon">
+                        </a>
+                        <div class="share">
+                            <span>share</span>
+                            <div class="exit">
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="sns">
+                                <a href="#"></a>
+                                <a href="#"></a>
+                                <a href="#"></a>
+                            </div>
+
+                            <span>copy link</span>
+                            <input type="text" name="pagelink">
+                            <input type="submit" name="copy" value="복사">
+                        </div>
+                    </div>
+                    <div class="img_box">
+                        <a href="#">
+                            <img src="../img/coffeestory_01.jpg">
+                        </a>
+                    </div>
+                    <p class="f_15">‘긱 시크(Geek Chic)’라는 단어를 들어본 적이 있는가? 괴짜’라는 의미의 ‘긱(Geek)’과 ‘세련된’이라는 의미의 ‘시크(Chic)’의 합성어로 일반적으로 독특한 괴짜 패션을 의미하는 ‘긱 시크(Geek chic)’.
+
+                        긱 시크는 트렌드에 민감하게 반응하는 패션업과 떼어놓고 설명하긴 어렵지만, 요식업에서 또한 자주 활용될 수 있는 단어이기도 하다.
+
+                        특히 커피 업계가 그러하다. 많은 카페들이 베리에이션(variation)을 통해 획일적이지 않은 커피 맛을 내기 위해 노력하고 독특한 플레이팅으로 소비자의 마음을 사로잡으려 노력하고 있다. 이번 포스트에서는 커피의 무한한 변신을 통해 탄생한 ‘긱 시크’ 커피들을 소개하고자 한다.</p>
+                </article>
+            </div>
+        </section>
+
+
+
+    </main>
+
+
+    <!---------------  footer  --------------->
+    <footer>
+
+        <div class="f_container center">
+            <div class="contact">
+                <h3 class="f_basic">contact</h3>
+                <a href="#" class="f_basic">info@coffeeforyou.com</a>
+            </div>
+            <span class="sns">
+                <a href="#">tw</a>
+                <a href="#">fb</a>
+                <a href="#">in</a>
+            </span>
+
+            <!----------- top 버튼 ----------->
+
+            <span class="top">
+                <a href="#" class="f_basic">top</a>
+            </span>
+        </div>
+
+    </footer>
+
+    <script>
+        const menu = document.querySelector('.menu-trigger');
+        const nav = document.querySelector('nav');
+        const icon = document.querySelector('.share_icon');
+        const share = document.querySelector('.share');
+        const exit = document.querySelector('.exit');
+
+            menu.addEventListener('click', function() {
+                menu.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        
+            icon.addEventListener('click',function(){
+                share.classList.toggle('active');
+            });
+        
+            exit.addEventListener('click', function(){
+               share.classList.toggle('active'); 
+            });
+    </script>
+
+</body></html>

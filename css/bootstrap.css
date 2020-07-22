@@ -2968,6 +2968,7 @@ select[multiple].form-group-lg .form-control {
     padding-top: 6px;
   }
 }
+/*
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -3353,6 +3354,7 @@ fieldset[disabled] .btn-link:focus {
 .btn-block + .btn-block {
   margin-top: 5px;
 }
+*/
 input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {

@@ -11,7 +11,7 @@
 
 *{
     box-sizing: border-box;
-    font-family:'Montserrat','NanumSquare';
+    font-family:Montserrat,NanumSquare;
 }
 html,body{
     margin:0;
@@ -61,4 +61,7 @@ a {
     font-size:15px;
     color:#d9d9d9;
 }
-
+.f_25{
+    font-size:25px;
+    color:#d9d9d9;
+}

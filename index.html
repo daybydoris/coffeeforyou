@@ -2,36 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+    <title>COFFEE FOR YOU</title>
 </head>
 <body>
 <!---------------  header  --------------->
     <header>
-       <div class="h_container ">
+       <div class="h_container">
             <h1>
-               <a href="index.html" class="orange">
+               <a href="index.html">
                     <img src="img/logo.png" alt="">
                 </a>
             </h1>
             <nav>
-                <a href="#">
+                <a href="pages/sub01.html">
                     what is coffee?
                 </a>
-                <a href="#">
+                <a href="pages/sub02.html">
                     bean to coffee
                 </a>
-                <a href="#">
+                <a href="pages/sub03.html">
                     coffee beans
                 </a>
-                <a href="#">
+                <a href="pages/sub04.html">
                     coffee for you
                 </a>
-                <a href="#">
+                <a href="pages/sub05.html">
                     coffee story
                 </a>
             </nav>
+            <div class="menu-trigger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     
@@ -40,11 +49,12 @@
     <main class="center">
         <div class="m_container">
             <section class="s_1 center">
-                  
-                   <img src="img/main_coffee.png">
-                   <img src="img/fog-th.png" class="fog01">
-                   <img src="img/fog-th.png" class="fog02">
-                   <img src="img/fog-th.png" class="fog03">
+                  <div class="cup">
+                       <img src="img/main_coffee.png">
+                       <img src="img/fog-th.png" class="fog01">
+                       <img src="img/fog-th.png" class="fog02">
+                       <img src="img/fog-th.png" class="fog03">
+                   </div>
                     <article>
                         <h2 class="orange">what is coffee?</h2>
                         <p class="f_basic">
@@ -58,7 +68,7 @@
                             bright red in color – indicating ripeness – 
                             they are picked, processed, and dried.
                         </p>
-                        <a href="#" class="f_basic">
+                        <a href="pages/sub01.html" class="f_basic">
                             알아보기 >
                         </a>
                     </article>
@@ -72,11 +82,15 @@
                 <div class="left">
                     <div class="l_container">
                         <h2>bean to coffee</h2>
-                        <p class="f_basic">커피체리에서 우리가 먹는 커피가 되기까지의 여정을 체험해보세요.</p>
-                        <a href="#" class="f_15">알아보기 ></a>
+                        <p class="f_basic">커피체리에서 우리가 먹는 커피가 되기까지의
+                            여정을 체험해보세요.</p>
+                        
                             <img src="img/main_treeArtboard-1.png">
                             <img src="img/main_coffee_bagArtboard-1.png">
                             <img src="img/main_machineArtboard-1.png">
+                        
+                        <a href="pages/sub02.html">알아보기</a>
+                        <button href="pages/sub02.html">알아보기</button>
                     </div>
                 </div>
                 <div class="right">
@@ -85,7 +99,6 @@
                        <div class="line">
                            <span></span>
                        </div>
-
                         <h2 class="orange">coffee beans</h2>
                         <p class="f_basic">커피 원두 종류와 특징을 알아보세요.</p>
                         <img src="img/main_coffee_bean.png">
@@ -105,7 +118,7 @@
                                 </p>
 
                             </div>
-                            <a href="#" class="f_basic">
+                            <a href="pages/sub03.html" class="f_basic">
                                 알아보기 >
                             </a>
                     </div>
@@ -116,7 +129,7 @@
            
            
            
-            <section class="s_3 w_1000 center">
+            <section class="s_3 center">
                  <div class="img_container">
                   <img src="img/main_coffee_for_you_float.png">
                   <img src="img/main_coffee_for_you_float2.png">
@@ -131,7 +144,7 @@
                             당신에게 맞는 원두를 추천 받아보세요.
                         </p>
                         
-                        <button>
+                        <button type="button" onclick="location.href='pages/sub04.html'" class="btn">
                            <span class="wave"></span>
                            <span class="wave"></span>
                             원두 추천 받기
@@ -139,7 +152,7 @@
                     </article>
             </section>
 
-            <section class="s_4 w_1000 center">
+            <section class="s_4 center">
                
                 <h2 class="orange">coffee story</h2>
                 <p class="f_basic">커피에 관한 다양한 사실들을 전해드립니다.</p>
@@ -147,39 +160,55 @@
                 <div class="news_container">
                    
                     <article>
-                       <a href="#">
-                           <img src="img/main_coffee_story01.jpg">
-                        </a>
-                        <a href="#">
-                            <h3 class="f_20">커피, 트렌드를 입다</h3>
-                        </a>
+                        <div class="img_box">
+                            <a href="#">
+                               <img src="img/main_coffee_story01.jpg">
+                            </a>
+                            <div class="wave"></div>
+                        </div>
+                        
+                        <h3 class="f_20">
+                            <a href="#">
+                                커피, 트렌드를 입다
+                            </a>
+                        </h3>
                         <p class="f_basic">‘긱 시크(Geek Chic)’라는 단어를 들어본 적이 있는가? 긱 시크는 ‘괴짜’라는 의미의 ‘긱(Geek)’과 ‘세련된’이라는 의미의 ‘시크(Chic)’의 합성어로 일반적으로 독특한 괴짜 패션을 의미한다. 긱 시크라는 단어를 떠올렸을...</p>
                         <a href="#" class="f_basic">read more</a>
                     </article>
                     
                     <article>
-                       <a href="#">
-                           <img src="img/main_coffee_story02.jpg">
-                        </a>
-                        <a href="#">
-                            <h3 class="f_20">커피, 트렌드를 입다</h3>
-                        </a>
+                       <div class="img_box">
+                            <a href="#">
+                               <img src="img/main_coffee_story02.jpg">
+                            </a>
+                            <div class="wave"></div>
+                        </div>
+                        <h3 class="f_20">
+                            <a href="#">
+                                커피, 트렌드를 입다
+                            </a>
+                        </h3>
                         <p class="f_basic">‘긱 시크(Geek Chic)’라는 단어를 들어본 적이 있는가? 긱 시크는 ‘괴짜’라는 의미의 ‘긱(Geek)’과 ‘세련된’이라는 의미의 ‘시크(Chic)’의 합성어로 일반적으로 독특한 괴짜 패션을 의미한다. 긱 시크라는 단어를 떠올렸을...</p>
                         <a href="#" class="f_basic">read more</a>
                     </article>
                     <article>
-                       <a href="#">
-                           <img src="img/main_coffee_story02.jpg">
-                        </a>
-                        <a href="#">
-                            <h3 class="f_20">커피, 트렌드를 입다</h3>
-                        </a>
+                       <div class="img_box">
+                            <a href="#">
+                               <img src="img/main_coffee_story01.jpg">
+                            </a>
+                            <div class="wave"></div>
+                        </div>
+                        <h3 class="f_20">
+                            <a href="#">
+                                커피, 트렌드를 입다
+                            </a>
+                        </h3>
                         <p class="f_basic">‘긱 시크(Geek Chic)’라는 단어를 들어본 적이 있는가? 긱 시크는 ‘괴짜’라는 의미의 ‘긱(Geek)’과 ‘세련된’이라는 의미의 ‘시크(Chic)’의 합성어로 일반적으로 독특한 괴짜 패션을 의미한다. 긱 시크라는 단어를 떠올렸을...</p>
                         <a href="#" class="f_basic">read more</a>
                     </article>
                     
                 </div>
-
+                    <a href="pages/sub05.html">목록 보기</a>
             </section>
         </div>
     </main>
@@ -203,6 +232,19 @@
             </span>
         </div>
         
-    </footer>        
+    </footer>      
+    
+    <script>
+        const menu = document.querySelector('.menu-trigger');
+        const nav = document.querySelector('nav');
+
+        
+        menu.addEventListener('click',function(){
+            menu.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+    </script>                      
+           
 </body>
 </html>
