@@ -707,7 +707,7 @@ footer .f_container .top:hover a:before{
         text-align: center;
         
         transition:.7s;
-        z-index:100;
+        z-index:1;
     }
     .h_container nav a{
         text-align: center;
@@ -730,6 +730,9 @@ footer .f_container .top:hover a:before{
     }
     .h_container .menu-trigger span{
         transition:.5s;
+    }
+    .h_container .menu-trigger.active span{
+        z-index:3;
     }
     .h_container .menu-trigger.active span{
         background:#1c1c1c;
@@ -852,7 +855,7 @@ footer .f_container .top:hover a:before{
         text-align: center;
         
         transition:.7s;
-        z-index:1;
+        z-index:2;
     }
     .h_container nav a{
         text-align: center;
