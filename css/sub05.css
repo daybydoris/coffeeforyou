@@ -160,6 +160,7 @@ main > p{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
 }
 
 .s_1 .news_container article{
