@@ -57,7 +57,7 @@
         </section>    
     </main>
         
-        
+    <div class="page"></div>    
     <!---------------  footer  --------------->        
     <footer>
        
@@ -84,12 +84,31 @@
     <script>
         const menu = document.querySelector('.menu-trigger');
         const nav = document.querySelector('nav');
-
+        const body = document.querySelector('body');
+        const menuList = document.querySelectorAll('a');
+        
+        setTimeout(function(){
+            body.classList.add('active');
+        },10);
+        
         
         menu.addEventListener('click',function(){
             menu.classList.toggle('active');
             nav.classList.toggle('active');
         });
+        
+        
+        for(let i=0; i<menuList.length;i++){
+            menuList[i].addEventListener('click', function(e){
+                e.preventDefault();
+                body.classList.remove('active');
+
+                setTimeout(function() {
+                    location.href = menuList[i].href;
+                },1000);
+            });
+        }
+        
 
     </script>                      
            

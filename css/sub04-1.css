@@ -19,8 +19,18 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+}
+.page{
+    width:100%; height:100%;
+    background:#de2a00;
+    position:fixed;
+    left:0; top:0;
+    transition:1s;
     
-    
+    z-index:1;
+}
+body.active .page{
+    top:-100%;
 }
 .h_container h1{
     font-size:30px;
