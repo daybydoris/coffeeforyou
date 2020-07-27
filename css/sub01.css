@@ -25,10 +25,20 @@ header{
     position:fixed;
     left:0; top:0;
     transition:1s;
+    
+     z-index:1;
+}
+.page img{
+    width:10%;
+    position: absolute;
+    left:50%; top:50%;
+    
+    transform: translate(-50%,-50%);
 }
 body.active .page{
     top:-100%;
 }
+
 .h_container h1{
     font-size:30px;
     text-transform: uppercase;

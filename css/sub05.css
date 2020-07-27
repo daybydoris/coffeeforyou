@@ -29,6 +29,13 @@ header{
     
     z-index:1;
 }
+.page img{
+    width:10%;
+    position: absolute;
+    left:50%; top:50%;
+    
+    transform: translate(-50%,-50%);
+}
 body.active .page{
     top:-100%;
 }
@@ -222,17 +229,17 @@ main > p{
 .s_1 .news_container article > a:hover:after{
     transform: translateX(200%);
 }
-.s_1 .page{
+.s_1 .pageNum{
     width:100%;
 }
-.s_1 .page ul{
+.s_1 .pageNum ul{
     display: flex;
     width:50%;
     justify-content: space-around;
     align-items: center;
     margin:0 auto;
 }
-.s_1 .page ul li{
+.s_1 .pageNum ul li{
     color:#f2f2f2;
 }
 .body_wrap{

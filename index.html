@@ -90,7 +90,7 @@
                             <img src="img/main_machineArtboard-1.png">
                         
                         <a href="pages/sub02.html">알아보기 ></a>
-                        <button onclick="location.href='pages/sub02.html'" class="btn">알아보기</button>
+                        <button data-link="pages/sub02.html" class="btn">알아보기</button>
                     </div>
                 </div>
                 <div class="right">
@@ -144,7 +144,7 @@
                             당신에게 맞는 원두를 추천 받아보세요.
                         </p>
                         
-                        <button type="button" onclick="location.href='pages/sub04.html'" class="btn">
+                        <button type="button" data-link="pages/sub04.html" class="btn">
                            <span class="wave"></span>
                            <span class="wave"></span>
                             원두 추천 받기
@@ -215,7 +215,9 @@
             </section>
         </div>
     </main>
-    <div class="page"></div>    
+    <div class="page">
+        <img src="img/page_coffee_bean.png" alt>
+    </div>    
         
 <!---------------  footer  --------------->        
     <footer>
@@ -242,19 +244,21 @@
         const nav = document.querySelector('nav');
         const body = document.querySelector('body');
         const menuList = document.querySelectorAll('a');
+        const btn = document.querySelectorAll('button');
         
+        // 시간지연 => body에 active 클래스 추가
         setTimeout(function(){
             body.classList.add('active');
         },10);
         
+        // menu-trigger active 클래스 추가
         menu.addEventListener('click',function(){
             menu.classList.toggle('active');
             nav.classList.toggle('active');
         });
 
-     
-        
-        
+        // menuList 누를 때 body active 클래스 제거
+        // menuList href 불러옴
         for(let i=0; i<menuList.length;i++){
             menuList[i].addEventListener('click', function(e){
                 e.preventDefault();
@@ -263,7 +267,20 @@
                 setTimeout(function() {
                     location.href = menuList[i].href;
                 },1000);
-            });
+            }); 
+            
+            
+        }
+        
+        for(let i=0;i<btn.length;i++){
+            btn[i].addEventListener('click', function(e){
+                   e.preventDefault();
+                    body.classList.remove('active');
+
+                    setTimeout(function() {
+                        location.href = btn[i].dataset.link;
+                    },1000);
+                });
         }
     </script>                      
            

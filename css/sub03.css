@@ -30,6 +30,13 @@ header{
     
     z-index:1;
 }
+.page img{
+    width:10%;
+    position: absolute;
+    left:50%; top:50%;
+    
+    transform: translate(-50%,-50%);
+}
 body.active .page{
     top:-100%;
 }
