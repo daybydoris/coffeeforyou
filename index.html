@@ -261,9 +261,6 @@
         // menuList 누를 때 body active 클래스 제거
         // menuList href 불러옴
         for(let i=0; i<menuList.length;i++){
-            if(menuList[i].class="top"){
-                break;
-            }else{
             menuList[i].addEventListener('click', function(e){
                 e.preventDefault();
                 body.classList.remove('active');
@@ -271,9 +268,7 @@
                 setTimeout(function() {
                     location.href = menuList[i].href;
                 },1000);
-            }); 
-            
-            }
+            });
         }
         
         for(let i=0;i<btn.length;i++){
