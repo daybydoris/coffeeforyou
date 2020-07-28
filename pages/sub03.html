@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/sub03.css">
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
 
-    <title>COFFEE FOR YOU - Coffee beans</title>
+    <title>COFFEE FOR YOU</title>
 </head>
 
 <body>
@@ -118,7 +118,7 @@
                             <a>자세히 보기</a>
                         </div>
                         <div class="bean_top">
-                            <img src="../img/flag/006-tanzania.png">
+                            <img src="../img/flag/flag_tanzania.png">
                             <div class="bean_title">
                                 <h4>tanzania</h4>
                                 <h3>킬리만자로 AA</h3>
@@ -165,7 +165,7 @@
                             <a>자세히 보기</a>
                         </div>
                         <div class="bean_top">
-                            <img src="../img/flag/006-tanzania.png">
+                            <img src="../img/flag/flag_tanzania.png">
                             <div class="bean_title">
                                 <h4>tanzania</h4>
                                 <h3>킬리만자로 AA</h3>
@@ -212,7 +212,7 @@
                             <a>자세히 보기</a>
                         </div>
                         <div class="bean_top">
-                            <img src="../img/flag/006-tanzania.png">
+                            <img src="../img/flag/flag_tanzania.png">
                             <div class="bean_title">
                                 <h4>tanzania</h4>
                                 <h3>킬리만자로 AA</h3>
@@ -259,7 +259,7 @@
                             <a>자세히 보기</a>
                         </div>
                         <div class="bean_top">
-                            <img src="../img/flag/006-tanzania.png">
+                            <img src="../img/flag/flag_tanzania.png">
                             <div class="bean_title">
                                 <h4>tanzania</h4>
                                 <h3>킬리만자로 AA</h3>
@@ -306,7 +306,7 @@
                             <a>자세히 보기</a>
                         </div>
                         <div class="bean_top">
-                            <img src="../img/flag/006-tanzania.png">
+                            <img src="../img/flag/flag_tanzania.png">
                             <div class="bean_title">
                                 <h4>tanzania</h4>
                                 <h3>킬리만자로 AA</h3>
@@ -353,7 +353,7 @@
                             <a>자세히 보기</a>
                         </div>
                         <div class="bean_top">
-                            <img src="../img/flag/006-tanzania.png">
+                            <img src="../img/flag/flag_tanzania.png">
                             <div class="bean_title">
                                 <h4>tanzania</h4>
                                 <h3>킬리만자로 AA</h3>
@@ -407,7 +407,7 @@
             <div class="bean_block">
                 <div class="block_wrap">
                     <div class="bean_top">
-                        <img src="../img/flag/006-tanzania.png">
+                        <img src=".../img/flag/flag_tanzania.png">
                         <div class="bean_title">
                             <h4 class="f_20">tanzania</h4>
                             <h3 class="f_25">킬리만자로 AA</h3>
@@ -583,16 +583,19 @@
     <script>
         const menu = document.querySelector('.menu-trigger');
         const nav = document.querySelector('nav');
-        const moreBtn = document.querySelector('.bean_block .more');
+        const moreBtn = document.querySelectorAll('.bean_block .more');
         const popup = document.querySelector('.popup');
         const exit = document.querySelector('.exit');
         const wrap = document.querySelector('.body_wrap');
         const body = document.querySelector('body');
-        const menuList = document.querySelectorAll('a');
+        const menuList = document.querySelectorAll('.h_container a');
         
+        
+        //화면 전환 page transition
         setTimeout(function(){
             body.classList.add('active');
         },10);
+        
         
         for(let i=0; i<menuList.length;i++){
             menuList[i].addEventListener('click', function(e){
@@ -604,20 +607,20 @@
                 },1000);
             });
         }
-        
-        menu.addEventListener('click', function() {
-            menu.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
 
-        moreBtn.addEventListener('click', function() {
-            popup.classList.toggle('active');
-            wrap.classList.toggle('active');
-        });
         
+        //팝업 띄우기
+        for(var i=0;i<moreBtn.length;i++){
+            moreBtn[i].addEventListener('click', function(){
+                popup.classList.add('active');
+                wrap.classList.add('active');
+            })
+        }
+        
+        //팝업 끄기
         exit.addEventListener('click', function() {
-            popup.classList.toggle('active');
-            wrap.classList.toggle('active');
+            popup.classList.remove('active');
+            wrap.classList.remove('active');
         });
         
         

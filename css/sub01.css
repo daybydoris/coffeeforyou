@@ -237,9 +237,7 @@ main > p{
     padding:30px 30px 30px 25vw;
     
     animation:back 2s ;
-    
-   
-    
+
 }
 @keyframes back{
     0%{
@@ -258,7 +256,19 @@ main > p{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    
+    animation:arabica 3s;
 }
+@keyframes arabica{
+    0%,60%{
+        opacity:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+
 .s_2 .left h1{
     text-transform: uppercase;
 }
@@ -305,6 +315,15 @@ main > p{
     width:65vw;
     margin:70px 0;
     
+    animation: table 3s;
+}
+@keyframes table{
+    0%,70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 

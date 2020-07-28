@@ -245,6 +245,7 @@
         const body = document.querySelector('body');
         const menuList = document.querySelectorAll('a');
         const btn = document.querySelectorAll('button');
+        const topBtn = document.querySelector('.f_container .top')
         
         // 시간지연 => body에 active 클래스 추가
         setTimeout(function(){
@@ -260,6 +261,9 @@
         // menuList 누를 때 body active 클래스 제거
         // menuList href 불러옴
         for(let i=0; i<menuList.length;i++){
+            if(menuList[i].class="top"){
+                break;
+            }else{
             menuList[i].addEventListener('click', function(e){
                 e.preventDefault();
                 body.classList.remove('active');
@@ -269,7 +273,7 @@
                 },1000);
             }); 
             
-            
+            }
         }
         
         for(let i=0;i<btn.length;i++){
@@ -282,6 +286,12 @@
                     },1000);
                 });
         }
+        
+//        topBtn.style.cursor = 'pointer';
+//        topBtn.addEventListener('click',function(){
+//            window.scroll(0,0);
+//        });
+        
     </script>                      
            
 </body>
