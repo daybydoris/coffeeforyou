@@ -1,7 +1,7 @@
 $(function(){
     //start
     $.ajax({
-        url:"/data_story.json",
+        url:"https://graphicnovel.github.io/coffeeforyou/data_story.json",
         type:"GET",
         success:function(data){
             var title, url, date, thumb, hashtag, contents, imgSrc, artList = "";
