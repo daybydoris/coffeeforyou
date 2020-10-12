@@ -67,7 +67,7 @@ $(function(){
                         pageList += "<li><a href='#'>"+ (pageNum)-(pageNum-i) +"</a></li>";
                     }
                 }
-                $(".page ul").html(pageList);
+                $(".paging ul").html(pageList);
             }
         }
     });
