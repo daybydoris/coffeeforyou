@@ -1,12 +1,13 @@
 $(function(){
    //start
-   var body = document.querySelector('body');
-   var menuList = document.querySelectorAll('a');
-   var btn = document.querySelectorAll('button');
-    
     $('header').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html header .h_container',menuTrigger);
     $('footer').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html footer .f_container');
     
+    var body = document.querySelector('body');
+    var menuList = document.querySelectorAll('.h_container a');
+    var btn = document.querySelectorAll('button');
+
+
     function menuTrigger(){
         // menu-trigger active 클래스 추가
         var menu = document.querySelector('.menu-trigger');
@@ -20,9 +21,9 @@ $(function(){
 
     //top 버튼
     setTimeout(function(){
-        var topBtn = document.querySelector(".f_container .top .topBtn");
+        var topButton = document.querySelector(".f_container .top .topBtn");
 
-        topBtn.addEventListener("click", function (e) {
+        topButton.addEventListener("click", function (e) {
             e.preventDefault();
             window.scrollTo({
             top: 0,
