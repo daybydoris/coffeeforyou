@@ -5,7 +5,7 @@ $(function(){
         type:"GET",
         success:function(data){
             var title, url, date, thumb, hashtag, contents, imgSrc, artList = "";
-            var artLen, blockNum = 6, pageNum, pageList = "";
+            var artLen=0, blockNum = 6, pageNum, pageList = "";
 
             function funList(tag){
                 //리스트 초기화 안되고 있음
@@ -64,7 +64,7 @@ $(function(){
                     pageNum = artLen / blockNum;
 
                     for(var i = 1; i<pageNum+1; i++){
-                        pageList += "<li><a href='#'>"+ (pageNum)-(pageNum-i) +"</a></li>";
+                        pageList += "<li><a href='#'>"+ pageNum -(pageNum-i) +"</a></li>";
                     }
                 }
                 $(".paging ul").html(pageList);
