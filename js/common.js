@@ -22,7 +22,6 @@ $(function(){
     }
 
     //top 버튼
-    setTimeout(function(){
         var topBtn = document.querySelector(".f_container .top a");
 
         topBtn.addEventListener("click", function (e) {
@@ -32,7 +31,6 @@ $(function(){
             behavior: "smooth"
             });
         });
-    },10);
 
     //------- 화면 전환 효과 -------
         // 시간지연 => body에 active 클래스 추가
@@ -64,7 +62,7 @@ $(function(){
                 });
         });
 
-        
+
     //end
 });
 
