@@ -39,14 +39,12 @@ $(function(){
                 });
                 $(".news_container").html(artList);
             }
-            funList("all"); 
-            console.log('aaa'); 
+            funList("all");
 
             $('.category a').on('click', function(e){
                 e.preventDefault();
 
                 var tag = $(this).attr('href');
-                console.log(tag);
 
                 funList(tag);
             });
