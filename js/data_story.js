@@ -1,0 +1,40 @@
+$(function(){
+    //start
+    $.ajax({
+        url:"/data_story.json",
+        type:"GET",
+        success:function(data){
+            var title, url, date, thumb, hashtag, contents, imgSrc, artList = "";
+
+            function funList(){
+                //리스트 초기화
+                artList = "";
+
+                data.article.forEach(function(el, key){
+                    //각 변수에 값 넣기
+                    title = el.title;
+                    url = el.url;
+                    date = el.date;
+                    thumb = el.thumb;
+                    hashtag = el.hashtag;
+                    contents = el.contents;
+                    imgSrc = el.imgSrc;
+
+                    //html 태그 넣기
+                    artList += "<article><div class='img_box'>";
+                    artList += "<a href="+ url +">"
+                    artList += "<img src="+thumb+"></a></div>"
+                    artList += "<span class='hashtag'>"+ hashtag +"</span>"
+                    artList += "<h3 class='f_20'>"
+                    artList += "<a href="+ url +">"+ title +"</a></h3>"
+                    artList += "<p class='f_basic'>"+ contents +"</p>"
+                    artList += "<a href="+ url +" class='f_basic'>read more</a></article>"  
+                });
+                $(".news_container").append(artList);
+            }
+            funList();
+        }
+    });
+
+    //end
+});
