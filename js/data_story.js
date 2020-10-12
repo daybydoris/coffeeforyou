@@ -64,10 +64,11 @@ $(function(){
                     pageNum = artLen / blockNum;
 
                     for(var i = 1; i<pageNum+1; i++){
-                        pageList += "<li><a href='#'>"+ (pageNum)-(pageNum-i) +"</a></li>"
+                        pageList += "<li><a href='#'>"+ (pageNum)-(pageNum-i) +"</a></li>";
                     }
                 }
                 $(".page ul").html(pageList);
+            }
         }
     });
 
