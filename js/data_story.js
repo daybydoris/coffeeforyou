@@ -21,7 +21,7 @@ $(function(){
                     imgSrc = el.imgSrc;
 
                     if(contents.length > 30 ){
-                        contents = contents.substr(0, 30);
+                        contents = contents.substr(0, 60);
                         contents = contents.replace(contents, contents + "...");
                     }
 
