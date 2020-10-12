@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
 <!--    <link rel="stylesheet" type="text/css" href="../css/style.css">-->
-    <link rel="stylesheet" type="text/css" href="https://graphicnovel.github.io/coffeeforyou/css/sub01.css">
-    <link rel="stylesheet" type="text/css" href="https://graphicnovel.github.io/coffeeforyou/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/sub01.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://graphicnovel.github.io/coffeeforyou/js/common.js"></script>
@@ -205,10 +205,10 @@
             body.classList.add('active');
         },10);
         
-        menu.addEventListener('click',function(){
-            menu.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
+        // menu.addEventListener('click',function(){
+        //     menu.classList.toggle('active');
+        //     nav.classList.toggle('active');
+        // });
 
         for(let i=0; i<menuList.length;i++){
             menuList[i].addEventListener('click', function(e){
@@ -220,6 +220,45 @@
                 },1000);
             });
         }
+
+//------- 스크롤시 fade in 효과 -------
+    //각 section 선택하기
+    var section = document.querySelectorAll('section');
+
+    //fadeIn 함수
+    fadeIn();
+    function fadeIn(){
+        var winH = window.innerHeight;
+            
+        section.forEach(function(el) {
+            el.classList.add('hideme');
+        }); //모든 div 숨김
+
+        setTimeout(function() {
+            section[0].classList.remove('hideme');
+            section[0].classList.add('active');
+            //페이지에 들어온 0.5초 후 첫번째 div 나타남
+        }, 500);
+
+        window.addEventListener('scroll', scrollFun);
+
+        function scrollFun() {
+            section.forEach(function(el) {
+                if (el.offsetTop - (winH * 0.6) < this.scrollY){
+                    if(el.classList.contains('s_2')){
+                        var left = el.querySelector('.left');
+                        el.classList.remove('hideme');
+                        left.classList.add('slide');
+                    }else{
+                        el.classList.remove('hideme');
+                        el.classList.add('active');
+                    }
+                }
+            });
+        };
+    };
+    
+
     </script>                      
            
 </body>

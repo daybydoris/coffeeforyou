@@ -78,10 +78,10 @@ a {
 
 /* fade in */
 
-section.hideme {
+.hideme {
   opacity: 0;
 }
-section.showme {
+.showme {
   opacity: 1;
   transform: translateY(0%);
 }

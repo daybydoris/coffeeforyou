@@ -18,7 +18,7 @@ $(function(){
         });
     }
 
-
+    //top 버튼
     setTimeout(function(){
         var topBtn = document.querySelector(".f_container .top a");
 

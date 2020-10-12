@@ -656,7 +656,7 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 400px auto;
+  margin: 600px auto 400px auto;
 
   border: 10px soild #d2d2d2;
 }
