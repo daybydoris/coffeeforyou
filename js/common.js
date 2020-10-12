@@ -22,7 +22,7 @@ $(function(){
     }
 
     //top 버튼
-        var topBtn = document.querySelector(".f_container .top a");
+        var topBtn = document.querySelector(".f_container .top .topBtn");
 
         topBtn.addEventListener("click", function (e) {
             e.preventDefault();
