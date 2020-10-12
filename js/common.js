@@ -1,8 +1,5 @@
 $(function(){
    //start
-    
-   var menu = document.querySelector('.menu-trigger');
-   var nav = document.querySelector('nav');
    var body = document.querySelector('body');
    var menuList = document.querySelectorAll('a');
    var btn = document.querySelectorAll('button');
@@ -22,6 +19,7 @@ $(function(){
     }
 
     //top 버튼
+    setTimeout(function(){
         var topBtn = document.querySelector(".f_container .top .topBtn");
 
         topBtn.addEventListener("click", function (e) {
@@ -31,6 +29,8 @@ $(function(){
             behavior: "smooth"
             });
         });
+    },10);
+        
 
     //------- 화면 전환 효과 -------
         // 시간지연 => body에 active 클래스 추가
