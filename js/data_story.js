@@ -39,6 +39,7 @@ $(function(){
                     }
                 });
                 $(".news_container").html(artList);
+                funPage();
             }
             funList("all");
 
@@ -56,8 +57,6 @@ $(function(){
                 // blockNum
                 //  pageNum;
             }
-            funPage();
-
         }
     });
 
