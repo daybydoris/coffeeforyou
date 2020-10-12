@@ -4,8 +4,8 @@ $(function(){
 //    console.log(location.pathname);
 //    console.log(location.host);
     
-    $('header').load('/inc_head_foot.html header .h_container',menuTrigger);
-    $('footer').load('/inc_head_foot.html footer .f_container');
+    $('header').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html header .h_container',menuTrigger);
+    $('footer').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html footer .f_container');
     
     function menuTrigger(){
         // menu-trigger active 클래스 추가
