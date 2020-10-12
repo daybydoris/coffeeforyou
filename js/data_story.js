@@ -5,7 +5,7 @@ $(function(){
         type:"GET",
         success:function(data){
             var title, url, date, thumb, hashtag, contents, imgSrc, artList = "";
-            var artLen, blockNum, pageNum;
+            var artLen, blockNum = 6, pageNum, pageList = "";
 
             function funList(tag){
                 //리스트 초기화 안되고 있음
@@ -53,10 +53,21 @@ $(function(){
         
             function funPage(){
                 artLen = $("article").length;
-                console.log(artLen);
-                // blockNum
-                //  pageNum;
-            }
+
+                pageList = "";
+
+                if(artLen<blockNum){
+                    pageNum = 1;
+
+                    pageList += "<li><a href='#'>"+ pageNum +"</a></li>"
+                }else{
+                    pageNum = artLen / blockNum;
+
+                    for(var i = 1; i<pageNum+1; i++){
+                        pageList += "<li><a href='#'>"+ (pageNum)-(pageNum-i) +"</a></li>"
+                    }
+                }
+                $(".page ul").html(pageList);
         }
     });
 
