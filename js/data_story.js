@@ -29,10 +29,12 @@ $(function(){
                     artList += "<a href="+ url +">"+ title +"</a></h3>"
                     artList += "<p class='f_basic'>"+ contents +"</p>"
                     artList += "<a href="+ url +" class='f_basic'>read more</a></article>"  
+
+                    
                 });
                 $(".news_container").append(artList);
             }
-            funList();
+            funList();  
         }
     });
 

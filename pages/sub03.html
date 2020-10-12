@@ -254,30 +254,10 @@
     <footer></footer>
 
     <script>
-      const menu = document.querySelector(".menu-trigger");
-      const nav = document.querySelector("nav");
-      const moreBtn = document.querySelectorAll(".bean_block .more");
-      const popup = document.querySelector(".popup");
-      const exit = document.querySelector(".exit");
-      const wrap = document.querySelector(".body_wrap");
-      const body = document.querySelector("body");
-      const menuList = document.querySelectorAll(".h_container a");
-
-      //화면 전환 page transition
-      setTimeout(function () {
-        body.classList.add("active");
-      }, 10);
-
-      for (let i = 0; i < menuList.length; i++) {
-        menuList[i].addEventListener("click", function (e) {
-          e.preventDefault();
-          body.classList.remove("active");
-
-          setTimeout(function () {
-            location.href = menuList[i].href;
-          }, 1000);
-        });
-      }
+      var moreBtn = document.querySelectorAll(".bean_block .more");
+      var popup = document.querySelector(".popup");
+      var exit = document.querySelector(".exit");
+      var wrap = document.querySelector(".body_wrap");
 
       //팝업 띄우기
       for (var i = 0; i < moreBtn.length; i++) {
