@@ -7,48 +7,23 @@
     
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/common.js"></script>
 
     <title>COFFEE FOR YOU</title>
 </head>
 <body>
 <!---------------  header  --------------->
     <header>
-       <div class="h_container">
-            <h1>
-               <a href="index.html">
-                    <img src="img/logo.png" alt="">
-                </a>
-            </h1>
-            <nav>
-                <a href="pages/sub01.html">
-                    what is coffee?
-                </a>
-                <a href="pages/sub02.html">
-                    bean to coffee
-                </a>
-                <a href="pages/sub03.html">
-                    coffee beans
-                </a>
-                <a href="pages/sub04.html">
-                    coffee for you
-                </a>
-                <a href="pages/sub05.html">
-                    coffee story
-                </a>
-            </nav>
-            <div class="menu-trigger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+       
     </header>
     
     
 <!----------------  main  ---------------->    
     <main class="center">
         <div class="m_container">
-            <section class="s_1 center">
+            <section class="s_1 center hideme">
                   <div class="cup">
                        <img src="img/main_coffee.png">
                        <img src="img/fog-th.png" class="fog01">
@@ -221,42 +196,21 @@
         
 <!---------------  footer  --------------->        
     <footer>
-       
-        <div class="f_container center">
-           <div class="contact">
-               <h3 class="f_basic">contact</h3>
-               <a href="#" class="f_basic">info@coffeeforyou.com</a>
-           </div>
-            <span class="sns">
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">in</a>
-            </span>
-            <span class="top">
-                <a href="#" class="f_basic">top</a>
-            </span>
-        </div>
-        
     </footer>      
     
     <script>
+
+    window.addEventListener('DOMContentLoaded',function(){
         const menu = document.querySelector('.menu-trigger');
         const nav = document.querySelector('nav');
         const body = document.querySelector('body');
         const menuList = document.querySelectorAll('a');
         const btn = document.querySelectorAll('button');
-        const topBtn = document.querySelector('.f_container .top')
         
         // 시간지연 => body에 active 클래스 추가
         setTimeout(function(){
             body.classList.add('active');
         },10);
-        
-        // menu-trigger active 클래스 추가
-        menu.addEventListener('click',function(){
-            menu.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
 
         // menuList 누를 때 body active 클래스 제거
         // menuList href 불러옴
@@ -282,10 +236,50 @@
                 });
         }
         
-//        topBtn.style.cursor = 'pointer';
-//        topBtn.addEventListener('click',function(){
-//            window.scroll(0,0);
-//        });
+    //스크롤시 fade in 효과
+    
+    //각 section 선택하기
+    var section = document.querySelectorAll('section');
+
+
+    //fadeIn 함수
+    function fadeIn(){
+        var winH = window.innerHeight;
+            
+        section.forEach(function(el) {
+            el.classList.add('hideme');
+        }); //모든 div 숨김
+
+        setTimeout(function() {
+            section[0].classList.remove('hideme');
+            section[0].classList.add('active');
+            //페이지에 들어온 0.5초 후 첫번째 div 나타남
+        }, 1000);
+
+        window.addEventListener('scroll', scrollFun);
+
+        function scrollFun() {
+            section.forEach(function(el) {
+                if (el.offsetTop - (winH * 0.6) < this.scrollY){
+                    if(el.classList.contains('s_2')){
+                        var left = el.querySelector('.left');
+                        el.classList.remove('hideme');
+                        left.classList.add('slide');
+                    }else{
+                        el.classList.remove('hideme');
+                        el.classList.add('active');
+                    }
+                }
+            
+                    //console.log(el.offsetTop + (winH * 0.5) < this.scrollY);
+                   
+                });
+            };
+    };
+    
+    fadeIn();
+    });
+        
         
     </script>                      
            

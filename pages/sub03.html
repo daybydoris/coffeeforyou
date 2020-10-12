@@ -1,630 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script src='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js'></script>
-    <link href='https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css' rel='stylesheet' />
-
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
 
     <!--    <link rel="stylesheet" type="text/css" href="../css/style.css">-->
-    <link rel="stylesheet" type="text/css" href="../css/sub03.css">
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/sub03.css" />
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/data_beans.js"></script>
 
     <title>COFFEE FOR YOU</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="body_wrap"></div>
     <!---------------  header  --------------->
-    <header>
-        <div class="h_container">
-            <h1>
-                <a href="../index.html">
-                    <img src="../img/logo.png" alt="">
-                </a>
-            </h1>
-            <nav>
-                <a href="sub01.html">
-                    what is coffee?
-                </a>
-                <a href="sub02.html">
-                    bean to coffee
-                </a>
-                <a href="sub03.html">
-                    coffee beans
-                </a>
-                <a href="sub04.html">
-                    coffee for you
-                </a>
-                <a href="sub05.html">
-                    coffee story
-                </a>
-            </nav>
-            <div class="menu-trigger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
-
+    <header></header>
 
     <!----------------  main  ---------------->
     <main class="center">
-        <p class="f_basic">
-            Main > Coffee beans
-        </p>
-        <section class="s_1 sub01_1 center">
-            <h2 class="orange">coffee beans</h2>
+      <p class="f_basic">Main > Coffee beans</p>
+      <section class="s_1 sub01_1 center">
+        <h2 class="orange">coffee beans</h2>
 
+        <!---------------- world map ---------------->
 
-            <!---------------- world map ---------------->
-
-            <div id='map' style='width: 100%; height: 400px;'>
-                <!-- 커피벨트 표시 -->
-                <div class="map_float01">
-
-                </div>
-                <div class="map_float02">
-                    <p class="f_15">coffee belt</p>
-                </div>
-            </div>
-            <script>
-                mapboxgl.accessToken = 'pk.eyJ1Ijoib25lZ29zZWVuIiwiYSI6ImNrY3Bwa2RhbTBlZ2sycW9jdXRpemV3M3oifQ.A9WQ0SdOjQUb1HQ70x7PDA';
-
-                var map = new mapboxgl.Map({
-                    container: 'map',
-                    // 지도 스타일
-                    style: 'mapbox://styles/mapbox/streets-v11',
-                    // 기본 위치 [lng, lat]
-                    center: [18.931402, 5.441022],
-                    // 줌
-                    zoom: 1.5,
-                    //인터랙션 활성/비활성화
-                    interactive: false
-                });
-
-                //지도에 마커 추가
-                var marker = new mapboxgl.Marker()
-                    .setLngLat([18.931402, 5.441022])
-                    .addTo(map);
-
-                //커스텀 마커
-                var geojson = {
-                    'type': 'FeatureCollection',
-                    'features': [{
-                        'type': 'Feature',
-                        'properties': {
-                            'message': 'Foo',
-                            'iconSize': [60, 60]
-                        },
-                        'geometry': {
-                            'type': 'Point',
-                            'coordinates': [-66.324462890625, -16.024695711685304]
-                        }
-                    }]
-                }
-            </script>
-
-
-            <!---------------- bean list ---------------->
-            <div class="bean_list">
-                <ul>
-                    <li class="bean_block">
-                        <div class="more f_15">
-                            <a>자세히 보기</a>
-                        </div>
-                        <div class="bean_top">
-                            <img src="../img/flag/flag_tanzania.png">
-                            <div class="bean_title">
-                                <h4>tanzania</h4>
-                                <h3>킬리만자로 AA</h3>
-                            </div>
-                        </div>
-                        <p>“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-                        <div class="bean_bar">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bean_block">
-                        <div class="more f_15">
-                            <a>자세히 보기</a>
-                        </div>
-                        <div class="bean_top">
-                            <img src="../img/flag/flag_tanzania.png">
-                            <div class="bean_title">
-                                <h4>tanzania</h4>
-                                <h3>킬리만자로 AA</h3>
-                            </div>
-                        </div>
-                        <p>“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-                        <div class="bean_bar">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bean_block">
-                        <div class="more f_15">
-                            <a>자세히 보기</a>
-                        </div>
-                        <div class="bean_top">
-                            <img src="../img/flag/flag_tanzania.png">
-                            <div class="bean_title">
-                                <h4>tanzania</h4>
-                                <h3>킬리만자로 AA</h3>
-                            </div>
-                        </div>
-                        <p>“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-                        <div class="bean_bar">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bean_block">
-                        <div class="more f_15">
-                            <a>자세히 보기</a>
-                        </div>
-                        <div class="bean_top">
-                            <img src="../img/flag/flag_tanzania.png">
-                            <div class="bean_title">
-                                <h4>tanzania</h4>
-                                <h3>킬리만자로 AA</h3>
-                            </div>
-                        </div>
-                        <p>“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-                        <div class="bean_bar">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bean_block">
-                        <div class="more f_15">
-                            <a>자세히 보기</a>
-                        </div>
-                        <div class="bean_top">
-                            <img src="../img/flag/flag_tanzania.png">
-                            <div class="bean_title">
-                                <h4>tanzania</h4>
-                                <h3>킬리만자로 AA</h3>
-                            </div>
-                        </div>
-                        <p>“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-                        <div class="bean_bar">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="bean_block">
-                        <div class="more f_15">
-                            <a>자세히 보기</a>
-                        </div>
-                        <div class="bean_top">
-                            <img src="../img/flag/flag_tanzania.png">
-                            <div class="bean_title">
-                                <h4>tanzania</h4>
-                                <h3>킬리만자로 AA</h3>
-                            </div>
-                        </div>
-                        <p>“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-                        <div class="bean_bar">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-
-
-        </section>
-
-        <!---------------- bean popup ---------------->
-        <div class="popup">
-            <div class="bean_block">
-                <div class="block_wrap">
-                    <div class="bean_top">
-                        <img src=".../img/flag/flag_tanzania.png">
-                        <div class="bean_title">
-                            <h4 class="f_20">tanzania</h4>
-                            <h3 class="f_25">킬리만자로 AA</h3>
-                        </div>
-                    </div>
-                    <div class="exit">
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <p class="f_15">“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.</p>
-
-
-                    <table>
-                        <tr>
-                            <th>산지</th>
-                            <td>NORTHERN-ALONG THE SLOPE OF mT KILIMANJARO</td>
-                        </tr>
-                        <tr>
-                            <th>품종</th>
-                            <td>BURBON, KENT</td>
-                        </tr>
-                        <tr>
-                            <th>원두등급</th>
-                            <td>AA</td>
-                        </tr>
-                        <tr>
-                            <th>가공방식</th>
-                            <td>WASHED, SUN DRIED</td>
-                        </tr>
-                    </table>
-
-
-
-                    <h2 class="f_20">Cupping note</h2>
-                    <div class="bean_bar">
-                        <div class="bar_left">
-                            <ul>
-                                <li>
-                                    향
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    산미
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    단맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="bar_right">
-                            <ul>
-                                <li>
-                                    쓴맛
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    바디감
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                                <li>
-                                    밸런스
-                                    <span></span>
-                                    <span></span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h2 class="f_20">Taste</h2>
-                    <div class="taste_icon">
-                        <ul>
-                            <li>
-                                <img src="../img/icon_wine.png">
-                                <p>wine</p>
-                            </li>
-                            <li>
-                                <img src="../img/icon_brownsugar.png">
-                                <p>brownsugar</p>
-                            </li>
-                            <li>
-                                <img src="../img/icon_grapefruit.png">
-                                <p>grapefruit</p>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <h2 class="f_20">Roasting point</h2>
-                    <div class="roasting">
-                       <span class="r_mobile">
-                           full city
-                       </span>
-                        <div class="roast_bar">
-                            <span>약로스팅(신맛)</span>
-                            <span>강로스팅(쓴맛)</span>
-                        </div>
-                    </div>
-                    <div class="roast_lev">
-                        <span class="back_lev"></span>
-                        <ul class="float_lev">
-                            <li>
-                                <span></span>
-                                light
-                            </li>
-                            <li>
-                                <span></span>
-                                cinnamon
-                            </li>
-                            <li>
-                                <span></span>
-                                medium
-                            </li>
-                            <li>
-                                <span></span>
-                                high
-                            </li>
-                            <li>
-                                <span></span>
-                                city
-                            </li>
-                            <li>
-                                <span></span>
-                                full city
-                            </li>
-                            <li>
-                                <span></span>
-                                italian
-                            </li>
-                            <li>
-                                <span></span>
-                                french
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <div id="map" style="width: 100%; height: 400px">
+          <!-- 커피벨트 표시 -->
+          <div class="map_float01"></div>
+          <div class="map_float02">
+            <p class="f_15">coffee belt</p>
+          </div>
         </div>
+        <script>
+          mapboxgl.accessToken =
+            "pk.eyJ1Ijoib25lZ29zZWVuIiwiYSI6ImNrY3Bwa2RhbTBlZ2sycW9jdXRpemV3M3oifQ.A9WQ0SdOjQUb1HQ70x7PDA";
+
+          var map = new mapboxgl.Map({
+            container: "map",
+            // 지도 스타일
+            style: "mapbox://styles/mapbox/streets-v11",
+            // 기본 위치 [lng, lat]
+            center: [18.931402, 5.441022],
+            // 줌
+            zoom: 1.5,
+            //인터랙션 활성/비활성화
+            interactive: false,
+          });
+
+          //지도에 마커 추가
+          var marker = new mapboxgl.Marker()
+            .setLngLat([18.931402, 5.441022])
+            .addTo(map);
+
+          //커스텀 마커
+          var geojson = {
+            type: "FeatureCollection",
+            features: [
+              {
+                type: "Feature",
+                properties: {
+                  message: "Foo",
+                  iconSize: [60, 60],
+                },
+                geometry: {
+                  type: "Point",
+                  coordinates: [-66.324462890625, -16.024695711685304],
+                },
+              },
+            ],
+          };
+        </script>
+
+        <!---------------- bean list ---------------->
+        <div class="bean_list">
+          <ul>
+            <!-- <li class="bean_block">
+              <div class="more f_15">
+                <a>자세히 보기</a>
+              </div>
+              <div class="bean_top"></div>
+              <div class="bean_detail"></div>
+              <div class="bean_bar"></div>
+            </li> -->
+          </ul>
+        </div>
+      </section>
+
+      <!---------------- bean popup ---------------->
+      <div class="popup">
+        <div class="bean_block">
+          <div class="block_wrap">
+            <div class="bean_top">
+              <img src="../img/flag/flag_tanzania.png" />
+              <div class="bean_title">
+                <h4 class="f_20">tanzania</h4>
+                <h3 class="f_25">킬리만자로 AA</h3>
+              </div>
+            </div>
+            <div class="exit">
+              <span></span>
+              <span></span>
+            </div>
+            <p class="f_15">
+              “킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한
+              상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고
+              강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.
+            </p>
+
+            <table>
+              <tr>
+                <th>산지</th>
+                <td>NORTHERN-ALONG THE SLOPE OF mT KILIMANJARO</td>
+              </tr>
+              <tr>
+                <th>품종</th>
+                <td>BURBON, KENT</td>
+              </tr>
+              <tr>
+                <th>원두등급</th>
+                <td>AA</td>
+              </tr>
+              <tr>
+                <th>가공방식</th>
+                <td>WASHED, SUN DRIED</td>
+              </tr>
+            </table>
+
+            <h2 class="f_20">Cupping note</h2>
+            <div class="bean_bar">
+              <div class="bar_left">
+                <ul>
+                  <li>
+                    향
+                    <span></span>
+                    <span></span>
+                  </li>
+                  <li>
+                    산미
+                    <span></span>
+                    <span></span>
+                  </li>
+                  <li>
+                    단맛
+                    <span></span>
+                    <span></span>
+                  </li>
+                </ul>
+              </div>
+              <div class="bar_right">
+                <ul>
+                  <li>
+                    쓴맛
+                    <span></span>
+                    <span></span>
+                  </li>
+                  <li>
+                    바디감
+                    <span></span>
+                    <span></span>
+                  </li>
+                  <li>
+                    밸런스
+                    <span></span>
+                    <span></span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2 class="f_20">Taste</h2>
+            <div class="taste_icon">
+              <ul>
+                <li>
+                  <img src="../img/icon_wine.png" />
+                  <p>wine</p>
+                </li>
+                <li>
+                  <img src="../img/icon_brownsugar.png" />
+                  <p>brownsugar</p>
+                </li>
+                <li>
+                  <img src="../img/icon_grapefruit.png" />
+                  <p>grapefruit</p>
+                </li>
+              </ul>
+            </div>
+
+            <h2 class="f_20">Roasting point</h2>
+            <div class="roasting">
+              <span class="r_mobile"> full city </span>
+              <div class="roast_bar">
+                <span>약로스팅(신맛)</span>
+                <span>강로스팅(쓴맛)</span>
+              </div>
+            </div>
+            <div class="roast_lev">
+              <span class="back_lev"></span>
+              <ul class="float_lev">
+                <li>
+                  <span></span>
+                  light
+                </li>
+                <li>
+                  <span></span>
+                  cinnamon
+                </li>
+                <li>
+                  <span></span>
+                  medium
+                </li>
+                <li>
+                  <span></span>
+                  high
+                </li>
+                <li>
+                  <span></span>
+                  city
+                </li>
+                <li>
+                  <span></span>
+                  full city
+                </li>
+                <li>
+                  <span></span>
+                  italian
+                </li>
+                <li>
+                  <span></span>
+                  french
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <div class="page">
-        <img src="../img/page_coffee_bean.png" alt>
+      <img src="../img/page_coffee_bean.png" alt />
     </div>
 
     <!---------------  footer  --------------->
-    <footer>
-
-        <div class="f_container center">
-            <div class="contact">
-                <h3 class="f_basic">contact</h3>
-                <a href="#" class="f_basic">info@coffeeforyou.com</a>
-            </div>
-            <span class="sns">
-                <a href="#">tw</a>
-                <a href="#">fb</a>
-                <a href="#">in</a>
-            </span>
-
-            <!----------- top 버튼 ----------->
-
-            <span class="top">
-                <a href="#" class="f_basic">top</a>
-            </span>
-        </div>
-
-    </footer>
+    <footer></footer>
 
     <script>
-        const menu = document.querySelector('.menu-trigger');
-        const nav = document.querySelector('nav');
-        const moreBtn = document.querySelectorAll('.bean_block .more');
-        const popup = document.querySelector('.popup');
-        const exit = document.querySelector('.exit');
-        const wrap = document.querySelector('.body_wrap');
-        const body = document.querySelector('body');
-        const menuList = document.querySelectorAll('.h_container a');
-        
-        
-        //화면 전환 page transition
-        setTimeout(function(){
-            body.classList.add('active');
-        },10);
-        
-        
-        for(let i=0; i<menuList.length;i++){
-            menuList[i].addEventListener('click', function(e){
-                e.preventDefault();
-                body.classList.remove('active');
+      const menu = document.querySelector(".menu-trigger");
+      const nav = document.querySelector("nav");
+      const moreBtn = document.querySelectorAll(".bean_block .more");
+      const popup = document.querySelector(".popup");
+      const exit = document.querySelector(".exit");
+      const wrap = document.querySelector(".body_wrap");
+      const body = document.querySelector("body");
+      const menuList = document.querySelectorAll(".h_container a");
 
-                setTimeout(function(){
-                    location.href = menuList[i].href;
-                },1000);
-            });
-        }
+      //화면 전환 page transition
+      setTimeout(function () {
+        body.classList.add("active");
+      }, 10);
 
-        
-        //팝업 띄우기
-        for(var i=0;i<moreBtn.length;i++){
-            moreBtn[i].addEventListener('click', function(){
-                popup.classList.add('active');
-                wrap.classList.add('active');
-            })
-        }
-        
-        //팝업 끄기
-        exit.addEventListener('click', function() {
-            popup.classList.remove('active');
-            wrap.classList.remove('active');
+      for (let i = 0; i < menuList.length; i++) {
+        menuList[i].addEventListener("click", function (e) {
+          e.preventDefault();
+          body.classList.remove("active");
+
+          setTimeout(function () {
+            location.href = menuList[i].href;
+          }, 1000);
         });
-        
-        
-        
-    </script>
+      }
 
-</body></html>
+      //팝업 띄우기
+      for (var i = 0; i < moreBtn.length; i++) {
+        moreBtn[i].addEventListener("click", function () {
+          popup.classList.add("active");
+          wrap.classList.add("active");
+        });
+      }
+
+      //팝업 끄기
+      exit.addEventListener("click", function () {
+        popup.classList.remove("active");
+        wrap.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
