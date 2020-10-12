@@ -39,7 +39,7 @@ $(function(){
                 });
                 $(".news_container").append(artList);
             }
-            funList(all);  
+            funList("all");  
 
             $('.category a').on('click', function(e){
                 e.preventDefault();
