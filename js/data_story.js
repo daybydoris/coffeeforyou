@@ -7,7 +7,7 @@ $(function(){
             var title, url, date, thumb, hashtag, contents, imgSrc, artList = "";
 
             function funList(tag){
-                //리스트 초기화
+                //리스트 초기화 안되고 있음
                 artList = "";
 
                 data.article.forEach(function(el, key){
@@ -29,7 +29,7 @@ $(function(){
                         //html 태그 넣기
                         artList += "<article><div class='img_box'>";
                         artList += "<a href="+ url +">";
-                        artList += "<img src="+thumb+"></a></div>";
+                        artList += "<img src="+ thumb +"></a></div>";
                         artList += "<span class='hashtag'>"+ hashtag +"</span>";
                         artList += "<h3 class='f_20'>";
                         artList += "<a href="+ url +">"+ title +"</a></h3>";
@@ -37,14 +37,16 @@ $(function(){
                         artList += "<a href="+ url +" class='f_basic'>read more</a></article>";
                     }
                 });
-                $(".news_container").append(artList);
+                $(".news_container").html(artList);
             }
-            funList("all");  
+            funList("all"); 
+            console.log('aaa'); 
 
             $('.category a').on('click', function(e){
                 e.preventDefault();
 
                 var tag = $(this).attr('href');
+                console.log(tag);
 
                 funList(tag);
             });

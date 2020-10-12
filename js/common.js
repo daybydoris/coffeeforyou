@@ -20,17 +20,17 @@ $(function(){
     }
 
     //top 버튼
-    setTimeout(function(){
-        var topButton = document.querySelector(".f_container .top .topBtn");
+    // setTimeout(function(){
+    //     var topButton = document.querySelector(".f_container .top .topBtn");
 
-        topButton.addEventListener("click", function (e) {
-            e.preventDefault();
-            window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-            });
-        });
-    },50);
+    //     topButton.addEventListener("click", function (e) {
+    //         e.preventDefault();
+    //         window.scrollTo({
+    //         top: 0,
+    //         behavior: "smooth"
+    //         });
+    //     });
+    // },50);
         
 
     //------- 화면 전환 효과 -------
