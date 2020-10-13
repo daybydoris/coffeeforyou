@@ -229,18 +229,20 @@ main > p{
 .s_1 .news_container article > a:hover:after{
     transform: translateX(200%);
 }
-.s_1 .pageNum{
+.s_1 .paging{
     width:100%;
 }
-.s_1 .pageNum ul{
+.s_1 .paging ul{
     display: flex;
     width:50%;
     justify-content: space-around;
     align-items: center;
     margin:0 auto;
 }
-.s_1 .pageNum ul li{
+.s_1 .paging ul li{
     color:#f2f2f2;
+    display:inline-block;
+    /* margin:0 10px; */
 }
 .body_wrap{
     width:100%;
@@ -406,14 +408,14 @@ footer .f_container .top:hover a:before{
     }
     .s_1{
         width:80vw;
-        padding: 5vh 0;
+        padding: 0 0 150px 0;
     }
     .s_1 h2{
         font-size:25px;
     }
     .s_1 .news_container{
         width:100%;
-        margin-top:5vh;
+        margin:3vh auto;
         display: block;
     }
     .s_1 .news_container article{

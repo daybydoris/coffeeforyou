@@ -8,7 +8,7 @@ $(function(){
             var artLen=0, blockNum = 6, pageNum, pageNumList, pageList = "";
 
             function funList(tag){
-                //리스트 초기화 안되고 있음
+                //리스트 초기화
                 artList = "";
 
                 data.article.forEach(function(el, key){
@@ -34,7 +34,7 @@ $(function(){
                         artList += "<span class='hashtag'>"+ hashtag +"</span>";
                         artList += "<h3 class='f_20'>";
                         artList += "<a href="+ url +">"+ title +"</a></h3>";
-                        artList += "<p class='f_basic'>"+ contents +"</p>";
+                        artList += "<a href="+ url +"><p class='f_basic'>"+ contents +"</a></p>";
                         artList += "<a href="+ url +" class='f_basic'>read more</a></article>";
                     }
                 });
@@ -61,8 +61,9 @@ $(function(){
 
                     pageList += "<li><a href='#'>"+ pageNum +"</a></li>"
                 }else{
-                    pageNum = artLen / blockNum;
+                    pageNum = artLen / blockNum; //페이지 수 = 게시글 수 / 한 페이지 당 표시할 게시글 수
 
+                    //페이지 버튼 표시
                     for(var i = 1; i<pageNum+1; i++){
                         pageNumList = (pageNum -(pageNum-i)).toString();
                         pageList += "<li><a href='#'>"+ pageNumList +"</a></li>";
