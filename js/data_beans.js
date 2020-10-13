@@ -2,7 +2,7 @@ $(function () {
   //start
 
   $.ajax({
-    url: "/data_beans.json",
+    url: "https://graphicnovel.github.io/coffeeforyou/data_beans.json",
     type: "GET",
     success: function (data) {
       var country,
@@ -21,7 +21,12 @@ $(function () {
         balance,
         roasting,
         note,
-        beanList = "";
+        beanList = "",
+        fragCal = [],
+        acidCal = [],
+        sweetCal = [],
+        bitterCal = [],
+        bodyCal = [];
 
       function funList() {
         //상품 리스트 초기화
@@ -42,8 +47,11 @@ $(function () {
           body = value.body;
           sweetness = value.sweetness;
           bitterness = value.bitterness;
-          balance;
           roasting = value.roasting;
+
+          balance = (fragrance + acidity + body +  sweetness + bitterness) / 5;
+          // console.log(balance);
+          // console.log(fragrance);
 
           //html 태그 넣기
           beanList += "<li class='bean_block'>";
@@ -60,22 +68,49 @@ $(function () {
           beanList += "<p>" + detail + "</p></div>";
 
           beanList += "<div class='bean_bar'><ul>";
-          beanList += "<li>향<span></span><span></span></li>";
-          beanList += "<li>산미<span></span><span></span></li>";
-          beanList += "<li>단맛<span></span><span></span></li>";
-          beanList += "<li>쓴맛<span></span><span></span></li>";
-          beanList += "<li>바디감<span></span><span></span></li>";
-          // beanList += "<li>" + balance + "<span></span>";
-          // beanList += "<span></span>";
+          beanList += "<li class='bean_frag'>향<span></span><span></span></li>";
+          beanList += "<li class='bean_acid'>산미<span></span><span></span></li>";
+          beanList += "<li class='bean_sweet'>단맛<span></span><span></span></li>";
+          beanList += "<li class='bean_bitter'>쓴맛<span></span><span></span></li>";
+          beanList += "<li class='bean_body'>바디감<span></span><span></span></li>";
+          // beanList += "<li class='bean_balance'>밸런스" + balance + "<span></span><span></span>";
           // beanList += "</li>";
           beanList += "</ul>";
           beanList += "</div></div></li>";
+
+          // var fragBar = document.querySelector('.bean_bar ul .bean_frag span:nth-of-type(2)');
+          
+          // 수치 계산 후 배열 저장
+          function cal(nameCal, status){
+            nameCal.push(75 / 5 * status);
+          }
+          cal(fragCal, fragrance);
+          cal(acidCal, acidity);
+          cal(sweetCal, sweetness);
+          cal(bitterCal, bitterness);
+          cal(bodyCal, body); 
         });
         $(".bean_list ul").append(beanList);
+        
+        //각 특징별 수치 입력
+        function setBar(nameBar, className, nameCal){
+          var nameBar = document.querySelectorAll(".bean_bar ul ."+ className +" span:nth-of-type(2)");
+
+          for(var i=0;i<nameBar.length;i++){
+            nameBar[i].style.width = nameCal[i] + "%";
+          }
+        }
+
+        setBar("fragBar", "bean_frag", fragCal);
+        setBar("acidBar", "bean_acid", acidCal);
+        setBar("sweetBar", "bean_sweet",sweetCal);
+        setBar("bitterBar", "bean_bitter",bitterCal);
+        setBar("bodyBar", "bean_body",bodyCal);         
       }
       funList();
     },
   });
+
 
   //end
 });
