@@ -218,7 +218,7 @@ main > p{
 .s_1 .news_container article > a{
     position: relative;
 }
-.s_1 .news_container article > a:after{
+.s_1 .news_container article > a:last-of-type:after{
     content:'>';
     color:#f2f2f2;
     position: absolute;

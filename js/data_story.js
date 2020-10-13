@@ -22,7 +22,7 @@ $(function(){
                     imgSrc = el.imgSrc;
 
                     if(contents.length > 30 ){
-                        contents = contents.substr(0, 60);
+                        contents = contents.substr(0, 150);
                         contents = contents.replace(contents, contents + "...");
                     }
 
@@ -64,10 +64,12 @@ $(function(){
                     pageNum = artLen / blockNum; //페이지 수 = 게시글 수 / 한 페이지 당 표시할 게시글 수
 
                     //페이지 버튼 표시
+                    pageList += "<li><a href='#'>＜</a></li>"
                     for(var i = 1; i<pageNum+1; i++){
                         pageNumList = (pageNum -(pageNum-i)).toString();
                         pageList += "<li><a href='#'>"+ pageNumList +"</a></li>";
                     }
+                    pageList += "<li><a href='#'>＞</a></li>"
                 }
                 $(".paging ul").html(pageList);
             }
