@@ -2,7 +2,7 @@
   "beans": [
     {
       "country": "tanzania",
-      "flag": "/img/flag/flag_tanzania.png",
+      "flag": "https://graphicnovel.github.io/coffeeforyou/img/flag/flag_tanzania.png",
       "name": "킬리만자로 AA",
       "detail": "“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.",
       "origin": "NORTHERN-ALONG THE SLOPE OF MT KILIMANJARO",
@@ -19,7 +19,7 @@
     },
     {
       "country": "kenya",
-      "flag": "/img/flag/flag_kenya.png",
+      "flag": "https://graphicnovel.github.io/coffeeforyou/img/flag/flag_kenya.png",
       "name": "케냐 AA",
       "detail": "케냐 커피는 풍부한 향과 산미가 좋으며 중후한 와인, 초콜릿의 단맛과 더불어 밸런스가 잘 잡힌 고급 커피로 유명합니다. 아프리카 커피중에서 최고로 손꼽힙니다.",
       "origin": "KENYA KIAMBU",
@@ -36,7 +36,7 @@
     },
     {
       "country": "guatemala",
-      "flag": "/img/flag/flag_guatemala.png",
+      "flag": "https://graphicnovel.github.io/coffeeforyou/img/flag/flag_guatemala.png",
       "name": "과테말라 안티구아 SHB",
       "detail": "진한 스모키향과 복합적인 풍미, 우아하고 뛰어난 감칠맛과 부드러운 단맛, 중후한 바디감을 느낄 수 있음. 고급 스트레이트 커피나 블렌드 커피 모두에 두루 사용되는 커피.",
       "origin": "ANTIGUA",
@@ -53,7 +53,7 @@
     },
     {
       "country": "costarica",
-      "flag": "/img/flag/flag_costarica.png",
+      "flag": "https://graphicnovel.github.io/coffeeforyou/img/flag/flag_costarica.png",
       "name": "코스타리카 따라주 SHB",
       "detail": "코르타리카 따라주 SHB는 브라운 슈가와 같은 깊은 단 맛과 견과류의 고소함이 특징. 상큼한 과일류의 신맛인 부드러운 산미를 느낄 수 있으며, 균형이 잡혀 있어 스트레이트 커피로도 훌륭한 원두. ",
       "origin": "Trrazu",
@@ -70,7 +70,7 @@
     },
     {
       "country": "brazil",
-      "flag": "/img/flag/flag_brazil.png",
+      "flag": "https://graphicnovel.github.io/coffeeforyou/img/flag/flag_brazil.png",
       "name": "브라질 옐로우 버번",
       "detail": "스페셜티 커피에 근접한 맛과 향을 가진 원두. 균형있는 향미와 산미, 고소함이 특징.",
       "origin": "Cerrado, Minas gerais, Sui de Minas",
