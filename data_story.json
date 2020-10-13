@@ -2,6 +2,7 @@
     "article":[
         {
             "title": "커피, 트렌드를 입다",
+            "num":"1",
             "url": "sub05-1.html",
             "date": "2020-06-15",
             "thumb": "../img/main_coffee_story01.jpg",
@@ -11,6 +12,7 @@
         },
         {
             "title": "완벽한 라떼아트를 위한 6가지 팁",
+            "num":"2",
             "url": "sub05-1.html",
             "date": "2020-06-23",
             "thumb": "../img/main_coffee_story02.jpg",
@@ -20,6 +22,7 @@
         },
         {
             "title": "빠르게 변화하는 ‘카페 트렌드’ 줌인(Zoom In)",
+            "num":"3",
             "url": "sub05-1.html",
             "date": "2020-06-30",
             "thumb": "../img/main_coffee_story02.jpg",
@@ -29,6 +32,7 @@
         },
         {
             "title": "커피, 트렌드를 입다",
+            "num":"4",
             "url": "sub05-1.html",
             "date": "2020-06-15",
             "thumb": "../img/main_coffee_story01.jpg",
@@ -38,6 +42,7 @@
         },
         {
             "title": "완벽한 라떼아트를 위한 6가지 팁",
+            "num":"5",
             "url": "sub05-1.html",
             "date": "2020-06-23",
             "thumb": "../img/main_coffee_story02.jpg",
@@ -47,6 +52,7 @@
         },
         {
             "title": "커피, 트렌드를 입다",
+            "num":"6",
             "url": "sub05-1.html",
             "date": "2020-06-15",
             "thumb": "../img/main_coffee_story01.jpg",
@@ -56,6 +62,7 @@
         },
         {
             "title": "완벽한 라떼아트를 위한 6가지 팁",
+            "num":"7",
             "url": "sub05-1.html",
             "date": "2020-06-23",
             "thumb": "../img/main_coffee_story02.jpg",
@@ -65,6 +72,7 @@
         },
         {
             "title": "커피, 트렌드를 입다",
+            "num":"8",
             "url": "sub05-1.html",
             "date": "2020-06-15",
             "thumb": "../img/main_coffee_story01.jpg",
@@ -74,6 +82,7 @@
         },
         {
             "title": "완벽한 라떼아트를 위한 6가지 팁",
+            "num":"9",
             "url": "sub05-1.html",
             "date": "2020-06-23",
             "thumb": "../img/main_coffee_story02.jpg",
