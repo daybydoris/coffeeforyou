@@ -4,18 +4,27 @@ $(function(){
         url:"/data_story.json",
         type:"GET",
         success:function(data){
-            var title, num, url, date, thumb, hashtag, contents, imgSrc,tag="all", artList = "";
-            var artLen = 0, totalLen = 0, blockNum = 6, pageNum, pageNumList,currentPage = 1, pageList = "";
-            var pageGroup = [], currentArt;
+            var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "";
+            var artLen = 0, totalLen = 0, blockNum = 6, pageNum, pageNumList, currentPage, pageList = "";
+            var pageGroup = [], pageTag=[], totalGroup = [], currentArt;
 
-            function funList(tag){
+            
+            function funList(tag, currentPage){
+
+                console.log(currentPage);
+
+                //페이지 버튼 눌렀을 때, 페이지 번호에 따라 불러올 범위 지정
+                var start = blockNum * (currentPage-1);
+                var end = blockNum * currentPage;
+
                 //리스트 초기화
                 artList = "";
+                
 
+                //반복문
                 data.article.forEach(function(el, key){
                     //각 변수에 값 넣기
-                    title = el.title;
-                    num = el.num;
+                    title = el.title; 
                     url = el.url;
                     date = el.date;
                     thumb = el.thumb;
@@ -23,74 +32,136 @@ $(function(){
                     contents = el.contents;
                     imgSrc = el.imgSrc;
 
-                    //게시글 넘버 담는 배열
-                    pageGroup.push(num);
+                    function createArt(){
+                        //html 태그 넣기
+                        artList += "<article><div class='img_box'>";
+                        artList += "<a href="+ url +">";
+                        artList += "<img src="+ thumb +"></a></div>";
+                        artList += "<span class='hashtag'>"+ hashtag +"</span>";
+                        artList += "<h3 class='f_20'>";
+                        artList += "<a href="+ url +">"+ title +"</a></h3>";
+                        artList += "<a href="+ url +"><p class='f_basic'>"+ contents +"</a></p>";
+                        artList += "<a href="+ url +" class='f_basic'>read more</a></article>";
+                    }
                     
 
+                    //본문 미리보기 글자 수 제한
                     if(contents.length > 30 ){
                         contents = contents.substr(0, 150);
                         contents = contents.replace(contents, contents + "...");
                     }
+                    
+                    if(tag == hashtag){ //tag와 hashtag가 같은 경우
 
-                    if( tag == "all" || tag == hashtag ){
-                        
-                        var start = blockNum * (currentPage);
-                        console.log(start);
-                        currentArt = pageGroup.slice(start, start + blockNum);
+                        createArt(); //해당하는 카테고리 게시글 html 태그 작성
 
-                        console.log(currentArt);
+                        //해당하는 카테고리의 총 게시글 수 체크를 위한 배열
+                        totalGroup.push(artList);
 
-                        if(num <= start){
-                            //html 태그 넣기
-                            artList += "<article><div class='img_box'>";
-                            artList += "<a href="+ url +">";
-                            artList += "<img src="+ thumb +"></a></div>";
-                            artList += "<span class='hashtag'>"+ hashtag +"</span>";
-                            artList += "<h3 class='f_20'>";
-                            artList += "<a href="+ url +">"+ title +"</a></h3>";
-                            artList += "<a href="+ url +"><p class='f_basic'>"+ contents +"</a></p>";
-                            artList += "<a href="+ url +" class='f_basic'>read more</a></article>";
-                        }
+                        //한 페이지에 출력할 게시글을 배열에 저장
+                        pageTag.push(artList);
+
+                    }else if( tag == "all" ){ //tag가 all일 경우
+
+                        createArt(); //html 태그 작성
+                        totalGroup.push(artList);
+
+                        if(key >= start && key < end ){ //페이징 조건
+                            pageGroup.push(artList); //pageGroup에 넣기
+                        }   
                     }
+
+                    //게시글 데이터가 마지막까지 다 돌았을 때
+                    if(data.article.length-1 == key){
+                        pushTag();
+                    }
+
+                    //artList 초기화
+                    artList = "";
+                   
                     
                 });
-                $(".news_container").html(artList);
                 funPage();
-            }
-            funList("all");
 
+
+                //pageTag 배열의 요소들을 pageGroup에 넣어줌
+                function pushTag(){
+                    pageTag.forEach(function(a, key){
+                        //페이징 조건
+                        if(key >= start && key < end){
+                            pageGroup.push(a);
+                        }
+                    });
+                }
+
+
+
+                //태그 뿌리기
+                $(".news_container").html(pageGroup);
+                //console.log("pageGroup:"+pageGroup);
+
+                
+
+                //페이지 그룹 초기화
+                pageGroup = [];
+                pageTag = [];
+                totalGroup = [];
+                
+                
+
+                
+            }
+            funList("all", 1);
+
+            
+
+
+            //카테고리 클릭 이벤트
             $('.category a').on('click', function(e){
                 e.preventDefault();
 
+                //클릭한 카테고리의 href 속성을 tag 변수에 담음
                 tag = $(this).attr('href');
 
-                funList(tag);
+                //페이지 번호 초기화
+                currentPage = 1;
+
+                //tag 변수를 funList로 보내 실행
+                funList(tag, currentPage);
+
+
             });
-        
+
+
+
+
+
+            
+            //페이징 함수
             function funPage(){
-                //artLen = $("article").length;
-                artLen = $('article').length;
-                totalLen = data.article.length;
+                artLen = $('article').length; //뿌려진 게시글 수
+                
+                totalLen = totalGroup.length; //총 게시글 수
 
-                console.log(artLen);
-                console.log(totalLen);
+                pageList = ""; //페이지 리스트 초기화
 
-                pageList = "";
-
-                if(totalLen<blockNum){
+                if(totalLen<blockNum){ //총 게시글 수 < 한 페이지 당 표시할 게시글 수
                     pageNum = 1;
 
                     pageList += "<li><a href='#'>"+ pageNum +"</a></li>"
                 }else{
-                    pageNum = Math.ceil(totalLen / blockNum); //페이지 수 = 게시글 수 / 한 페이지 당 표시할 게시글 수
-
+                    //페이지 수 = ( 게시글 수 / 한 페이지 당 표시할 게시글 수 )
+                    pageNum = Math.ceil(totalLen / blockNum);
+                    
+                    //console.log(pageNum);
+                    
                     //페이지 버튼 표시
-                    pageList += "<li><a href='#'>＜</a></li>"
+                    pageList += "<li><a href='#'>＜</a></li>" //prev
                     for(var i = 1; i<pageNum+1; i++){
                         pageNumList = (pageNum -(pageNum-i)).toString();
                         pageList += "<li><a href='#'>"+ pageNumList +"</a></li>";
                     }
-                    pageList += "<li><a href='#'>＞</a></li>"
+                    pageList += "<li><a href='#'>＞</a></li>" //next
                 }
                 //페이지 버튼 뿌리기
                 $(".paging ul").html(pageList);
@@ -98,11 +169,36 @@ $(function(){
                 //페이지 버튼 클릭시 
                 $('.paging ul li a').on('click',function(e){
                     e.preventDefault();
+
                     currentPage = $(this).parent().index();
-                    console.log(currentPage);
-                    funList(tag);
+
+                    console.log($(this).parent().parent().length);
+                    //console.log($(this).parent().index());
+                    if($(this).parent().index() == 0){ //prev 버튼
+                        // if(currentPage > 1 || currentPage != undefined){
+                        //     currentPage--;
+                        // }else{
+                        //     return;
+                        // }
+                        // //console.log(currentPage);
+                    }else if($(this) == $(this).last()){ //next 버튼
+                        // console.log("마지막");
+                        // if(currentPage < $(this).parent().parent().length){
+                        //     currentPage++;
+                        // }
+                    }else{
+                        //클릭한 페이지 버튼의 인덱스 currentPage에 저장
+                        currentPage = $(this).parent().index();
+                    }
+
+                    //funList 재실행
+                    funList(tag, currentPage);
                 });
             }
+
+
+
+
         }
     });
 
