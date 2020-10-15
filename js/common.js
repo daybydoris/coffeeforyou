@@ -1,7 +1,7 @@
 $(function(){
    //start
     $('header').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html header .h_container',menuTrigger);
-    $('footer').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html footer .f_container');
+    $('footer').load('https://graphicnovel.github.io/coffeeforyou/inc_head_foot.html footer .f_container', scrollTop);
     
     var body = document.querySelector('body');
     var menuList = document.querySelectorAll('.h_container a');
@@ -19,18 +19,21 @@ $(function(){
         });
     }
 
-    //top 버튼
-    // setTimeout(function(){
-    //     var topButton = document.querySelector(".f_container .top .topBtn");
-
-    //     topButton.addEventListener("click", function (e) {
-    //         e.preventDefault();
-    //         window.scrollTo({
-    //         top: 0,
-    //         behavior: "smooth"
-    //         });
-    //     });
-    // },50);
+    function scrollTop(){
+                //top 버튼
+                    setTimeout(function(){
+                        var topButton = document.querySelector('.topBtn');
+                        console.log(topButton);
+        
+                        topButton.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                        });
+                    });
+                    },500);
+    }
         
 
     //------- 화면 전환 효과 -------
