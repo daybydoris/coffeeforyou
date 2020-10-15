@@ -20,19 +20,18 @@ $(function(){
     }
 
     function scrollTop(){
-                //top 버튼
-                    setTimeout(function(){
-                        var topButton = document.querySelector('.topBtn');
-                        console.log(topButton);
-        
-                        topButton.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        window.scrollTo({
-                        top: 0,
-                        behavior: "smooth"
-                        });
-                    });
-                    },500);
+        //top 버튼
+        setTimeout(function(){
+            var topButton = document.querySelector('.topBtn');
+
+            topButton.addEventListener("click", function (e) {
+            e.preventDefault();
+            window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+            });
+        });
+        },500);
     }
         
 
