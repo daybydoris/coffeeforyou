@@ -1,7 +1,7 @@
 $(function(){
     //start
     $.ajax({
-        url:"https://graphicnovel.github.io/coffeeforyou/data_story.json",
+        url:"/data_story.json",
         type:"GET",
         success:function(data){
             var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "";
@@ -12,6 +12,7 @@ $(function(){
             function funList(tag, currentPage){
 
                 console.log(currentPage);
+                
 
                 //페이지 버튼 눌렀을 때, 페이지 번호에 따라 불러올 범위 지정
                 var start = blockNum * (currentPage-1);
@@ -51,6 +52,8 @@ $(function(){
                         contents = contents.replace(contents, contents + "...");
                     }
                     
+
+
                     if(tag == hashtag){ //tag와 hashtag가 같은 경우
 
                         createArt(); //해당하는 카테고리 게시글 html 태그 작성
@@ -81,8 +84,10 @@ $(function(){
                    
                     
                 });
-                funPage();
+                funPage(currentPage);
 
+
+                console.log(pageNum);
 
                 //pageTag 배열의 요소들을 pageGroup에 넣어줌
                 function pushTag(){
@@ -128,8 +133,6 @@ $(function(){
 
                 //tag 변수를 funList로 보내 실행
                 funList(tag, currentPage);
-
-
             });
 
 
@@ -138,9 +141,8 @@ $(function(){
 
             
             //페이징 함수
-            function funPage(){
+            function funPage(currentPage){
                 artLen = $('article').length; //뿌려진 게시글 수
-                
                 totalLen = totalGroup.length; //총 게시글 수
 
                 pageList = ""; //페이지 리스트 초기화
@@ -156,43 +158,49 @@ $(function(){
                     //console.log(pageNum);
                     
                     //페이지 버튼 표시
-                    pageList += "<li><a href='#'>＜</a></li>" //prev
+                    pageList += "<li><a href='#' class='prev'>＜</a></li>" //prev
                     for(var i = 1; i<pageNum+1; i++){
                         pageNumList = (pageNum -(pageNum-i)).toString();
                         pageList += "<li><a href='#'>"+ pageNumList +"</a></li>";
                     }
-                    pageList += "<li><a href='#'>＞</a></li>" //next
+                    pageList += "<li><a href='#' class='next'>＞</a></li>" //next
                 }
+
                 //페이지 버튼 뿌리기
                 $(".paging ul").html(pageList);
 
-                //페이지 버튼 클릭시 
+
+                //페이지 버튼 클릭 이벤트
                 $('.paging ul li a').on('click',function(e){
                     e.preventDefault();
 
-                    currentPage = $(this).parent().index();
-
-                    console.log($(this).parent().parent().length);
-                    //console.log($(this).parent().index());
-                    if($(this).parent().index() == 0){ //prev 버튼
-                        // if(currentPage > 1 || currentPage != undefined){
-                        //     currentPage--;
-                        // }else{
-                        //     return;
-                        // }
-                        // //console.log(currentPage);
-                    }else if($(this) == $(this).last()){ //next 버튼
-                        // console.log("마지막");
-                        // if(currentPage < $(this).parent().parent().length){
-                        //     currentPage++;
-                        // }
-                    }else{
-                        //클릭한 페이지 버튼의 인덱스 currentPage에 저장
-                        currentPage = $(this).parent().index();
-                    }
-
+                    console.log(pageNum);
+                    
+                    if(pageNum != 1){ //pageNum이 1이면 실행 안함
+                        if($(this).hasClass('prev')){ //prev 버튼
+                            if(currentPage > 1){
+                                currentPage--;
+                            }else{
+                                return;
+                            }
+                            console.log("이전");
+                        }else if($(this).hasClass('next')){ //next 버튼
+                            console.log("마지막");
+                            console.log(currentPage, pageNum);
+                            if(currentPage < pageNum){
+                                currentPage++;
+                            }else{
+                                return;
+                            }
+                        }else{
+                            //prev, next 버튼이 아닌 경우
+                            //클릭한 페이지 버튼의 인덱스 currentPage에 저장
+                            currentPage = $(this).parent().index();
+                        }
+                
                     //funList 재실행
                     funList(tag, currentPage);
+                }
                 });
             }
 
