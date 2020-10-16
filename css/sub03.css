@@ -207,7 +207,7 @@ main > p {
 
   position: relative;
 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .bean_block .more {
   width: 100%;
@@ -222,7 +222,7 @@ main > p {
 
   opacity: 0;
 
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 .bean_block .more a {
@@ -326,11 +326,14 @@ main > p {
   display: none;
   transition: 0.5s;
 }
-.popup.active {
+.popup.active,
+.popup .bean_block.active {
   display: block;
 }
 
 .popup .bean_block {
+  display:none;
+
   width: 580px;
   height: 1150px;
   margin-bottom: 4%;

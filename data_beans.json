@@ -15,7 +15,11 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "full city",
-      "note": ["wine", "grapefruit", "brownsugar"]
+      "note": {
+        "wine":"../img/icon_wine.png",
+        "grapefruit":"../img/icon_grapefruit.png",
+        "brownsugar":"../img/icon_brownsugar.png"
+      }
     },
     {
       "country": "kenya",
@@ -32,7 +36,11 @@
       "bitterness": 3,
       "sweetness": 4,
       "roasting": "full city",
-      "note": ["redgrapefruit", "orange", "brownsugar"]
+      "note": {
+        "wine":"../img/icon_wine.png",
+        "grapefruit":"../img/icon_grapefruit.png",
+        "brownsugar":"../img/icon_brownsugar.png"
+      }
     },
     {
       "country": "guatemala",
@@ -49,7 +57,12 @@
       "bitterness": 4,
       "sweetness": 3,
       "roasting": "full city",
-      "note": ["darkchocolate", "blackcurrant", "brownsugar"]
+      "note": {
+        "darkchocolate":"../img/icon_darkchocolate.png",
+        "blackcurrant":"../img/icon_blackcurrant.png",
+        "brownsugar":"../img/icon_brownsugar.png"
+      }
+
     },
     {
       "country": "costarica",
@@ -66,7 +79,11 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": ["greenapple", "sugarcane", "pecan"]
+      "note": {"greenapple":"../img/icon_greenapple.png",
+        "sugarcane":"../img/icon_sugarcane.png",
+        "pecan":"../img/icon_pecan.png"
+      }
+      
     },
     {
       "country": "brazil",
@@ -83,7 +100,9 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": ["peanut", "sugarcane", "cereals"]
+      "note": {"peanut":"../img/icon_peanut.png",
+        "sugarcane":"../img/icon_sugarcane.png",
+        "cereals":"../img/icon_cereals.png"}
     }
   ]
 }

@@ -1,7 +1,7 @@
 $(function(){
     //start
     $.ajax({
-        url:"https://graphicnovel.github.io/coffeeforyou/data_story.json",
+        url:"/data_story.json",
         type:"GET",
         success:function(data){
             var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "";
@@ -9,10 +9,7 @@ $(function(){
             var pageGroup = [], pageTag=[], totalGroup = [], currentArt;
 
             
-            function funList(tag, currentPage){
-
-                console.log(currentPage);
-                
+            function funList(tag, currentPage){                
 
                 //페이지 버튼 눌렀을 때, 페이지 번호에 따라 불러올 범위 지정
                 var start = blockNum * (currentPage-1);
@@ -84,10 +81,8 @@ $(function(){
                    
                     
                 });
-                funPage(currentPage);
+                funPage(currentPage); //페이징 함수에 currentPage 변수를 보내 함수 실행
 
-
-                console.log(pageNum);
 
                 //pageTag 배열의 요소들을 pageGroup에 넣어줌
                 function pushTag(){
@@ -100,26 +95,21 @@ $(function(){
                 }
 
 
-
                 //태그 뿌리기
                 $(".news_container").html(pageGroup);
-                //console.log("pageGroup:"+pageGroup);
 
                 
 
-                //페이지 그룹 초기화
+                //페이징 배열 초기화
                 pageGroup = [];
                 pageTag = [];
                 totalGroup = [];
-                
-                
 
-                
             }
+            //첫 페이지 뿌리기
             funList("all", 1);
 
             
-
 
             //카테고리 클릭 이벤트
             $('.category a').on('click', function(e){
@@ -133,11 +123,14 @@ $(function(){
 
                 //tag 변수를 funList로 보내 실행
                 funList(tag, currentPage);
+
+                //카테고리 버튼 활성화
+                $('.category a').removeClass('active');
+                $(this).addClass('active');
             });
 
 
-
-
+            
 
             
             //페이징 함수
@@ -150,18 +143,16 @@ $(function(){
                 if(totalLen<blockNum){ //총 게시글 수 < 한 페이지 당 표시할 게시글 수
                     pageNum = 1;
 
-                    pageList += "<li><a href='#'>"+ pageNum +"</a></li>"
+                    pageList += "<li><a href='#' class='1'>"+ pageNum +"</a></li>"
                 }else{
                     //페이지 수 = ( 게시글 수 / 한 페이지 당 표시할 게시글 수 )
                     pageNum = Math.ceil(totalLen / blockNum);
-                    
-                    //console.log(pageNum);
                     
                     //페이지 버튼 표시
                     pageList += "<li><a href='#' class='prev'>＜</a></li>" //prev
                     for(var i = 1; i<pageNum+1; i++){
                         pageNumList = (pageNum -(pageNum-i)).toString();
-                        pageList += "<li><a href='#'>"+ pageNumList +"</a></li>";
+                        pageList += "<li class='"+ i +"'><a href='#'>"+ pageNumList +"</a></li>";
                     }
                     pageList += "<li><a href='#' class='next'>＞</a></li>" //next
                 }
@@ -170,12 +161,19 @@ $(function(){
                 $(".paging ul").html(pageList);
 
 
+                //첫 번째 페이지 넘버에 active 추가
+                if(totalLen<blockNum){
+                    $('.paging ul li').eq(0).find('a').addClass('active');
+                }else{
+                    $('.paging ul li').eq(currentPage).addClass('active');
+                }
+
+
                 //페이지 버튼 클릭 이벤트
                 $('.paging ul li a').on('click',function(e){
                     e.preventDefault();
 
-                    console.log(pageNum);
-                    
+
                     if(pageNum != 1){ //pageNum이 1이면 실행 안함
                         if($(this).hasClass('prev')){ //prev 버튼
                             if(currentPage > 1){
@@ -183,10 +181,7 @@ $(function(){
                             }else{
                                 return;
                             }
-                            console.log("이전");
                         }else if($(this).hasClass('next')){ //next 버튼
-                            console.log("마지막");
-                            console.log(currentPage, pageNum);
                             if(currentPage < pageNum){
                                 currentPage++;
                             }else{
@@ -197,15 +192,13 @@ $(function(){
                             //클릭한 페이지 버튼의 인덱스 currentPage에 저장
                             currentPage = $(this).parent().index();
                         }
-                
+
                     //funList 재실행
                     funList(tag, currentPage);
-                }
+                    
+                    }
                 });
             }
-
-
-
 
         }
     });
