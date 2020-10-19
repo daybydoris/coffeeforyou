@@ -5,30 +5,10 @@ $(function () {
     url: "/data_beans.json",
     type: "GET",
     success: function (data) {
-      var country,
-        flag,
-        name,
-        detail,
-        origin,
-        kind,
-        grade,
-        process,
-        fragrance,
-        acidity,
-        body,
-        sweetness,
-        bitterness,
-        balance,
-        roasting,
-        note = [],
-        beanList = "",
-        popList = "",
-        fragCal = [],
-        acidCal = [],
-        sweetCal = [],
-        bitterCal = [],
-        bodyCal = [],
-        balCal = [],
+      var country, flag, name, detail, origin, kind, grade, process, fragrance,
+        acidity, body, sweetness, bitterness, balance, roasting, note = [],
+        beanList = "", popList = "", fragCal = [], acidCal = [], sweetCal = [],
+        bitterCal = [], bodyCal = [], balCal = [], roast = [], noteGroup = [],
         moreBtn, popup, beanBlock, exit, wrap;
       
       function funList() {
@@ -43,31 +23,11 @@ $(function () {
           name = value.name;
           detail = value.detail;
           origin = value.origin;
-          kind = value.kind;
-          grade = value.grade;
-          process = value.process;
           fragrance = value.fragrance;
           acidity = value.acidity;
           body = value.body;
           sweetness = value.sweetness;
           bitterness = value.bitterness;
-          roasting = value.roasting;
-
-          // value.note.foreach(function (el, key){
-          //   note.push(el);
-          // });
-          var aa = value.note;
-          for(var i in aa){
-            // console.log('key',i)
-            // console.log('value',aa[i])
-          }
-
-          var first_key = Object.keys(value.note)[0];
-          var first_value = value.note[Object.keys(value.note)[0]];
-
-          // console.log(first_key);
-          // console.log(first_value);
-          
 
           balance = (fragrance + acidity + body +  sweetness + bitterness) / 5;
           // console.log(balance);
@@ -106,22 +66,27 @@ $(function () {
           cal(bodyCal, body);
           cal(balCal, balance); 
 
+
         });
         $(".bean_list ul").append(beanList); //beanList 화면에 뿌리기
 
-        //bar width 설정
-        setBar("fragBar", "bean_frag", fragCal);
-        setBar("acidBar", "bean_acid", acidCal);
-        setBar("sweetBar", "bean_sweet", sweetCal);
-        setBar("bitterBar", "bean_bitter", bitterCal);
-        setBar("bodyBar", "bean_body", bodyCal);
-        setBar("balBar", "bean_balance", balCal);
-
+        
       }
       funList();
 
+      // ------------- funList 실행 끝 --------------- // 
 
-      // ------------- funList 실행 끝 --------------- //
+
+      //popup 생성
+      funPopup();
+
+      //bar width 설정
+      setBar("fragBar", "bean_frag", fragCal);
+      setBar("acidBar", "bean_acid", acidCal);
+      setBar("sweetBar", "bean_sweet", sweetCal);
+      setBar("bitterBar", "bean_bitter", bitterCal);
+      setBar("bodyBar", "bean_body", bodyCal);
+      setBar("balBar", "bean_balance", balCal);
 
 
 
@@ -132,48 +97,74 @@ $(function () {
 
       //각 특징별 수치 입력
       function setBar(nameBar, className, nameCal){
-        var nameBar = document.querySelectorAll(".bean_bar ul ."+ className +" span:nth-of-type(2)");
+        var nameBar = document.querySelectorAll(".bean_list .bean_bar ul ."+ className +" span:nth-of-type(2)");
         var nameBarPop = document.querySelectorAll(".popup .bean_bar ul ."+ className +" span:nth-of-type(2)");
-
-        console.log(nameBarPop);
-
+        
         for(var i=0;i<nameBar.length;i++){
-          nameBar[i].style.width = nameCal[i] + "%";
+          nameBar[i].style.width = nameCal[i] + "%"; //리스트
+          nameBarPop[i].style.width = nameCal[i] + "%"; //팝업
           if(className == "bean_balance"){
             nameBar[i].style.background = "#e1421d";
+            nameBarPop[i].style.background = "#e1421d";
           }
         }
 
       }
-      
-      moreBtn = document.querySelectorAll(".bean_block .more");
 
-      //moreBtn 클릭 이벤트
-      moreBtn.forEach(function(btn, key){
-        //popup 생성
-        funPopup();
+      function setRoast(roasting){
+        var roastBarPop = document.querySelectorAll(".roast_bar span:nth-of-type(1)");
+
+        var popBlock = document.querySelectorAll('.popup .bean_block');        
         
-        btn.addEventListener('click',function(){
-          //popup 창 요소들 선택하기
-          popup = document.querySelector(".popup"),
-          exit = document.querySelectorAll(".exit"),
-          wrap = document.querySelector(".body_wrap"),
-          beanBlock = document.querySelectorAll('.popup .bean_block');
-      
-          //popup 나타내기
-          popup.classList.add('active');
-          beanBlock[key].classList.add('active');
-          
-          //exit 클릭 이벤트
-          exit.forEach(function(btn){
-            btn.addEventListener('click',function(){
-              popup.classList.remove('active');
-              beanBlock[key].classList.remove('active');
-            });
+
+        //roasting point 이름 bold로 처리
+        popBlock.forEach(function(el, key){
+          var roastLi = el.querySelectorAll('.float_lev li'); //로스팅 레벨 담기
+
+          roastLi.forEach(function(r, key2){
+            //원두 로스팅 레벨과 클래스 리스트가 일치하면 글씨체 bold
+            if(roastLi[key2].classList == roast[key]){
+              roastLi[key2].style.fontWeight = "bold";
+            }
           });
-          
         });
-      });
+        
+        //roasting point bar 길이 조정
+        roastBarPop.forEach(function(r, key){
+
+          switch(roast[key]){
+            case "light":
+              r.style.width = "7%";
+              break;
+            case "cinnamon":
+              r.style.width = "19%";
+              break;
+            case "medium":
+              r.style.width = "32%";
+              break;
+            case "high":
+              r.style.width = "44%";
+              break;
+            case "city":
+              r.style.width = "58%";
+              break;
+            case "fullcity":
+              r.style.width = "70%";
+              break;
+            case "italian":
+              r.style.width = "82%";
+              break;
+            case "french":  
+              r.style.width = "95%";
+              break;
+            default:
+              break;
+          }
+        });
+      }
+      
+      
+      
 
 
       function funPopup(){
@@ -197,6 +188,19 @@ $(function () {
           sweetness = value.sweetness;
           bitterness = value.bitterness;
           roasting = value.roasting;
+          note = value.note;
+
+          //note 정보 초기화
+          noteGroup = [];
+
+
+          //note 데이터를 배열에 저장
+          for(var i in note){
+
+            noteGroup.push(i);
+            noteGroup.push(note[i]);
+
+          }
 
           //popup
           popList += "<div class='bean_block'><div class='block_wrap'><div class='bean_top'>";
@@ -218,19 +222,99 @@ $(function () {
           popList += "<li class='bean_balance'>밸런스<span></span><span></span></li></ul></div></div>";
 
           popList += "<h2 class='f_20'>Taste</h2><div class='taste_icon'>";
-          popList += "<ul><li><img src='"+ note[0] +"' /><p>wine</p></li>";
-          popList += "<li><img src='"+ note[1] +"' /><p>brownsugar</p></li>";
-          popList += "<li><img src='"+ note[2] +"' /><p>grapefruit</p></li></ul></div>";
+          popList += "<ul><li><img src='"+ noteGroup[1] +"' /><p>"+ noteGroup[0] +"</p></li>";
+          popList += "<li><img src='"+ noteGroup[3] +"' /><p>"+ noteGroup[2] +"</p></li>";
+          popList += "<li><img src='"+ noteGroup[5] +"' /><p>"+ noteGroup[4] +"</p></li></ul></div>";
 
-          popList += "<h2 class='f_20'>Roasting point</h2><div class='roasting'><span class='r_mobile'>full city</span>";
-          popList += "<div class='roast_bar'><span>약로스팅(신맛)</span><span>강로스팅(쓴맛)</span></div></div>";
+          popList += "<h2 class='f_20'>Roasting point</h2><div class='roasting'><span class='r_mobile'>"+ roasting +"</span>";
+          popList += "<div class='roast_bar'><span></span><span></span><span>약로스팅(신맛)</span><span>강로스팅(쓴맛)</span></div></div>";
           popList += "<div class='roast_lev'><span class='back_lev'></span><ul class='float_lev'>";
-          popList += "<li><span></span>light</li><li><span></span>cinnamon</li><li><span></span>medium</li><li><span></span>high</li><li><span></span>city</li><li><span></span>full city</li><li><span></span>italian</li><li><span></span>french</li></ul></div></div></div>"
+          popList += "<li class='light'><span></span>light</li><li class='cinnamon'><span></span>cinnamon</li><li class='medium'><span></span>medium</li><li class='high'><span></span>high</li><li class='city'><span></span>city</li><li class='fullcity'><span></span>full city</li><li class='italian'><span></span>italian</li><li class='french'><span></span>french</li></ul></div></div></div>"
+          
+          roast.push(roasting); //로스팅 레벨 정보를 배열에 담음
+
+          // var topAfterStyle = document.createElement('style');
+          //   topAfterStyle.innerHTML = 
+          //   ".popup .bean_block .bean_top:after{ background: url('../img/popup_" + country + ".jpg') no-repeat; }";
+          //   console.log(topAfterStyle);
+          //   document.head.appendChild(topAfterStyle);
+          //   // topAfter.style.backgroundImage = "url('../img/popup_" + country + ".jpg') no-repeat;";
+          //   // console.log("../img/popup_" + country + ".jpg");
+
         });
         $('.popup').html(popList);
+        setRoast(roasting); //로스팅 레벨 정보를 setRoast에 보내 실행
 
+        
+        
       }
 
+
+
+      moreBtn = document.querySelectorAll(".bean_block .more");
+
+      
+      //moreBtn 클릭 이벤트
+      moreBtn.forEach(function(btn, key){
+
+        //반복문으로 버튼마다 클릭 이벤트 걸기
+        btn.addEventListener('click',function(){
+
+          
+          //popup 창 요소들 선택하기
+          popup = document.querySelector(".popup"),
+          exit = document.querySelectorAll(".exit"),
+          wrap = document.querySelector(".body_wrap"),
+          beanBlock = document.querySelectorAll('.popup .bean_block');
+          bodyWrap = document.querySelector('.body_wrap');
+
+          //배경 어둡게
+          bodyWrap.classList.add('active');
+
+          //popup 나타내기
+          popup.classList.add('active');
+          beanBlock[key].classList.add('active');
+
+          
+          
+          //화면 중앙에 나타내기
+          // beanBlock.forEach(function(b){
+          //   var scrollY = window.pageYOffset;
+          //   var blockH = b.offsetHeight / 2;
+  
+          //   console.log(scrollY - 30);
+
+          //   b.style.top = "calc("+ scrollY +"px" + 30 + "%)" + "px";
+
+          // });
+          
+
+
+          //exit 클릭 이벤트
+          exit.forEach(function(btn){
+            btn.addEventListener('click',function(){
+              popup.classList.remove('active');
+              beanBlock[key].classList.remove('active');
+              bodyWrap.classList.remove('active');
+
+              // beanBlock.forEach(function(b){
+              //   var scrollY = window.pageYOffset;
+              //   var blockH = b.offsetHeight / 2;
+              //   //b.style.top = "calc("+ scrollY +"px" + 30 + "%)" + "px";
+              // });
+            });
+          });
+          
+          console.log(window.pageYOffset); //스크롤 된 높이
+          console.log(beanBlock[0].getBoundingClientRect().top); //beanblock 상대 좌표
+          console.log(window.pageYOffset + beanBlock[0].getBoundingClientRect().top); //beanblock 절대 좌표
+
+          
+         
+
+
+        });
+      });
 
     },
   });
