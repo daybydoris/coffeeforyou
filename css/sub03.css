@@ -57,7 +57,7 @@ body.active .page {
   font-size: 12px;
   margin-left: 4vw;
 }
-.h_container nav a:nth-of-type(3) {
+.h_container nav a:nth-of-type(2) {
   font-weight: bold;
 }
 .h_container nav a:after {
@@ -69,7 +69,7 @@ body.active .page {
   opacity: 0;
   transition: 0.5s;
 }
-.h_container nav a:nth-of-type(3):after {
+.h_container nav a:nth-of-type(2):after {
   content: "";
   height: 2px;
   width: 10px;
