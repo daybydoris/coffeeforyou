@@ -2,7 +2,7 @@ $(function () {
   //start
 
   $.ajax({
-    url: "/data_beans.json",
+    url: "https://graphicnovel.github.io/coffeeforyou/data_beans.json",
     type: "GET",
     success: function (data) {
       var country, flag, name, detail, origin, kind, grade, process, fragrance,
