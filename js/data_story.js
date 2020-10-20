@@ -24,22 +24,20 @@ $(function(){
                     //각 변수에 값 넣기
                     title = el.title; 
                     url = el.url;
-                    date = el.date;
                     thumb = el.thumb;
                     hashtag = el.hashtag;
                     contents = el.contents;
-                    imgSrc = el.imgSrc;
 
                     function createArt(){
                         //html 태그 넣기
                         artList += "<article><div class='img_box'>";
-                        artList += "<a href="+ url +">";
-                        artList += "<img src="+ thumb +"></a></div>";
+                        artList += "<a href="+ url +" class='thumb'>";
+                        artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
                         artList += "<span class='hashtag'>"+ hashtag +"</span>";
-                        artList += "<h3 class='f_20'>";
+                        artList += "<h3 class='f_20 title'>";
                         artList += "<a href="+ url +">"+ title +"</a></h3>";
-                        artList += "<a href="+ url +"><p class='f_basic'>"+ contents +"</a></p>";
-                        artList += "<a href="+ url +" class='f_basic'>read more</a></article>";
+                        artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</a></p>";
+                        artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
                     }
                     
 
@@ -97,6 +95,14 @@ $(function(){
 
                 //태그 뿌리기
                 $(".news_container").html(pageGroup);
+
+                
+                //게시글 클릭 이벤트
+                $('article a').on('click',function(e){
+                    e.preventDefault();
+                    viewUrl = $(this).attr('href');
+                    console.log($(this).title);
+                });
 
                 
 
