@@ -814,7 +814,7 @@ footer .f_container .top:hover a:before {
     justify-content: flex-start;
     align-items: flex-start;
   }
-  .popup .bean_block .bean_top img {
+  .popup .bean_block .bean_top > img {
     width: 20%;
     margin-bottom: 2vh;
   }
