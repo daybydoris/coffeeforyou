@@ -236,8 +236,8 @@ $(function () {
           var topBg = document.querySelector('.bean_top_bg');
           // topBg.style.background = "url('../img/popup_" + country + ".jpg') no-repeat;";
             
-          console.log(country);
-          console.log(topBg);
+          // console.log(country);
+          // console.log(topBg);
             
         });
         $('.popup').html(popList);
@@ -303,9 +303,9 @@ $(function () {
             });
           });
           
-          console.log(window.pageYOffset); //스크롤 된 높이
-          console.log(beanBlock[0].getBoundingClientRect().top); //beanblock 상대 좌표
-          console.log(window.pageYOffset + beanBlock[0].getBoundingClientRect().top); //beanblock 절대 좌표
+          // console.log(window.pageYOffset); //스크롤 된 높이
+          // console.log(beanBlock[0].getBoundingClientRect().top); //beanblock 상대 좌표
+          // console.log(window.pageYOffset + beanBlock[0].getBoundingClientRect().top); //beanblock 절대 좌표
 
           
          
