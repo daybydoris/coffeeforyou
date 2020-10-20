@@ -206,7 +206,7 @@ $(function () {
           popList += "<div class='bean_block'><div class='block_wrap'><div class='bean_top'>";
           popList += "<img src="+ flag +" /><div class='bean_title'>";
           popList += "<h4 class='f_20'>"+ country +"</h4>";
-          popList += "<h3 class='f_25'>"+ name +"</h3></div></div>";
+          popList += "<h3 class='f_25'>"+ name +"</h3></div><div class='bean_top_bg'><img src='../img/popup_" + country + ".jpg'></div></div>";
           popList += "<div class='exit'><span></span><span></span></div>";
           popList += "<p class='f_15'>"+ detail +"</p>";
           popList += "<table><tr><th>산지</th><td>"+ origin +"</td></tr>";
@@ -233,14 +233,12 @@ $(function () {
           
           roast.push(roasting); //로스팅 레벨 정보를 배열에 담음
 
-          // var topAfterStyle = document.createElement('style');
-          //   topAfterStyle.innerHTML = 
-          //   ".popup .bean_block .bean_top:after{ background: url('../img/popup_" + country + ".jpg') no-repeat; }";
-          //   console.log(topAfterStyle);
-          //   document.head.appendChild(topAfterStyle);
-          //   // topAfter.style.backgroundImage = "url('../img/popup_" + country + ".jpg') no-repeat;";
-          //   // console.log("../img/popup_" + country + ".jpg");
-
+          var topBg = document.querySelector('.bean_top_bg');
+          // topBg.style.background = "url('../img/popup_" + country + ".jpg') no-repeat;";
+            
+          console.log(country);
+          console.log(topBg);
+            
         });
         $('.popup').html(popList);
         setRoast(roasting); //로스팅 레벨 정보를 setRoast에 보내 실행

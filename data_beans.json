@@ -108,6 +108,26 @@
       "note": {"peanut":"../img/icon_peanut.png",
         "sugarcane":"../img/icon_sugarcane.png",
         "cereals":"../img/icon_cereals.png"}
+    },
+    {
+      "country": "brazil",
+      "backImg":"../img/popup_tanzania.jpg",
+      "flag": "https://graphicnovel.github.io/coffeeforyou/img/flag/flag_brazil.png",
+      "name": "브라질 옐로우 버번",
+      "detail": "스페셜티 커피에 근접한 맛과 향을 가진 원두. 균형있는 향미와 산미, 고소함이 특징.",
+      "origin": "Cerrado, Minas gerais, Sui de Minas",
+      "kind": "Yellow bourbon",
+      "grade": "NY2 FC",
+      "process": "PULPED NATURAL",
+      "fragrance": 3.5,
+      "acidity": 2.5,
+      "body": 3,
+      "bitterness": 3,
+      "sweetness": 3.5,
+      "roasting": "city",
+      "note": {"peanut":"../img/icon_peanut.png",
+        "sugarcane":"../img/icon_sugarcane.png",
+        "cereals":"../img/icon_cereals.png"}
     }
   ]
 }

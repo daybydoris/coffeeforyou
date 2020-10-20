@@ -368,12 +368,12 @@ main > p {
   justify-content: left;
   align-items: flex-start;
 }
-.popup .bean_block .bean_top:after {
+/* .popup .bean_block .bean_top:after {
   content: "";
   width: 100%;
   height: 235px;
 
-  /* background: url("../img/popup_tanzania.jpg") no-repeat; */
+  background: url("../img/popup_tanzania.jpg") no-repeat;
   background-position: bottom;
   opacity: 0.5;
 
@@ -381,7 +381,24 @@ main > p {
   left: 0;
   top: 0;
 
+  
+} */
+.popup .bean_block .bean_top_bg {
+  width: 100%;
+
+  background-position: bottom;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
   z-index: -1;
+
+  opacity: 0.5;
+}
+.popup .bean_block .bean_top_bg img {
+  width: 100%;
+  height: 100%;
 }
 .popup .bean_block .exit {
   width: 50px;
@@ -413,7 +430,7 @@ main > p {
 .popup .bean_block .exit span:nth-of-type(2) {
   transform: rotate(-45deg);
 }
-.popup .bean_block .bean_top img {
+.popup .bean_block .bean_top > img {
   width: 76px;
   margin-right: 15px;
 }
