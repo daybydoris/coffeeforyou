@@ -149,21 +149,7 @@ main > p {
   margin-bottom:50px;
   line-height:2;
 }
-.s_1 .resultBtn{
-  display:inline-block;
-  width:180px;
-  height:60px;
-  margin-bottom:50px;
 
-  border:1px solid rgba(255,255,255,0.4);
-  
-  text-align: center;
-  line-height: 4;
-  transition:.3s;
-}
-.s_1 .resultBtn:hover{
-  background:rgba(255,255,255,0.2);
-}
 
 .mapboxgl-map {
   width: 100%;
