@@ -64,6 +64,7 @@ body.active .page {
 
 .h_container nav {
   text-align: right;
+  z-index:4;
 }
 .h_container nav a {
   font-size: 12px;

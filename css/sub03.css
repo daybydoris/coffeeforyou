@@ -146,6 +146,8 @@ main > p {
   width: 100%;
   text-align: center;
   text-transform: uppercase;
+  margin-bottom:50px;
+  line-height:2;
 }
 .s_1 .resultBtn{
   display:inline-block;
@@ -228,6 +230,7 @@ main > p {
   position: relative;
 
   transition: 0.3s;
+  z-index:0;
 }
 .bean_block .more {
   width: 100%;
@@ -458,7 +461,7 @@ main > p {
 .popup .bean_block .bean_top > img {
   /* width: 76px; */
   margin-right: 15px;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 .popup .bean_block .bean_top h4 {
   font-size: 20px;
@@ -540,7 +543,7 @@ main > p {
   align-items: center;
 }
 .popup .taste_icon ul li img {
-  max-width: 59px;
+  max-width: 60px;
 }
 .popup .taste_icon ul li p {
   font-size: 13px;
@@ -840,7 +843,8 @@ footer .f_container .top:hover a:before {
     justify-content: flex-start;
     align-items: flex-start;
     width:100%;
-    height:15vh;
+    height:auto;
+    margin-bottom:30%;
   }
   .popup .bean_block .bean_top h4{
     font-size:15px;
