@@ -32,28 +32,27 @@
             <h2 class="orange">coffee for you</h2>
 
             <div class="form">
-                <div class="step">
+                <div class="step step1">
                     <h3>
                         <strong>step 01</strong> 좋아하는 향을 선택하세요.
                     </h3>
                     <ul>
-                        <li>새콤달콤한 향</li>
-                        <li>고소한 단향</li>
-                        <li>쌉싸름하고
-                            구수한 향</li>
+                        <li id="sour">새콤달콤한 향</li>
+                        <li id="nutty">고소한 단향</li>
+                        <li id="bitter">쌉싸름하고 구수한 향</li>
                     </ul>
                 </div>
-                <div class="step">
+                <div class="step step2">
                     <h3>
                         <strong>step 02</strong> 좋아하는 풍미를 선택하세요.
                     </h3>
                     <ul>
-                        <li>산뜻한 산미</li>
-                        <li>부드러운 미디움</li>
-                        <li>진하고 묵직한</li>
+                        <li id="light">산뜻한 산미</li>
+                        <li id="medium">부드러운 미디움</li>
+                        <li id="strong">진하고 묵직한</li>
                     </ul>
                 </div>
-                <a href="../pages/sub04-1.html" class="f_15">결과보기</a>
+                <a href="../pages/sub04-1.html" class="f_15 resultBtn">결과보기</a>
             </div>
 
         </section>
@@ -66,12 +65,13 @@
     <footer>
     </footer>
 
-    <script>
-        var li = document.querySelector('.step ul li');
+    <script src="https://graphicnovel.github.io/coffeeforyou/js/data_foryou.js"></script>
+    <!-- <script>
+        // var li = document.querySelector('.step ul li');
 
-        li.addEventListener('click', function() {
-            li.classList.toggle('active');
-        });
-    </script>
+        // li.addEventListener('click', function() {
+        //     li.classList.toggle('active');
+        // });
+    </script> -->
 
 </body></html>

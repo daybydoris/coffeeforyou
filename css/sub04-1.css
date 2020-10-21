@@ -138,7 +138,7 @@ main > p{
     align-items: center;
 }
 
-.s_1 > h2{
+.s_1 .result_text h2{
     width:100%;
     text-align: center;
     text-transform: uppercase;

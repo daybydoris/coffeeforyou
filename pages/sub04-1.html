@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--    <link rel="stylesheet" type="text/css" href="../css/style.css">-->
-    <link rel="stylesheet" type="text/css" href="../css/sub04-1.css">
+    <link rel="stylesheet" type="text/css" href="../css/sub03.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/sub04-1.css"> -->
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -16,6 +17,7 @@
 </head>
 
 <body>
+    <div class="body_wrap"></div>
     <!---------------  header  --------------->
     <header>
       
@@ -29,16 +31,18 @@
         </p>
 
         <section class="s_1 sub01_1 center">
-            <h2 class="f_20">
-                고소한 향과 부드러운 풍미를 즐기는
-            </h2>
-            <h2 class="f_20">
-                당신에게 맞는 원두는
-            </h2>
+            <div class="result_text">
+                <!-- <h2 class="f_20">
+                    고소한 향과 부드러운 풍미를 즐기는
+                </h2>
+                <h2 class="f_20">
+                    당신에게 맞는 원두는
+                </h2> -->
+            </div>
 
             <div class="bean_list">
                 <ul>
-                    <li class="bean_block">
+                    <!-- <li class="bean_block">
                         <div class="more f_15">
                             <a>자세히 보기</a>
                         </div>
@@ -319,7 +323,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
@@ -331,7 +335,7 @@
 
     <!---------------- bean popup ---------------->
     <div class="popup">
-        <div class="bean_block">
+        <!-- <div class="bean_block">
             <div class="bean_top">
                 <img src="../img/flag/006-tanzania.png">
                 <div class="bean_title">
@@ -476,16 +480,17 @@
 
                 </ul>
             </div>
-        </div>
+        </div> -->
     </div>
 
     <!---------------  footer  --------------->
     <footer>
-
+ 
 
     </footer>
 
-    <script>
+    <script src="https://graphicnovel.github.io/coffeeforyou/js/data_beans.js"></script>
+    <!-- <script>
         var moreBtn = document.querySelector('.bean_block .more');
         var popup = document.querySelector('.popup');
         var exit = document.querySelector('.exit');
@@ -496,6 +501,6 @@
         exit.addEventListener('click', function() {
             popup.classList.toggle('active');
         });
-    </script>
+    </script> -->
 
 </body></html>

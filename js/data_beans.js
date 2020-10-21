@@ -2,20 +2,34 @@ $(function () {
   //start
 
   $.ajax({
+    //https://graphicnovel.github.io/coffeeforyou
     url: "https://graphicnovel.github.io/coffeeforyou/data_beans.json",
     type: "GET",
     success: function (data) {
       var country, flag, name, detail, origin, kind, grade, process, fragrance,
-        acidity, body, sweetness, bitterness, balance, roasting, note = [],
-        beanList = "", popList = "", fragCal = [], acidCal = [], sweetCal = [],
+        acidity, body, sweetness, bitterness, balance, roasting, recommend = [], note = [],
+        beanList = "", popList = "", resultText = "", fragCal = [], acidCal = [], sweetCal = [],
         bitterCal = [], bodyCal = [], balCal = [], roast = [], noteGroup = [],
         moreBtn, popup, beanBlock, exit, wrap;
-      
+
       function funList() {
+        
+        if(localStorage.getItem('id1') != null){
+          var id1Text = localStorage.getItem('id1Text');
+          var id2Text = localStorage.getItem('id2Text');
+          
+          resultText += "<h2 class='f_20'>"+ id1Text +"과 "+ id2Text +" 풍미를 즐기는</h2>"
+          resultText += "<h2 class='f_20'>당신에게 맞는 원두는</h2>";
+
+        }else{
+          resultText += "<a href='/pages/sub04.html' class='resultBtn'>원두 추천 받기</a>";
+        }
+        $('.result_text').html(resultText);
+
         //상품 리스트 초기화
         beanList = "";
-        
-
+        resultText = "";
+          
         data.beans.forEach(function (value, key) {
           //각 변수에 값 넣기
           country = value.country;
@@ -28,35 +42,79 @@ $(function () {
           body = value.body;
           sweetness = value.sweetness;
           bitterness = value.bitterness;
-
           balance = (fragrance + acidity + body +  sweetness + bitterness) / 5;
-          // console.log(balance);
-          // console.log(fragrance);
 
-          //html 태그 넣기
-          beanList += "<li class='bean_block'>";
-          beanList += "<div class='more f_15'>";
-          beanList += "<a>자세히 보기</a></div>";
-          beanList += "<div class='bean_top'>";
-          beanList += "<img src='" + flag + "'/>";
-          beanList += "<div class='bean_title'>";
-          beanList += "<h4>" + country + "</h4>";
-          beanList += "<h3>" + name + "</h3>";
-          beanList += "</div></div>";
 
-          beanList += "<div class='bean_detail'>";
-          beanList += "<p>" + detail + "</p></div>";
+          //recommend 배열 초기화
+          //원두 추천시 필요한 키워드 저장
+          recommend = [];
+          
+          //localStorage에 id1 값이 있으면
+          console.log(localStorage.getItem('id1') != null);
+          if(localStorage.getItem('id1') != null){
+            recommend.push(value.recommend[0]);
+            recommend.push(value.recommend[1]);
 
-          beanList += "<div class='bean_bar'><ul>";
-          beanList += "<li class='bean_frag'>향<span></span><span></span></li>";
-          beanList += "<li class='bean_acid'>산미<span></span><span></span></li>";
-          beanList += "<li class='bean_sweet'>단맛<span></span><span></span></li>";
-          beanList += "<li class='bean_bitter'>쓴맛<span></span><span></span></li>";
-          beanList += "<li class='bean_body'>바디감<span></span><span></span></li>";
-          beanList += "<li class='bean_balance'>밸런스<span></span><span></span>";
-          beanList += "</li>";
-          beanList += "</ul>";
-          beanList += "</div></div></li>";
+            var id1 = localStorage.getItem('id1');
+            var id2 = localStorage.getItem('id2');
+
+            //step에 들어온 키워드와 원두 데이터에 있는 데이터가 일치하는지 검사
+            if(id1 == recommend[0] && id2 == recommend[1]){
+              //일치하면 html 태그 넣기
+              beanList += "<li class='bean_block'>";
+              beanList += "<div class='more f_15'>";
+              beanList += "<a>자세히 보기</a></div>";
+              beanList += "<div class='bean_top'>";
+              beanList += "<img src='" + flag + "'/>";
+              beanList += "<div class='bean_title'>";
+              beanList += "<h4>" + country + "</h4>";
+              beanList += "<h3>" + name + "</h3>";
+              beanList += "</div></div>";
+    
+              beanList += "<div class='bean_detail'>";
+              beanList += "<p>" + detail + "</p></div>";
+    
+              beanList += "<div class='bean_bar'><ul>";
+              beanList += "<li class='bean_frag'>향<span></span><span></span></li>";
+              beanList += "<li class='bean_acid'>산미<span></span><span></span></li>";
+              beanList += "<li class='bean_sweet'>단맛<span></span><span></span></li>";
+              beanList += "<li class='bean_bitter'>쓴맛<span></span><span></span></li>";
+              beanList += "<li class='bean_body'>바디감<span></span><span></span></li>";
+              beanList += "<li class='bean_balance'>밸런스<span></span><span></span>";
+              beanList += "</li>";
+              beanList += "</ul>";
+              beanList += "</div></div></li>";
+            }else{
+              //없으면 출력하지 않기
+              beanList += "";
+            }
+          }else{
+
+            //html 태그 넣기
+            beanList += "<li class='bean_block'>";
+            beanList += "<div class='more f_15'>";
+            beanList += "<a>자세히 보기</a></div>";
+            beanList += "<div class='bean_top'>";
+            beanList += "<img src='" + flag + "'/>";
+            beanList += "<div class='bean_title'>";
+            beanList += "<h4>" + country + "</h4>";
+            beanList += "<h3>" + name + "</h3>";
+            beanList += "</div></div>";
+  
+            beanList += "<div class='bean_detail'>";
+            beanList += "<p>" + detail + "</p></div>";
+  
+            beanList += "<div class='bean_bar'><ul>";
+            beanList += "<li class='bean_frag'>향<span></span><span></span></li>";
+            beanList += "<li class='bean_acid'>산미<span></span><span></span></li>";
+            beanList += "<li class='bean_sweet'>단맛<span></span><span></span></li>";
+            beanList += "<li class='bean_bitter'>쓴맛<span></span><span></span></li>";
+            beanList += "<li class='bean_body'>바디감<span></span><span></span></li>";
+            beanList += "<li class='bean_balance'>밸런스<span></span><span></span>";
+            beanList += "</li>";
+            beanList += "</ul>";
+            beanList += "</div></div></li>";
+          }
 
           //수치 계산
           cal(fragCal, fragrance);
@@ -69,12 +127,20 @@ $(function () {
 
         });
         $(".bean_list ul").append(beanList); //beanList 화면에 뿌리기
-
         
       }
       funList();
 
       // ------------- funList 실행 끝 --------------- // 
+
+
+      //페이지를 벗어나면 localStorage에서 step 삭제
+      $(window).on('beforeunload', function(){
+        localStorage.removeItem('id1');
+        localStorage.removeItem('id2');
+        localStorage.removeItem('id1Text');
+        localStorage.removeItem('id2Text');
+      });
 
 
       //popup 생성
@@ -235,10 +301,7 @@ $(function () {
 
           var topBg = document.querySelector('.bean_top_bg');
           // topBg.style.background = "url('../img/popup_" + country + ".jpg') no-repeat;";
-            
-          console.log(country);
-          console.log(topBg);
-            
+                      
         });
         $('.popup').html(popList);
         setRoast(roasting); //로스팅 레벨 정보를 setRoast에 보내 실행

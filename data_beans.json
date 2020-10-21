@@ -20,7 +20,8 @@
         "와인":"../img/icon_wine.png",
         "자몽":"../img/icon_grapefruit.png",
         "흑설탕":"../img/icon_brownsugar.png"
-      }
+      },
+      "recommend":["nutty","strong"]
     },
     {
       "country": "kenya",
@@ -42,7 +43,8 @@
         "자몽":"../img/icon_grapefruit.png",
         "오렌지":"../img/icon_grapefruit.png",
         "흑설탕":"../img/icon_brownsugar.png"
-      }
+      },
+      "recommend":["nutty","strong"]
     },
     {
       "country": "guatemala",
@@ -64,8 +66,8 @@
         "darkchocolate":"../img/icon_darkchocolate.png",
         "blackcurrant":"../img/icon_blackcurrant.png",
         "brownsugar":"../img/icon_brownsugar.png"
-      }
-
+      },
+      "recommend":["nutty","strong"]
     },
     {
       "country": "costarica",
@@ -86,7 +88,8 @@
       "note": {"greenapple":"../img/icon_greenapple.png",
         "sugarcane":"../img/icon_sugarcane.png",
         "pecan":"../img/icon_pecan.png"
-      }
+      },
+      "recommend":["nutty","medium"]
       
     },
     {
@@ -107,7 +110,8 @@
       "roasting": "city",
       "note": {"peanut":"../img/icon_peanut.png",
         "sugarcane":"../img/icon_sugarcane.png",
-        "cereals":"../img/icon_cereals.png"}
+        "cereals":"../img/icon_cereals.png"},
+        "recommend":["sour","strong"]
     },
     {
       "country": "brazil",
@@ -127,7 +131,8 @@
       "roasting": "city",
       "note": {"peanut":"../img/icon_peanut.png",
         "sugarcane":"../img/icon_sugarcane.png",
-        "cereals":"../img/icon_cereals.png"}
+        "cereals":"../img/icon_cereals.png"},
+        "recommend":["nutty","strong"]
     }
   ]
 }
