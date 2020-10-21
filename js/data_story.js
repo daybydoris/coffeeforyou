@@ -6,11 +6,12 @@ $(function(){
         success:function(data){
             var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "";
             var artLen = 0, totalLen = 0, blockNum = 6, pageNum, pageNumList, currentPage, pageList = "";
-            var pageGroup = [], pageTag=[], totalGroup = [], currentArt;
+            var pageGroup = [], pageTag=[], totalGroup = [], currentArt, artNum = [];
 
             
-            function funList(tag, currentPage){                
-
+            function funList(tag, currentPage){   
+                $(".news_container").hide();  
+                
                 //페이지 버튼 눌렀을 때, 페이지 번호에 따라 불러올 범위 지정
                 var start = blockNum * (currentPage-1);
                 var end = blockNum * currentPage;
@@ -27,19 +28,7 @@ $(function(){
                     thumb = el.thumb;
                     hashtag = el.hashtag;
                     contents = el.contents;
-
-                    function createArt(){
-                        //html 태그 넣기
-                        artList += "<article><div class='img_box'>";
-                        artList += "<a href="+ url +" class='thumb'>";
-                        artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
-                        artList += "<span class='hashtag'>"+ hashtag +"</span>";
-                        artList += "<h3 class='f_20 title'>";
-                        artList += "<a href="+ url +">"+ title +"</a></h3>";
-                        artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</a></p>";
-                        artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
-                    }
-                    
+                    num  = el.num;
 
                     //본문 미리보기 글자 수 제한
                     if(contents.length > 30 ){
@@ -73,14 +62,15 @@ $(function(){
                     if(data.article.length-1 == key){
                         pushTag();
                     }
-
+                
                     //artList 초기화
                     artList = "";
-                   
+
                     
                 });
-                funPage(currentPage); //페이징 함수에 currentPage 변수를 보내 함수 실행
+                
 
+                funPage(currentPage); //페이징 함수에 currentPage 변수를 보내 함수 실행
 
                 //pageTag 배열의 요소들을 pageGroup에 넣어줌
                 function pushTag(){
@@ -91,20 +81,9 @@ $(function(){
                         }
                     });
                 }
-
-
                 //태그 뿌리기
                 $(".news_container").html(pageGroup);
-
-                
-                //게시글 클릭 이벤트
-                $('article a').on('click',function(e){
-                    e.preventDefault();
-                    viewUrl = $(this).attr('href');
-                    console.log($(this).title);
-                });
-
-                
+                $(".news_container").fadeIn(500);
 
                 //페이징 배열 초기화
                 pageGroup = [];
@@ -115,11 +94,13 @@ $(function(){
             //첫 페이지 뿌리기
             funList("all", 1);
 
-            
+            //게시글 클릭 이벤트
+            clickArt();
 
             //카테고리 클릭 이벤트
             $('.category a').on('click', function(e){
                 e.preventDefault();
+                $(".news_container").hide();
 
                 //클릭한 카테고리의 href 속성을 tag 변수에 담음
                 tag = $(this).attr('href');
@@ -133,10 +114,35 @@ $(function(){
                 //카테고리 버튼 활성화
                 $('.category a').removeClass('active');
                 $(this).addClass('active');
+
+                //게시글 클릭 이벤트
+                clickArt();
             });
 
+            function clickArt(){
+                //게시글 클릭 이벤트
+                $('article').on('click',function(e){
+                    e.preventDefault();
+                    console.log($(this).attr('id'));
+                    viewUrl = $(this).find('a').attr('href');
 
-            
+                    localStorage.num = $(this).attr('id');
+
+                    location.href = viewUrl;
+                });
+            }
+
+            function createArt(){
+                //html 태그 넣기
+                artList += "<article id="+ num +"><div class='img_box'>";
+                artList += "<a href="+ url +" class='thumb'>";
+                artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
+                artList += "<span class='hashtag'>"+ hashtag +"</span>";
+                artList += "<h3 class='f_20 title'>";
+                artList += "<a href="+ url +">"+ title +"</a></h3>";
+                artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</a></p>";
+                artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
+            }
 
             
             //페이징 함수
@@ -165,7 +171,6 @@ $(function(){
 
                 //페이지 버튼 뿌리기
                 $(".paging ul").html(pageList);
-
 
                 //첫 번째 페이지 넘버에 active 추가
                 if(totalLen<blockNum){
@@ -201,13 +206,15 @@ $(function(){
 
                     //funList 재실행
                     funList(tag, currentPage);
+
+                    //게시글 클릭 이벤트
+                    clickArt();
                     
                     }
                 });
             }
-
         }
     });
-
+    
     //end
 });

@@ -4,7 +4,7 @@ $(function(){
         type:'GET',
         success:function(data){
 
-            var viewList = "", recentList = "";
+            var viewList = "", recentList = "", artBlock;
 
             function funView(){
                 //초기화
@@ -19,17 +19,18 @@ $(function(){
                     thumb = el.thumb;
                     contents = el.contents;
                     imgSrc = el.imgSrc;
+                    num = el.num;
 
-                    viewList += "<h2>"+ title +"</h2><div class='a_desc'><p class='f_15'>"+ date +"</p>";
-                    viewList += "<a href='#'><img src='../img/icon_share.png' class='share_icon'></a>";
-                    viewList += "<div class='share'><span>share</span><div class='exit'><span></span><span></span></div>";
-                    viewList += "<div class='sns'><a href='#'></a><a href='#'></a><a href='#'></a></div>";
+                    if(localStorage.getItem('num') == num){
 
-                    viewList += "<span>copy link</span><input type='text' name='pagelink' value='"+ url +"'><input type='submit' name='copy' value='복사'></div></div>";
-                    viewList += "<div class='img_box'><img src='"+ imgSrc +"'></a></div>";
-                    viewList += "<p class='f_15'>"+ contents +"</p>";
+                        viewList += "<h2>"+ title +"</h2><div class='a_desc'><p class='f_15'>"+ date +"</p>";
+                        viewList += "<a href='#'><img src='../img/icon_share.png' class='share_icon'></a>";
+                        viewList += "<div class='share'><span>share</span><div class='exit'><span></span><span></span></div>";
+                        viewList += "<div class='sns'><a href='#'></a><a href='#'></a><a href='#'></a></div>";
 
-
+                        viewList += "<span>copy link</span><input type='text' name='pagelink' value='"+ url +"'><input type='submit' name='copy' value='복사'></div></div>";
+                        viewList += "<div class='contents'>"+ contents +"</div>";
+                    }
                 });
                 $('.news_container article').html(viewList);
 
@@ -47,6 +48,7 @@ $(function(){
                         title = el.title; 
                         url = el.url;
                         date = el.date;
+                        num = el.num;
 
                         //본문 미리보기 글자 수 제한
                     if(title.length > 30 ){
@@ -54,13 +56,30 @@ $(function(){
                         title = title.replace(title, title + "...");
                     }
     
-                        recentList += "<li><a href='"+ url +"'>"+ title +"</a><span>"+ date +"</span></li>";
+                        recentList += "<li id="+ num +"><a href='"+ url +"'>"+ title +"</a><span>"+ date +"</span></li>";
                     }
+                    
                     
                 });
                 $('.recent ul').append(recentList);
+
+                $('.recent li').on('click',function(e){
+                    e.preventDefault();
+                    console.log($(this));
+                    console.log($(this).attr('id'));
+                    viewUrl = $(this).find('a').attr('href');
+
+                    localStorage.num = $(this).attr('id');
+
+                    location.href = viewUrl;
+                });
             }
             recent();
+
+            // $(window).on('beforeunload', function(){
+            //     localStorage.removeItem('num');
+            //   });
+            
 
         }
     });

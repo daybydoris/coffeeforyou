@@ -278,9 +278,11 @@ main > p{
     
     float:right;
 }
-.s_1 .news_container article > p{
+.s_1 .news_container article .contents{
     width:100%;
     margin:5vh auto;
+
+    color:#f2f2f2;
 }
 .s_1 .news_container article .img_box{
     width:100%;
@@ -289,6 +291,7 @@ main > p{
     position: relative;
     
     text-align: center;
+    margin: 50px 0;
 }
 
 .s_1 .news_container article .img_box img{
