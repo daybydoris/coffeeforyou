@@ -136,11 +136,16 @@ main > p {
   justify-content: center;
   align-items: center;
 }
+.s_1 > p {
+  text-align: left;
+  width: 100%;
+  margin-bottom:50px;
+}
 .s_1 > h2 {
   width: 100%;
   text-align: left;
   text-transform: uppercase;
-  margin-bottom:50px;
+  
 }
 
 

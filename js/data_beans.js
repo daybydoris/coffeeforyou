@@ -3,12 +3,12 @@ $(function () {
 
   $.ajax({
     //https://graphicnovel.github.io/coffeeforyou
-    url: "../data_beans.json",
+    url: "/data_beans.json",
     type: "GET",
     success: function (data) {
       var country, flag, name, detail, origin, kind, grade, process, fragrance,
         acidity, body, sweetness, bitterness, balance, roasting, recommend = [], note = [],
-        beanList = "", popList = "", resultText = "", fragCal = [], acidCal = [], sweetCal = [],
+        beanList = "", popList = "", resultText = "", retryBtn = "", fragCal = [], acidCal = [], sweetCal = [],
         bitterCal = [], bodyCal = [], balCal = [], roast = [], noteGroup = [],
         moreBtn, popup, beanBlock, exit, wrap;
 
@@ -19,11 +19,15 @@ $(function () {
           var id2Text = localStorage.getItem('id2Text');
           
           resultText += "<h2 class='f_20'>"+ id1Text +"과 "+ id2Text +" 풍미를 즐기는 <br>당신에게 맞는 원두는</h2>"
+          retryBtn += "<a href='sub04.html' class='retryBtn'>다시하기</a>";
 
+          $('.retryBtn').html(retryBtn);//다시하기 버튼 뿌리기
         }else{
           resultText += "<a href='/pages/sub04.html' class='resultBtn'>원두 추천 받기</a>";
+          $('.retryBtn').css('display','none');
         }
         $('.result_text').html(resultText);
+        
 
         //상품 리스트 초기화
         beanList = "";
@@ -68,9 +72,8 @@ $(function () {
               //일치하면 html 태그 넣기
               createArt();
               createPopup();
-              
             }else{
-              //없으면 출력하지 않기
+              //일치하지 않으면 출력하지 않기
               beanList += "";
             }
           }else{
@@ -91,11 +94,11 @@ $(function () {
 
         });
         $(".bean_list ul").append(beanList); //beanList 화면에 뿌리기
-        $('.popup').html(popList);
+        $('.popup').html(popList); //popup 화면에 뿌리기
+
         setRoast(roasting); //로스팅 레벨 정보를 setRoast에 보내 실행
       }
       funList();
-
       // ------------- funList 실행 끝 --------------- // 
 
 

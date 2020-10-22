@@ -105,7 +105,8 @@ main > p {
   }
 
 
-.s_1 .resultBtn{
+.s_1 .resultBtn,
+.s_1 .retryBtn {
     display:inline-block;
     width:180px;
     height:60px;
@@ -117,7 +118,8 @@ main > p {
     line-height: 4;
     transition:.3s;
   }
-  .s_1 .resultBtn:hover{
+  .s_1 .resultBtn:hover,
+  .s_1 .retryBtn:hover {
     background:rgba(255,255,255,0.2);
   }
 

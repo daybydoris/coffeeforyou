@@ -99,9 +99,10 @@
 
     //coffee story 게시글 불러오기
     $.ajax({
-        url:"data_story.json",
+        url:"../data_story.json",
         type:"GET",
         success:function(data){
+            console.log('성공');
             var artList = "";
 
             data.article.sort(date_sort).forEach(function(el, key){
@@ -109,7 +110,7 @@
                     //각 변수에 값 넣기
                     title = el.title; 
                     url = "pages/" + el.url;
-                    thumb = el.thumb.substr(3);
+                    thumb = el.thumb;
                     hashtag = el.hashtag;
                     contents = el.contents;
                     num  = el.num;

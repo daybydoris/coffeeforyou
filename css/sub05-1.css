@@ -361,7 +361,7 @@ main > p {
   width: 80%;
 }
 .s_1 .recent ul li:hover a {
-  color: #de2a00;
+  color:#de2a00;
   transition: 0.3s;
 }
 .s_1 .recent ul li a,
