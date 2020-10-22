@@ -29,6 +29,18 @@ $(function(){
             localStorage.id2Text = id2Text;
         
             location.href = $(this).attr('href');
+
+            // $.ajax({
+            //     url:'https://graphicnovel.github.io/coffeeforyou/data_story.json',
+            //     type:'GET',
+            //     success:function(data){
+            //         console.log(id1, id2);
+                    
+            //         stepText += id1 + "과 " + id2 + "를 즐기는"; 
+
+            //         $('.stepResult').html(stepText);
+            //     }
+            // });
         }else{
             alert('STEP01과 STEP02를 선택해주세요.');
         }
