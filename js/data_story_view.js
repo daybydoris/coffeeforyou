@@ -15,7 +15,7 @@ $(function(){
 
                     //변수에 데이터 저장
                     title = el.title; 
-                    url = el.url;
+                    url = "https://graphicnovel.github.io/coffeeforyou/pages/" + el.url;
                     date = el.date;
                     thumb = el.thumb;
                     contents = el.contents;
@@ -25,7 +25,7 @@ $(function(){
                     if(localStorage.getItem('num') == num){
 
                         viewList += "<h2>"+ title +"</h2><div class='a_desc'><p class='f_15'>"+ date +"</p>";
-                        viewList += "<a href='#'><img src='../img/icon_share.png' class='share_icon'></a>";
+                        viewList += "<a href='#' class='shareBtn'><img src='../img/icon_share.png' class='share_icon'></a>";
                         viewList += "<div class='share'><span>share</span><div class='exit'><span></span><span></span></div>";
                         viewList += "<div class='sns'><a href='#'></a><a href='#'></a><a href='#'></a></div>";
 
@@ -89,7 +89,25 @@ $(function(){
             //     localStorage.removeItem('num');
             //   });
             
-
+            function share(){
+                $('.shareBtn').on('click',function(e){
+                    e.preventDefault();
+                    
+                    $('.share').fadeIn();
+                });
+                $('.share .exit').on('click',function(){
+                    $('.share').fadeOut();
+                });
+                $('input[name=copy]').on('click',function(){
+                    var copyUrl = document.querySelector('input[name=pagelink]');
+                    copyUrl.select();
+                    document.execCommand("Copy");
+                    
+                    alert("복사 완료!");
+                    
+                });
+            }
+            share();
         }
     });
 });
