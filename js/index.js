@@ -99,7 +99,7 @@
 
     //coffee story 게시글 불러오기
     $.ajax({
-        url:"../data_story.json",
+        url:"data_story.json",
         type:"GET",
         success:function(data){
             console.log('성공');
