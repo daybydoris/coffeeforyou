@@ -18,12 +18,12 @@ $(function () {
           var id1Text = localStorage.getItem('id1Text');
           var id2Text = localStorage.getItem('id2Text');
           
-          resultText += "<h2 class='f_20'>"+ id1Text +"과 "+ id2Text +" 풍미를 즐기는 <br>당신에게 맞는 원두는</h2>"
+          resultText += "<h2 class='f_20'>"+ id1Text +"과 <br>"+ id2Text +" 풍미를 즐기는 <br>당신에게 맞는 원두는</h2>"
           retryBtn += "<a href='sub04.html' class='retryBtn'>다시하기</a>";
 
           $('.retryBtn').html(retryBtn);//다시하기 버튼 뿌리기
         }else{
-          resultText += "<a href='sub04.html' class='resultBtn'>원두 추천 받기</a>";
+          resultText += "<a href='/pages/sub04.html' class='resultBtn'>원두 추천 받기</a>";
           $('.retryBtn').css('display','none');
         }
         $('.result_text').html(resultText);
@@ -370,47 +370,37 @@ $(function () {
           beanBlock = document.querySelectorAll('.popup .bean_block');
           bodyWrap = document.querySelector('.body_wrap');
 
+          var scrollY = window.pageYOffset;
+
+          //스크롤된 위치에 맞춰 나타내기
+          $('.popup .bean_block').eq(key).css('top', (scrollY + 500 )+'px');
+
           //배경 어둡게
-          bodyWrap.classList.add('active');
+          $('.body_wrap').fadeIn();
 
           //popup 나타내기
-          popup.classList.add('active');
-          beanBlock[key].classList.add('active');
+          $('.popup').fadeIn(100);
+          $('.popup .bean_block').eq(key).fadeIn(100);
           
-          //화면 중앙에 나타내기
-          // beanBlock.forEach(function(b){
-          //   var scrollY = window.pageYOffset;
-          //   var blockH = b.offsetHeight / 2;
-  
-          //   console.log(scrollY - 30);
-
-          //   b.style.top = "calc("+ scrollY +"px" + 30 + "%)" + "px";
-
-          // });
+          
           
 
 
           //exit 클릭 이벤트
           exit.forEach(function(btn){
             btn.addEventListener('click',function(){
-              popup.classList.remove('active');
-              beanBlock[key].classList.remove('active');
-              bodyWrap.classList.remove('active');
-
-              // beanBlock.forEach(function(b){
-              //   var scrollY = window.pageYOffset;
-              //   var blockH = b.offsetHeight / 2;
-              //   //b.style.top = "calc("+ scrollY +"px" + 30 + "%)" + "px";
-              // });
+              $('.popup').fadeOut();
+              $('.popup .bean_block').fadeOut();
+              $('.body_wrap').fadeOut();
             });
           });
           
-          console.log(window.pageYOffset); //스크롤 된 높이
-          console.log(beanBlock[0].getBoundingClientRect().top); //beanblock 상대 좌표
-          console.log(window.pageYOffset + beanBlock[0].getBoundingClientRect().top); //beanblock 절대 좌표
-
-          
-         
+          //popup 바깥쪽 클릭 이벤트
+          bodyWrap.addEventListener('click',function(){
+            $('.popup').fadeOut();
+            $('.popup .bean_block').fadeOut();
+            $('.body_wrap').fadeOut();
+          });
 
 
         });

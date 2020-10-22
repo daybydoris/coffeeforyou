@@ -70,6 +70,37 @@ body {
     opacity: 1;
     transition: 0.5s;
   }
+  .h_container nav a:hover:after{
+    opacity:1;
+   
+  }
+.h_container .menu-trigger{
+   width:25px; height:16px;
+
+   display: none;
+   position: relative;
+}
+.h_container .menu-trigger span{
+   display: inline-block;
+   width:100%;
+   height:2px;
+   border-radius: 20%;
+   background:#f2f2f2;
+   
+   position: absolute;
+   left:0;
+
+}
+.h_container .menu-trigger span:nth-of-type(1){
+   top:0%;
+}
+.h_container .menu-trigger span:nth-of-type(2){
+   top:50%;
+   transform: translateY(-50%);
+}
+.h_container .menu-trigger span:nth-of-type(3){
+   bottom:0%;
+} 
 
 /*----------------  main  ----------------*/
 
@@ -227,8 +258,7 @@ main > p {
   .bean_block .bean_bar {
     width: 100%;
   }
-  .bean_block .bean_bar ul {
-  }
+
   .bean_block .bean_bar ul li {
     position: relative;
     display: flex;
@@ -268,7 +298,6 @@ main > p {
   
   .popup {
     display: none;
-    transition: 0.5s;
   }
   .popup.active,
   .popup .bean_block.active {
@@ -289,7 +318,7 @@ main > p {
   
     position: absolute;
     left: 50%;
-    top: 50%;
+    /* top: 50%; */
     transform: translate(-50%, -50%);
     z-index: 3;
   }
@@ -301,36 +330,10 @@ main > p {
     width: 100%;
     height: 205px;
   
-    /*
-      position: absolute;
-      left:0; top:0;
-  */
-  
-    /*    padding:40px;*/
-  
-    /* display: flex;
-    justify-content: left;
-    align-items: flex-start; */
-  
     flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
-  /* .popup .bean_block .bean_top:after {
-    content: "";
-    width: 100%;
-    height: 235px;
-  
-    background: url("../img/popup_tanzania.jpg") no-repeat;
-    background-position: bottom;
-    opacity: 0.5;
-  
-    position: absolute;
-    left: 0;
-    top: 0;
-  
-    
-  } */
   .popup .bean_block .bean_top_bg {
     width: 100%;
   
@@ -803,7 +806,7 @@ main > p {
       width: 100%;
     }
     .popup .roasting .r_mobile:before {
-      content: "√";
+      content: "√ ";
       font-size: 15px;
     }
     .popup .roasting .r_mobile {
