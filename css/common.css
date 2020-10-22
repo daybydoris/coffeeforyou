@@ -54,7 +54,7 @@ figcaption {
 }
 a {
   text-decoration: none !important;
-  color: #d9d9d9 !important;
+  color: #d9d9d9;
 }
 
 /* font */
