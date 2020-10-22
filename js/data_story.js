@@ -1,7 +1,7 @@
 $(function(){
     //start
     $.ajax({
-        url:"https://graphicnovel.github.io/coffeeforyou/data_story.json",
+        url:"../data_story.json",
         type:"GET",
         success:function(data){
             var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "";
@@ -29,6 +29,7 @@ $(function(){
                     hashtag = el.hashtag;
                     contents = el.contents;
                     num  = el.num;
+                    imgSrc = el.imgSrc;
 
                     //본문 미리보기 글자 수 제한
                     if(contents.length > 30 ){
@@ -41,6 +42,7 @@ $(function(){
                     if(tag == hashtag){ //tag와 hashtag가 같은 경우
 
                         createArt(); //해당하는 카테고리 게시글 html 태그 작성
+
 
                         //해당하는 카테고리의 총 게시글 수 체크를 위한 배열
                         totalGroup.push(artList);
@@ -137,11 +139,11 @@ $(function(){
                 artList += "<article id="+ num +"><div class='img_box'>";
                 artList += "<a href="+ url +" class='thumb'>";
                 artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
-                artList += "<span class='hashtag'>"+ hashtag +"</span>";
+                artList += "<div class='text'><span class='hashtag'>"+ hashtag +"</span>";
                 artList += "<h3 class='f_20 title'>";
                 artList += "<a href="+ url +">"+ title +"</a></h3>";
-                artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</a></p>";
-                artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
+                artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</p></a></div>";
+                //artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
             }
 
             

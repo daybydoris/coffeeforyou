@@ -1,6 +1,6 @@
 $(function(){
     $.ajax({
-        url:'https://graphicnovel.github.io/coffeeforyou/data_story.json',
+        url:'../data_story.json',
         type:'GET',
         success:function(data){
 
