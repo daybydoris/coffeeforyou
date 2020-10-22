@@ -63,9 +63,9 @@
       "sweetness": 3,
       "roasting": "fullcity",
       "note": {
-        "darkchocolate":"../img/popup/taste/icon_darkchocolate.png",
-        "blackcurrant":"../img/popup/taste/icon_blackcurrant.png",
-        "brownsugar":"../img/popup/taste/icon_brownsugar.png"
+        "다크초콜렛":"../img/popup/taste/icon_darkchocolate.png",
+        "블랙커런트":"../img/popup/taste/icon_blackcurrant.png",
+        "흑설탕":"../img/popup/taste/icon_brownsugar.png"
       },
       "recommend":["nutty","strong"]
     },
@@ -85,9 +85,9 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": {"greenapple":"../img/popup/taste/icon_greenapple.png",
-        "sugarcane":"../img/popup/taste/icon_sugarcane.png",
-        "pecan":"../img/popup/taste/icon_pecan.png"
+      "note": {"풋사과":"../img/popup/taste/icon_greenapple.png",
+        "사탕수수":"../img/popup/taste/icon_sugarcane.png",
+        "피칸":"../img/popup/taste/icon_pecan.png"
       },
       "recommend":["nutty","medium"]
       
@@ -108,9 +108,9 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": {"peanut":"../img/popup/taste/icon_peanut.png",
-        "sugarcane":"../img/popup/taste/icon_sugarcane.png",
-        "cereals":"../img/popup/taste/icon_cereals.png"},
+      "note": {"땅콩":"../img/popup/taste/icon_peanut.png",
+        "사탕수수":"../img/popup/taste/icon_sugarcane.png",
+        "시리얼":"../img/popup/taste/icon_cereals.png"},
         "recommend":["sour","strong"]
     },
     {
@@ -129,9 +129,9 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": {"peanut":"../img/popup/taste/icon_peanut.png",
-        "sugarcane":"../img/popup/taste/icon_sugarcane.png",
-        "cereals":"../img/popup/taste/icon_cereals.png"},
+      "note": {"땅콩":"../img/popup/taste/icon_peanut.png",
+        "사탕수수":"../img/popup/taste/icon_sugarcane.png",
+        "시리얼":"../img/popup/taste/icon_cereals.png"},
         "recommend":["nutty","strong"]
     }
   ]
