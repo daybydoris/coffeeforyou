@@ -5,6 +5,7 @@ $(function(){
         success:function(data){
 
             var viewList = "", recentList = "", artBlock;
+            
 
             function funView(){
                 //초기화
@@ -41,8 +42,9 @@ $(function(){
             function recent(){
                 recentList = "";
 
-                data.article.forEach(function(el, key){
-                    console.log(key<3);
+                //최신순 3개만 가져옴
+                data.article.sort(date_sort).forEach(function(el, key){
+                    
                     if(key < 3){
                         //변수에 데이터 저장
                         title = el.title; 
@@ -75,6 +77,13 @@ $(function(){
                 });
             }
             recent();
+
+            //게시글 최신 날짜순 정렬
+            function date_sort(a,b){
+                var dateA = new Date(a['date']).getTime();
+                var dateB = new Date(b['date']).getTime();
+                return dateA < dateB ? 1 : -1;
+            }
 
             // $(window).on('beforeunload', function(){
             //     localStorage.removeItem('num');

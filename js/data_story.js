@@ -21,7 +21,7 @@ $(function(){
                 
 
                 //반복문
-                data.article.forEach(function(el, key){
+                data.article.sort(date_sort).forEach(function(el, key){
                     //각 변수에 값 넣기
                     title = el.title; 
                     url = el.url;
@@ -144,6 +144,13 @@ $(function(){
                 artList += "<a href="+ url +">"+ title +"</a></h3>";
                 artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</p></a></div>";
                 //artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
+            }
+
+            //게시글 최신 날짜순 정렬
+            function date_sort(a,b){
+                var dateA = new Date(a['date']).getTime();
+                var dateB = new Date(b['date']).getTime();
+                return dateA < dateB ? 1 : -1;
             }
 
             
