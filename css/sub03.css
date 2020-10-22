@@ -142,13 +142,7 @@ main > p {
   text-transform: uppercase;
   margin-bottom:50px;
 }
-.s_1 .result_text h2 {
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom:50px;
-  line-height:2;
-}
+
 
 
 .mapboxgl-map {
