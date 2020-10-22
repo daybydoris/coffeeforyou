@@ -126,7 +126,7 @@ $(function(){
                 $('article').on('click',function(e){
                     e.preventDefault();
                     console.log($(this).attr('id'));
-                    viewUrl = $(this).find('a').attr('href');
+                    var viewUrl = $(this).find('a').attr('href');
 
                     localStorage.num = $(this).attr('id');
 
@@ -142,7 +142,7 @@ $(function(){
                 artList += "<div class='text'><span class='hashtag'>"+ hashtag +"</span>";
                 artList += "<h3 class='f_20 title'>";
                 artList += "<a href="+ url +">"+ title +"</a></h3>";
-                artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</p></a></div>";
+                artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</p></a></div></article>";
                 //artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
             }
 

@@ -95,5 +95,73 @@
         };
     };
     fadeIn();
+
+
+    //coffee story 게시글 불러오기
+    $.ajax({
+        url:"../data_story.json",
+        type:"GET",
+        success:function(data){
+            console.log('성공');
+            var artList = "";
+
+            data.article.sort(date_sort).forEach(function(el, key){
+                if(key < 3){
+                    //각 변수에 값 넣기
+                    title = el.title; 
+                    url = "pages/" + el.url;
+                    thumb = el.thumb;
+                    hashtag = el.hashtag;
+                    contents = el.contents;
+                    num  = el.num;
+
+                    //본문 미리보기 글자 수 제한
+                    if(contents.length > 30 ){
+                        contents = contents.substr(0, 70);
+                        contents = contents.replace(contents, contents + "...");
+                    }
+
+                    createArt();
+                }
+            });
+            $(".news_container").html(artList);
+
+
+            function createArt(){
+                //html 태그 넣기
+                artList += "<article id="+ num +"><div class='img_box'>";
+                artList += "<a href="+ url +" class='thumb'>";
+                artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
+                artList += "<div class='text'><span class='hashtag'>"+ hashtag +"</span>";
+                artList += "<h3 class='f_20 title'>";
+                artList += "<a href="+ url +">"+ title +"</a></h3>";
+                artList += "<a href="+ url +"><p class='f_basic contents'>"+ contents +"</p></a></div></article>";
+                //artList += "<a href="+ url +" class='f_basic readMore'>read more</a></article>";
+            }
+
+            //게시글 최신 날짜순 정렬
+            function date_sort(a,b){
+                var dateA = new Date(a['date']).getTime();
+                var dateB = new Date(b['date']).getTime();
+                return dateA < dateB ? 1 : -1;
+            }
+
+            function clickArt(){
+                //게시글 클릭 이벤트
+                $('article').on('click',function(e){
+                    e.preventDefault();
+                    console.log($(this).attr('id'));
+                    var viewUrl = $(this).find('a').attr('href');
+
+                    localStorage.num = $(this).attr('id');
+
+                    location.href = viewUrl;
+                });
+            }
+            clickArt();
+        }
+    });
+
+
 });
    

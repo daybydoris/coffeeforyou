@@ -231,10 +231,10 @@ main > p {
   color: #f2f2f2;
   /* position: absolute;
   right: 0%;
-  bottom: -10%; */
+  bottom: -10%;
 
   transition: 0.5s;
-}
+} */
 .s_1 .news_container article > a:hover:after {
   transform: translateX(50px);
 } */
