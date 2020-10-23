@@ -131,7 +131,7 @@ $(function(){
 
             function createArt(){
                 //html 태그 넣기
-                artList += "<article id="+ num +" data-aos='fade-up' data-aos-duration='600' data-aos-delay='"+ idx +"'><div class='img_box'>";
+                artList += "<article id="+ num +" data-aos='fade-up' data-aos-delay='"+ idx +"'><div class='img_box'>";
                 artList += "<a href="+ url +" class='thumb'>";
                 artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
                 artList += "<div class='text'><span class='hashtag'>"+ hashtag +"</span>";

@@ -692,9 +692,10 @@ main {
 .s_3 article button {
   border: 1px solid #fff;
   background: rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #f2f2f2;
   padding: 15px 20px;
-  transition: 0.5s;
+  transition: 0.3s;
   font-weight: 200;
 
   display: inline-block;
@@ -768,7 +769,7 @@ main {
 .s_4 .listBtn .arti_list {
   display: inline-block;
   border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1.5vh 3vw;
+  padding: 15px 20px;
   margin:0 auto;
   transition: 0.3s;
 }

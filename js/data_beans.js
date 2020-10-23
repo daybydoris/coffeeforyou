@@ -114,7 +114,7 @@ $(function () {
 
 
       function createArt(){
-        beanList += "<li class='bean_block' data-aos='fade-up' data-aos-duration='1000' data-aos-delay='"+ idx +"'>";
+        beanList += "<li class='bean_block' data-aos='fade-up' data-aos-delay='"+ idx +"'>";
         beanList += "<div class='more f_15'>";
         beanList += "<a>자세히 보기</a></div>";
         beanList += "<div class='bean_top'>";

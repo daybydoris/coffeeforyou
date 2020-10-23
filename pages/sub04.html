@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
     <!--    <link rel="stylesheet" type="text/css" href="../css/style.css">-->
     <link rel="stylesheet" type="text/css" href="../css/sub04.css">
@@ -37,9 +39,9 @@
                         <strong>step 01</strong> 좋아하는 향을 선택하세요.
                     </h3>
                     <ul>
-                        <li id="sour">새콤달콤한 향</li>
-                        <li id="nutty">고소한 단향</li>
-                        <li id="bitter">쌉싸름하고 구수한 향</li>
+                        <li id="sour" data-aos="fade-up" data-aos-delay="100">새콤달콤한 향</li>
+                        <li id="nutty" data-aos="fade-up" data-aos-delay="200">고소한 단향</li>
+                        <li id="bitter" data-aos="fade-up" data-aos-delay="300">쌉싸름하고 구수한 향</li>
                     </ul>
                 </div>
                 <div class="step step2">
@@ -47,9 +49,9 @@
                         <strong>step 02</strong> 좋아하는 풍미를 선택하세요.
                     </h3>
                     <ul>
-                        <li id="light">산뜻한 산미</li>
-                        <li id="medium">부드러운 미디움</li>
-                        <li id="strong">진하고 묵직한</li>
+                        <li id="light" data-aos="fade-up" data-aos-delay="100">산뜻한 산미</li>
+                        <li id="medium" data-aos="fade-up" data-aos-delay="200">부드러운 미디움</li>
+                        <li id="strong" data-aos="fade-up" data-aos-delay="300">진하고 묵직한</li>
                     </ul>
                 </div>
                 <a href="../pages/sub04-1.html" class="f_15 resultBtn">결과보기</a>
@@ -64,6 +66,15 @@
 
     <script src="../js/common.js"></script>
     <script src="../js/data_foryou.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        AOS.init({
+          once: true,
+          offset: -500
+        });
+      </script>
     <!-- <script>
         // var li = document.querySelector('.step ul li');
 
