@@ -10,7 +10,7 @@ $(function () {
         acidity, body, sweetness, bitterness, balance, roasting, recommend = [], note = [],
         beanList = "", popList = "", resultText = "", retryBtn = "", fragCal = [], acidCal = [], sweetCal = [],
         bitterCal = [], bodyCal = [], balCal = [], roast = [], noteGroup = [],
-        moreBtn, popup, beanBlock, exit, wrap;
+        moreBtn, popup, beanBlock, exit, wrap ,idx = 300;
 
       function funList() {
         
@@ -91,8 +91,10 @@ $(function () {
           cal(bodyCal, body);
           cal(balCal, balance); 
 
+          idx += 100;
 
         });
+        
         $(".bean_list ul").append(beanList); //beanList 화면에 뿌리기
         $('.popup').html(popList); //popup 화면에 뿌리기
 
@@ -112,7 +114,7 @@ $(function () {
 
 
       function createArt(){
-        beanList += "<li class='bean_block'>";
+        beanList += "<li class='bean_block' data-aos='fade-up' data-aos-duration='1000' data-aos-delay='"+ idx +"'>";
         beanList += "<div class='more f_15'>";
         beanList += "<a>자세히 보기</a></div>";
         beanList += "<div class='bean_top'>";

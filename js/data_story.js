@@ -4,7 +4,7 @@ $(function(){
         url:"../data_story.json",
         type:"GET",
         success:function(data){
-            var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "";
+            var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "", idx = 300;
             var artLen = 0, totalLen = 0, blockNum = 6, pageNum, pageNumList, currentPage, pageList = "";
             var pageGroup = [], pageTag=[], totalGroup = [], currentArt, artNum = [];
 
@@ -18,7 +18,6 @@ $(function(){
 
                 //리스트 초기화
                 artList = "";
-                
 
                 //반복문
                 data.article.sort(date_sort).forEach(function(el, key){
@@ -36,8 +35,6 @@ $(function(){
                         contents = contents.substr(0, 150);
                         contents = contents.replace(contents, contents + "...");
                     }
-                    
-
 
                     if(tag == hashtag){ //tag와 hashtag가 같은 경우
 
@@ -67,8 +64,6 @@ $(function(){
                 
                     //artList 초기화
                     artList = "";
-
-                    
                 });
                 
 
@@ -136,7 +131,7 @@ $(function(){
 
             function createArt(){
                 //html 태그 넣기
-                artList += "<article id="+ num +"><div class='img_box'>";
+                artList += "<article id="+ num +" data-aos='fade-up' data-aos-duration='600' data-aos-delay='"+ idx +"'><div class='img_box'>";
                 artList += "<a href="+ url +" class='thumb'>";
                 artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
                 artList += "<div class='text'><span class='hashtag'>"+ hashtag +"</span>";

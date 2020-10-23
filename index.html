@@ -26,11 +26,11 @@
     <main class="center">
         <div class="m_container">
             <section class="s_1 center">
-                  <div class="cup" data-aos="fade-up" data-aos-duration="800">
-                       <img src="img/main_coffee.png">
-                       <img src="img/fog-th.png" class="fog01">
-                       <img src="img/fog-th.png" class="fog02">
-                       <img src="img/fog-th.png" class="fog03">
+                  <div class="cup">
+                       <img src="img/main_coffee.png" data-aos="fade-up" data-aos-duration="800">
+                       <img src="img/fog-th.png" class="fog01" data-aos="fade-up" data-aos-duration="800">
+                       <img src="img/fog-th.png" class="fog02" data-aos="fade-up" data-aos-duration="800">
+                       <img src="img/fog-th.png" class="fog03" data-aos="fade-up" data-aos-duration="800">
                    </div>
                     <article>
                         <h2 class="orange"  data-aos="fade-up" data-aos-duration="1000">what is coffee?</h2>
@@ -171,7 +171,12 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init();
-    </script>
+
+        AOS.init({
+          once: true,
+        });
+      </script>
+    
            
 </body>
 </html>

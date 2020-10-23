@@ -24,7 +24,7 @@ $(function(){
 
                     if(localStorage.getItem('num') == num){
 
-                        viewList += "<h2>"+ title +"</h2><div class='a_desc'><p class='f_15'>"+ date +"</p>";
+                        viewList += "<h2 data-aos='fade-down' data-aos-duration='600'>"+ title +"</h2><div class='a_desc'><p class='f_15'>"+ date +"</p>";
                         viewList += "<a href='#' class='shareBtn'><img src='../img/icon_share.png' class='share_icon'></a>";
                         viewList += "<div class='share'><span>share</span><div class='exit'><span></span><span></span></div>";
                         viewList += "<div class='sns'><a href='#'></a><a href='#'></a><a href='#'></a></div>";
