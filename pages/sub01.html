@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="https://graphicnovel.github.io/coffeeforyou/js/common.js"></script>
+    
 
     <title>COFFEE FOR YOU</title>
 </head>
@@ -186,61 +186,16 @@
             </div>
         </section>
     </main>
-    <div class="page">
+    <!-- <div class="page">
         <img src="../img/page_coffee_bean.png" alt>
-    </div>    
+    </div>     -->
         
     <!---------------  footer  --------------->        
     <footer>
       
     </footer>      
     
-    <script>
-        var body = document.querySelector('body');
-        
-        setTimeout(function(){
-            body.classList.add('active');
-        },10);
-
-//------- 스크롤시 fade in 효과 -------
-    //각 section 선택하기
-    var section = document.querySelectorAll('section');
-
-    //fadeIn 함수
-    fadeIn();
-    function fadeIn(){
-        var winH = window.innerHeight;
-            
-        section.forEach(function(el) {
-            el.classList.add('hideme');
-        }); //모든 div 숨김
-
-        setTimeout(function() {
-            section[0].classList.remove('hideme');
-            section[0].classList.add('active');
-            //페이지에 들어온 0.5초 후 첫번째 div 나타남
-        }, 500);
-
-        window.addEventListener('scroll', scrollFun);
-
-        function scrollFun() {
-            section.forEach(function(el) {
-                if (el.offsetTop - (winH * 0.6) < this.scrollY){
-                    if(el.classList.contains('s_2')){
-                        var left = el.querySelector('.left');
-                        el.classList.remove('hideme');
-                        left.classList.add('slide');
-                    }else{
-                        el.classList.remove('hideme');
-                        el.classList.add('active');
-                    }
-                }
-            });
-        };
-    };
-    
-
-    </script>                      
+    <script src="../js/common.js"></script>                
            
 </body>
 </html>

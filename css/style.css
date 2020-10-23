@@ -1,10 +1,10 @@
 @import url("common.css");
 
 /* fade in */
-section {
-  transform: translateY(20%);
+/* section {
+  transform: translateY(0%);
   transition: 1s;
-}
+} */
 section.hideme {
   opacity: 0;
 }
@@ -28,10 +28,10 @@ header {
   background: #de2a00;
   position: fixed;
   left: 0;
-  top: 0;
+  top: -100%;
   transition: 1s;
 
-  z-index: 1;
+  z-index: 5;
 }
 .page img {
   width: 10%;
@@ -42,7 +42,7 @@ header {
   transform: translate(-50%, -50%);
 }
 body.active .page {
-  top: -100%;
+  top: 0;
 }
 .h_container {
   width: 80vw;
@@ -296,7 +296,7 @@ main {
 
   position: relative;
 
-  margin: 200px auto;
+  margin: 300px auto;
 
   display: table;
 }
@@ -309,23 +309,13 @@ main {
   display: table-cell;
 
   padding: 30px;
-
   width: 0%;
   opacity: 0;
 }
-.s_2 .left.slide {
+/* .s_2 .left.slide {
   animation: back 2s forwards;
-}
-@keyframes back {
-  0% {
-    width: 0%;
-    opacity: 0;
-  }
-  100% {
-    width: 50%;
-    opacity: 1;
-  }
-}
+} */
+
 
 .s_2 .left .l_container {
   width: 60%;
@@ -344,9 +334,9 @@ main {
   color: #1c1c1c;
   text-transform: uppercase;
 
-  animation: h2 2s 1s both;
+  /* animation: h2 2s 2s both; */
 }
-@keyframes h2 {
+/* @keyframes h2 {
   0% {
     opacity: 0;
   }
@@ -357,12 +347,12 @@ main {
   100% {
     opacity: 1;
   }
-}
+} */
 .s_2 .left .l_container p {
-  animation: p 2s 1s both;
+  /* animation: p 2s 2s both; */
   margin-bottom: 5vh;
 }
-@keyframes p {
+/* @keyframes p {
   0% {
     opacity: 0;
   }
@@ -372,8 +362,8 @@ main {
   }
   100% {
     opacity: 1;
-  }
-}
+  } 
+} */
 .s_2 .left .l_container a:nth-of-type(1) {
   position: absolute;
   left: 50%;
@@ -381,9 +371,9 @@ main {
   transform: translate(-50%, -50%);
 
   text-decoration: underline !important;
-  animation: a 2s 1.5s both;
+  /* animation: a 2s 2s both; */
 }
-@keyframes a {
+/* @keyframes a {
   0% {
     opacity: 0;
   }
@@ -393,12 +383,12 @@ main {
   100% {
     opacity: 1;
   }
-}
+} */
 .s_2 .left .l_container img {
   transition: 0.5s;
   position: absolute;
 
-  animation: img 2s 1s both;
+  /* animation: img 2s 2s both; */
 }
 .s_2 .left .l_container button {
   padding: 15px 20px;
@@ -409,9 +399,9 @@ main {
   margin: 5vh auto;
 
   display: none;
-  animation: img 1.5s 1s both;
+  /* animation: img 1.5s 2s both; */
 }
-@keyframes img {
+/* @keyframes img {
   0% {
     opacity: 0;
   }
@@ -421,7 +411,7 @@ main {
   100% {
     opacity: 1;
   }
-}
+} */
 .s_2 .left .l_container img:nth-of-type(1) {
   left: 5%;
   top: 10%;
@@ -437,9 +427,9 @@ main {
   top: 10%;
   width: 25%;
 }
-.s_2 .left .l_container img:hover {
+/* .s_2 .left .l_container img:hover {
   transform: scale(1.2);
-}
+} */
 
 /* ------------------ s_2 right ----------------*/
 
@@ -462,9 +452,9 @@ main {
 }
 .s_2 .right .r_container h2 {
   text-transform: uppercase;
-  animation: h2 2s 1s both;
+  /* animation: h2 2s 2s both; */
 }
-@keyframes h2 {
+/* @keyframes h2 {
   0% {
     opacity: 0;
   }
@@ -474,13 +464,13 @@ main {
   100% {
     opacity: 1;
   }
-}
+} */
 
 .s_2 .right .r_container p {
   margin: 0;
-  animation: p 2s 1s both;
+  /* animation: p 2s 2s both; */
 }
-@keyframes p {
+/* @keyframes p {
   0% {
     opacity: 0;
   }
@@ -490,7 +480,7 @@ main {
   100% {
     opacity: 1;
   }
-}
+} */
 
 .s_2 .right .r_container a {
   margin-top: 120px;
@@ -500,9 +490,9 @@ main {
 
   right: 10%;
   bottom: 0;
-  animation: a 2s 1.5s both;
+  /* animation: a 2s 2.5s both; */
 }
-@keyframes a {
+/* @keyframes a {
   0% {
     opacity: 0;
   }
@@ -512,25 +502,22 @@ main {
   100% {
     opacity: 1;
   }
-}
+} */
 .s_2 .right .r_container img {
   margin: 40px 0 0 120px;
   transition: 0.5s;
-  animation: bean 2s 1s both;
+  /* animation: bean 2s 2s both; */
 
   width: 35%;
 }
-@keyframes bean {
+/* @keyframes bean {
   0% {
-    opacity: 0;
-  }
-  30% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}
+} */
 .s_2 .right .r_container img:hover {
   transform: scale(1.3) translateX(20px);
 }
@@ -564,7 +551,7 @@ main {
 
   transform: rotate(180deg);
   transform-origin: left;
-  animation: line 1s 1.7s both;
+  animation: line 1s 2.3s both;
 }
 .s_2 .right .r_container .line span:after {
   content: "";
@@ -579,7 +566,7 @@ main {
   transform-origin: left;
   transform: translate(99px, -14px) rotate(-50deg);
 
-  animation: line-after 0.5s 2.4s both;
+  animation: line-after 0.5s 3s both;
 }
 @keyframes line {
   0% {
@@ -623,32 +610,32 @@ main {
   height: 18px;
   overflow: hidden;
 
-  animation: typing 0.5s 2.7s linear both;
+  /* animation: typing 0.5s 3.7s linear both; */
 }
-@keyframes typing {
+/* @keyframes typing {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}
+} */
 
 .s_2 .right .r_container .img_desc p {
   color: #8b8b8b;
   width: 265px;
   white-space: pre-line;
 
-  animation: desc 1s 2.9s both;
+  /* animation: desc 1s 3.9s both; */
 }
-@keyframes desc {
+/* @keyframes desc {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
   }
-}
+} */
 
 /* ------------------ s_3 ---------------------*/
 

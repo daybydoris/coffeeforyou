@@ -41,24 +41,24 @@
 
     //------- 스크롤시 fade in 효과 -------
     //각 section 선택하기
-    var section = document.querySelectorAll('section');
+    // var section = document.querySelectorAll('section');
 
 
     //fadeIn 함수
-    function fadeIn(){
-        var winH = window.innerHeight;
+    // function fadeIn(){
+    //     var winH = window.innerHeight;
             
-        section.forEach(function(el) {
-            el.classList.add('hideme');
-        }); //모든 div 숨김
+    //     section.forEach(function(el) {
+    //         el.classList.add('hideme');
+    //     }); //모든 div 숨김
 
-        setTimeout(function() {
-            section[0].classList.remove('hideme');
-            section[0].classList.add('active');
-            //페이지에 들어온 0.5초 후 첫번째 div 나타남
-        }, 500);
+    //     setTimeout(function() {
+    //         section[0].classList.remove('hideme');
+    //         section[0].classList.add('active');
+    //         //페이지에 들어온 0.5초 후 첫번째 div 나타남
+    //     }, 500);
 
-        window.addEventListener('scroll', scrollFun);
+        // window.addEventListener('scroll', scrollFun);
 
         // function scrollFun2(){
         //     section.forEach(function(el){
@@ -79,40 +79,44 @@
             
         // }
 
-        function scrollFun() {
-            section.forEach(function(el) {
-                if (el.offsetTop - (winH * 0.6) < this.scrollY){
-                    if(el.classList.contains('s_2')){
-                        var left = el.querySelector('.left');
-                        el.classList.remove('hideme');
-                        left.classList.add('slide');
-                    }else{
-                        el.classList.remove('hideme');
-                        el.classList.add('active');
-                    }
-                }
-            });
-        };
-    };
-    fadeIn();
+        // function scrollFun() {
+        //     section.forEach(function(el) {
+        //         if (el.offsetTop - (winH * 0.6) < this.scrollY){
+        //             if(el.classList.contains('s_2')){
+        //                 var left = el.querySelector('.left');
+        //                 el.classList.remove('hideme');
+        //                 left.classList.add('slide');
+        //             }else{
+        //                 console.log(el.children);
+        //                 el.classList.remove('hideme');
+        //                 el.classList.add('active');
+        //             }
+        //         }
+        //     });
+        // };
+    // };
+    // fadeIn();
 
 
     //coffee story 게시글 불러오기
     $.ajax({
-        url:"https://graphicnovel.github.io/coffeeforyou/data_story.json",
+        url:"data_story.json",
         type:"GET",
         success:function(data){
+            console.log('성공');
             var artList = "";
+            var idx = 150;
 
             data.article.sort(date_sort).forEach(function(el, key){
                 if(key < 3){
                     //각 변수에 값 넣기
                     title = el.title; 
                     url = "pages/" + el.url;
-                    thumb = el.thumb.substr(3);
+                    thumb = el.thumb;
                     hashtag = el.hashtag;
                     contents = el.contents;
                     num  = el.num;
+                    
 
                     //본문 미리보기 글자 수 제한
                     if(contents.length > 30 ){
@@ -122,13 +126,14 @@
 
                     createArt();
                 }
+                idx+=100;
             });
             $(".news_container").html(artList);
 
 
             function createArt(){
                 //html 태그 넣기
-                artList += "<article id="+ num +"><div class='img_box'>";
+                artList += "<article data-aos='fade-up' data-aos-duration='1000' data-aos-delay='"+ idx +"' id="+ num +"><div class='img_box'>";
                 artList += "<a href="+ url +" class='thumb'>";
                 artList += "<img src="+ thumb +" class='thumbImg'></a></div>";
                 artList += "<div class='text'><span class='hashtag'>"+ hashtag +"</span>";

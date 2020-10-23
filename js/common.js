@@ -36,23 +36,26 @@ $(function(){
         
 
     //------- 화면 전환 효과 -------
-        // 시간지연 => body에 active 클래스 추가
-        setTimeout(function(){
-            body.classList.add('active');
-        },10);
+        //시간지연 => body에 active 클래스 추가
+        // setTimeout(function(){
+        //     body.classList.add('active');
+        // },10);
+        // setTimeout(function(){
+        //     body.classList.remove('active');
+        // },1000);
 
         // menuList 누를 때 body active 클래스 제거
         // menuList href 불러옴
-        menuList.forEach(function(el){
-            el.addEventListener('click', function(e){
-                e.preventDefault();
-                body.classList.remove('active');
+        // menuList.forEach(function(el){
+        //     el.addEventListener('click', function(e){
+        //         e.preventDefault();
 
-                setTimeout(function() {
-                    location.href = el.href;
-                },500);
-            });
-        });
+        //         setTimeout(function() {
+                    
+        //             location.href = el.href;
+        //         },500);
+        //     });
+        // });
         
         btn.forEach(function(el){
             el.addEventListener('click', function(e){
