@@ -112,7 +112,7 @@
                     //각 변수에 값 넣기
                     title = el.title; 
                     url = "pages/" + el.url;
-                    thumb = el.thumb;
+                    thumb = el.thumb.substr(3);
                     hashtag = el.hashtag;
                     contents = el.contents;
                     num  = el.num;
