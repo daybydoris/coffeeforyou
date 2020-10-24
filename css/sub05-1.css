@@ -151,6 +151,10 @@ main > p {
 .s_1 .news_container article {
   width: 100%;
 }
+.s_1 .news_container article a:hover {
+  color: #de2a00;
+  transition: 0.3s;
+}
 .s_1 .news_container article .a_desc {
   display: flex;
   justify-content: space-between;
@@ -293,11 +297,12 @@ main > p {
   position: relative;
 
   text-align: center;
-  margin: 50px 0;
+  margin: 50px auto;
 }
 
 .s_1 .news_container article .img_box img {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   margin: 0 auto;
 }
 .s_1 .news_container article h2 {
@@ -361,7 +366,7 @@ main > p {
   width: 80%;
 }
 .s_1 .recent ul li:hover a {
-  color:#de2a00;
+  color: #de2a00;
   transition: 0.3s;
 }
 .s_1 .recent ul li a,

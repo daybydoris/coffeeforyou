@@ -30,6 +30,9 @@ $(function(){
                     num  = el.num;
                     imgSrc = el.imgSrc;
 
+                    //contents에서 태그 제거
+                    contents = contents.replace(/(<([^>]+)>)/ig,"");
+
                     //본문 미리보기 글자 수 제한
                     if(contents.length > 30 ){
                         contents = contents.substr(0, 150);
