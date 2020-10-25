@@ -139,16 +139,13 @@ main > p {
 .s_1 > p {
   text-align: left;
   width: 100%;
-  margin-bottom:50px;
+  margin-bottom: 50px;
 }
 .s_1 > h2 {
   width: 100%;
   text-align: left;
   text-transform: uppercase;
-  
 }
-
-
 
 .mapboxgl-map {
   width: 100%;
@@ -215,7 +212,7 @@ main > p {
   position: relative;
 
   transition: 0.3s;
-  z-index:0;
+  z-index: 0;
 }
 .bean_block .more {
   width: 100%;
@@ -318,7 +315,7 @@ main > p {
   border-radius: 50px;
   position: absolute;
   left: 25%;
-  top: 12%;
+  /* top: 12%; */
 }
 
 .bean_block .bean_bar ul li span:after {
@@ -799,15 +796,15 @@ footer .f_container .top:hover a:before {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    width:100%;
-    height:auto;
-    margin-bottom:30%;
+    width: 100%;
+    height: auto;
+    margin-bottom: 30%;
   }
-  .popup .bean_block .bean_top h4{
-    font-size:15px;
+  .popup .bean_block .bean_top h4 {
+    font-size: 15px;
   }
-  .popup .bean_block .bean_top h3{
-    font-size:22px;
+  .popup .bean_block .bean_top h3 {
+    font-size: 22px;
   }
   .popup .bean_block .bean_top > img {
     width: 15%;

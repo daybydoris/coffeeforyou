@@ -63,7 +63,7 @@
             "date": "2020-06-29",
             "thumb": "../img/coffeestory_07.jpg",
             "hashtag": "video",
-            "contents": "<iframe width='810' height='454' src='https://www.youtube.com/embed/_f-hSLQRtM4' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe><br/><br/>‘바리스타룰스’는 2017년 9월, 아시아 커피 트렌드의 중심이자, 오랜 커피 문화를 가진 도쿄로 커피 여행을 다녀왔었습니다.<br/><br/>지금까지 일본만의 전통 키샤텐 방식을 고수하고 있는 카페부터 유럽, 미국 등 세계적인 커피 브랜드의 아시아 진출 교두보 역할을 하는 카페, 그리고 동네 구석구석까지 스페셜티 커피를 맛볼 수 있는 소규모 카페까지, 도쿄 커피의 모든 것을 바리스타룰스 영상으로 한 번 만나보시죠."
+            "contents": "<div class='video_wrap'><iframe src='https://www.youtube.com/embed/_f-hSLQRtM4' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe></div><br/><br/>‘바리스타룰스’는 2017년 9월, 아시아 커피 트렌드의 중심이자, 오랜 커피 문화를 가진 도쿄로 커피 여행을 다녀왔었습니다.<br/><br/>지금까지 일본만의 전통 키샤텐 방식을 고수하고 있는 카페부터 유럽, 미국 등 세계적인 커피 브랜드의 아시아 진출 교두보 역할을 하는 카페, 그리고 동네 구석구석까지 스페셜티 커피를 맛볼 수 있는 소규모 카페까지, 도쿄 커피의 모든 것을 바리스타룰스 영상으로 한 번 만나보시죠."
         },
         {
             "title": "커피, 트렌드를 입다",
