@@ -34,8 +34,8 @@ $(function(){
                     contents = contents.replace(/(<([^>]+)>)/ig,"");
 
                     //본문 미리보기 글자 수 제한
-                    if(contents.length > 60 ){
-                        contents = contents.substr(0, 60);
+                    if(contents.length > 100 ){
+                        contents = contents.substr(0, 100);
                         contents = contents.replace(contents, contents + "...");
                     }
 
