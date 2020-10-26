@@ -97,6 +97,10 @@
     // };
     // fadeIn();
 
+    $('.btn').on('click',function(){
+        console.log($(this).attr('data-link'));
+        location.href = $(this).attr('data-link');
+    });
 
     //coffee story 게시글 불러오기
     $.ajax({
@@ -152,7 +156,7 @@
 
             function clickArt(){
                 //게시글 클릭 이벤트
-                $('article').on('click',function(e){
+                $('.new_container article').on('click',function(e){
                     e.preventDefault();
                     console.log($(this).attr('id'));
                     var viewUrl = $(this).find('a').attr('href');
