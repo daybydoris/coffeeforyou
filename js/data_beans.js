@@ -23,7 +23,7 @@ $(function () {
 
           $('.retryBtn').html(retryBtn);//다시하기 버튼 뿌리기
         }else{
-          resultText += "<a href='/pages/sub04.html' class='resultBtn'>원두 추천 받기</a>";
+          resultText += "<a href='/coffeeforyou/pages/sub04.html' class='resultBtn'>원두 추천 받기</a>";
           $('.retryBtn').css('display','none');
         }
         $('.result_text').html(resultText);
