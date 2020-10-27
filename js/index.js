@@ -25,77 +25,8 @@
         //         },500);
         //     });
         // });
-        
-        // btn.forEach(function(el){
-        //     el.addEventListener('click', function(e){
-        //            e.preventDefault();
-        //             body.classList.remove('active');
 
-        //             setTimeout(function() {
-        //                 location.href = el.dataset.link;
-        //             },500);
-        //         });
-        // });
-        
-
-
-    //------- 스크롤시 fade in 효과 -------
-    //각 section 선택하기
-    // var section = document.querySelectorAll('section');
-
-
-    //fadeIn 함수
-    // function fadeIn(){
-    //     var winH = window.innerHeight;
-            
-    //     section.forEach(function(el) {
-    //         el.classList.add('hideme');
-    //     }); //모든 div 숨김
-
-    //     setTimeout(function() {
-    //         section[0].classList.remove('hideme');
-    //         section[0].classList.add('active');
-    //         //페이지에 들어온 0.5초 후 첫번째 div 나타남
-    //     }, 500);
-
-        // window.addEventListener('scroll', scrollFun);
-
-        // function scrollFun2(){
-        //     section.forEach(function(el){
-        //         //section의 자식 요소들을 변수에 담기
-        //         var contents = el.childNodes;
-
-        //         contents.forEach(function(con){
-        //             var i = 1;
-
-        //             setTimeout(function(){
-        //                 con.classList.remove('hideme');
-        //                 con.classList.add('active');
-        //             },i*100);
-
-        //             i++;
-        //         });
-        //     });
-            
-        // }
-
-        // function scrollFun() {
-        //     section.forEach(function(el) {
-        //         if (el.offsetTop - (winH * 0.6) < this.scrollY){
-        //             if(el.classList.contains('s_2')){
-        //                 var left = el.querySelector('.left');
-        //                 el.classList.remove('hideme');
-        //                 left.classList.add('slide');
-        //             }else{
-        //                 console.log(el.children);
-        //                 el.classList.remove('hideme');
-        //                 el.classList.add('active');
-        //             }
-        //         }
-        //     });
-        // };
-    // };
-    // fadeIn();
+    
 
     $('.btn').on('click',function(){
         console.log($(this).attr('data-link'));

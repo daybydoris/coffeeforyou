@@ -38,6 +38,23 @@ $(function(){
             });
         },500);
     }
+
+    $('body').fadeTo(500, 1 );
+
+    setTimeout(function(){
+        $('.h_container a').on('click',function(e){
+            pageHref = $(this).attr('href');
+
+            e.preventDefault();
+            
+            $('body').fadeOut(500);
+            setTimeout(function(){
+                location.href = pageHref;
+            },500);
+        }); 
+    },500);
+
+
     //end
 });
 
