@@ -5,7 +5,7 @@ $(function(){
         type:"GET",
         success:function(data){
             var title, num=0, url, date, thumb, hashtag, contents, imgSrc, tag="all", artList = "", idx = 300;
-            var artLen = 0, totalLen = 0, blockNum = 6, pageNum, pageNumList, currentPage, pageList = "";
+            var totalLen = 0, blockNum = 6, pageNum, pageNumList, currentPage, pageList = "";
             var pageGroup = [], pageTag=[], totalGroup = [], currentArt, artNum = [];
 
             
@@ -154,7 +154,6 @@ $(function(){
             
             //페이징 함수
             function funPage(currentPage){
-                artLen = $('article').length; //뿌려진 게시글 수
                 totalLen = totalGroup.length; //총 게시글 수
 
                 pageList = ""; //페이지 리스트 초기화
