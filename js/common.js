@@ -51,7 +51,27 @@ $(function(){
             setTimeout(function(){
                 location.href = pageHref;
             },500);
-        }); 
+        });
+        $('body a').on('click',function(e){
+            pageHref = $(this).attr('href');
+
+            e.preventDefault();
+            
+            $('body').fadeOut(500);
+            setTimeout(function(){
+                location.href = pageHref;
+            },500);
+        });
+        $('button').on('click',function(e){
+            pageHref = $(this).attr('data-link');
+
+            e.preventDefault();
+            
+            $('body').fadeOut(500);
+            setTimeout(function(){
+                location.href = pageHref;
+            },500);
+        });  
     },500);
 
 

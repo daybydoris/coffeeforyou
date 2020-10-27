@@ -26,13 +26,6 @@
         //     });
         // });
 
-    
-
-    $('.btn').on('click',function(){
-        console.log($(this).attr('data-link'));
-        location.href = $(this).attr('data-link');
-    });
-
     //coffee story 게시글 불러오기
     $.ajax({
         url:"data_story.json",
