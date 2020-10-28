@@ -38,46 +38,26 @@ $(function(){
             });
         },500);
     }
-
+ 
+    //화면 나타날 때 opacity 서서히 올리기
     $('body').fadeTo(500, 1 );
 
-    setTimeout(function(){
-
-        $('body #location').on('click',function(e){
+    //페이지 이동시 opacity 서서히 줄어들기
+    $('body #location').on('click',function(e){
+        e.preventDefault();
+        if($(this).attr('type') == 'button'){
+            pageHref = $(this).attr('data-link');
+        }else{
             pageHref = $(this).attr('href');
+        }
 
-            e.preventDefault();
-            
-            $('body').fadeOut(500);
-            setTimeout(function(){
-                if($(this).prop('tagName') == 'button'){
-                    location.href = $(this).attr('data-link');
-                }else{
-                    location.href = pageHref;
-                }
-            },500);
-        });
-        // $('body a').on('click',function(e){
-        //     pageHref = $(this).attr('href');
+        $('body').fadeOut(500);
+        
+        setTimeout(function(){
+            location.href = pageHref;
+        },500);
+    });
 
-        //     e.preventDefault();
-            
-        //     $('body').fadeOut(500);
-        //     setTimeout(function(){
-        //         location.href = pageHref;
-        //     },500);
-        // });
-        // $('button').on('click',function(e){
-        //     pageHref = $(this).attr('data-link');
-
-        //     e.preventDefault();
-            
-        //     $('body').fadeOut(500);
-        //     setTimeout(function(){
-        //         location.href = pageHref;
-        //     },500);
-        // });  
-    },500);
 
 
     //end
