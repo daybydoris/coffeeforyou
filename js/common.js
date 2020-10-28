@@ -42,7 +42,9 @@ $(function(){
     $('body').fadeTo(500, 1 );
 
     setTimeout(function(){
-        $('.h_container a').on('click',function(e){
+
+        console.log($('body #location'));
+        $('body #location').on('click',function(e){
             pageHref = $(this).attr('href');
 
             e.preventDefault();
@@ -52,26 +54,26 @@ $(function(){
                 location.href = pageHref;
             },500);
         });
-        $('body a').on('click',function(e){
-            pageHref = $(this).attr('href');
+        // $('body a').on('click',function(e){
+        //     pageHref = $(this).attr('href');
 
-            e.preventDefault();
+        //     e.preventDefault();
             
-            $('body').fadeOut(500);
-            setTimeout(function(){
-                location.href = pageHref;
-            },500);
-        });
-        $('button').on('click',function(e){
-            pageHref = $(this).attr('data-link');
+        //     $('body').fadeOut(500);
+        //     setTimeout(function(){
+        //         location.href = pageHref;
+        //     },500);
+        // });
+        // $('button').on('click',function(e){
+        //     pageHref = $(this).attr('data-link');
 
-            e.preventDefault();
+        //     e.preventDefault();
             
-            $('body').fadeOut(500);
-            setTimeout(function(){
-                location.href = pageHref;
-            },500);
-        });  
+        //     $('body').fadeOut(500);
+        //     setTimeout(function(){
+        //         location.href = pageHref;
+        //     },500);
+        // });  
     },500);
 
 
