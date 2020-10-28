@@ -43,7 +43,6 @@ $(function(){
 
     setTimeout(function(){
 
-        console.log($('body #location'));
         $('body #location').on('click',function(e){
             pageHref = $(this).attr('href');
 
@@ -51,7 +50,11 @@ $(function(){
             
             $('body').fadeOut(500);
             setTimeout(function(){
-                location.href = pageHref;
+                if($(this).prop('tagName') == 'button'){
+                    location.href = $(this).attr('data-link');
+                }else{
+                    location.href = pageHref;
+                }
             },500);
         });
         // $('body a').on('click',function(e){
