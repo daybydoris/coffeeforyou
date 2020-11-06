@@ -15,29 +15,44 @@ body {
   margin: 0;
   background: #1c1c1c !important;
 }
-body{
-  opacity:0;
+body {
+  width:100%;
+  opacity: 0;
 }
+
 .back {
   background: #1c1c1c;
 }
+.orange {
+  color: #de2a00 !important;
+}
+
+
 .center {
   margin: 0 auto;
 }
+
+
 .w_1200 {
   width: 1200px;
 }
 .w_1000 {
   width: 1000px;
 }
+
+
+
+/* position */
+
+.pos-rel{
+  position:relative;
+}
+
 ul,
 li {
   margin: 0;
   padding: 0;
   list-style: none;
-}
-.orange {
-  color: #de2a00 !important;
 }
 h1,
 h2 {
@@ -62,8 +77,9 @@ a {
 
 /* font */
 
-.f_basic {
-  font-size: 13px;
+
+.f_25 {
+  font-size: 25px;
   color: #d9d9d9;
 }
 .f_20 {
@@ -74,10 +90,11 @@ a {
   font-size: 15px;
   color: #d9d9d9;
 }
-.f_25 {
-  font-size: 25px;
+.f_basic {
+  font-size: 13px;
   color: #d9d9d9;
 }
+
 
 /* fade in */
 
@@ -87,4 +104,324 @@ a {
 .showme {
   opacity: 1;
   transform: translateY(0%);
+}
+
+
+/* scroll disable */
+
+.disable {
+  height:100%; min-height:100%;
+  overflow:hidden !important;
+  touch-action:none;
+}
+
+
+/*---------------  header  ---------------*/
+
+
+header {
+  background: #1c1c1c;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* h_container  */
+
+.h_container {
+  width: 80vw;
+  margin: 0 auto;
+  padding: 30px 0;
+  background: #1c1c1c;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.h_container h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.h_container h1 a img {
+  width: 100%;
+}
+
+
+.h_container nav {
+  text-align: right;
+  z-index:4;
+}
+.h_container nav a {
+  font-size: 12px;
+  margin-left: 4vw;
+}
+.h_container nav a:after {
+  content: "";
+  height: 2px;
+  width: 10px;
+  border: 2px solid #de2a00;
+
+  opacity: 0;
+  transition: 0.5s;
+}
+.h_container nav a:hover:after {
+  opacity: 1;
+}
+
+
+.h_container .menu-trigger {
+  width: 25px;
+  height: 16px;
+
+  display: none;
+  position: relative;
+}
+.h_container .menu-trigger span {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  border-radius: 20%;
+  background: #f2f2f2;
+
+  position: absolute;
+  left: 0;
+}
+.h_container .menu-trigger span:nth-of-type(1) {
+  top: 0%;
+}
+.h_container .menu-trigger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.h_container .menu-trigger span:nth-of-type(3) {
+  bottom: 0%;
+}
+
+
+
+/*---------------  main  ---------------*/
+
+main {
+  width: 100%;
+  padding: 0;
+  background: #1c1c1c;
+}
+
+.m_container {
+  width: 100%;
+  min-width: 360px;
+}
+
+
+
+/* footer */
+
+footer {
+  width: 100%;
+  padding: 40px;
+  border-top: 1px solid #de2a00;
+}
+footer .f_container {
+  width: 80vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  position: relative;
+}
+footer .f_container .contact {
+}
+footer .f_container .contact h3 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+footer .f_container .contact a {
+}
+footer .f_container .sns {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+footer .f_container .sns a {
+  display: inline-block;
+  margin-right: 20px;
+  background: url("../img/icon_sns.png") no-repeat;
+  width: 20px;
+  height: 20px;
+
+  font-size: 0;
+}
+footer .f_container .sns a:nth-of-type(2) {
+  background-position: -40px;
+}
+footer .f_container .sns a:nth-of-type(3) {
+  background-position: -80px;
+}
+footer .f_container .top {
+  position: absolute;
+  right: 0;
+  bottom: 250%;
+
+  width: 40px;
+  height: 40px;
+  background: #be2a00;
+
+  border-radius: 50px;
+
+  text-align: center;
+  line-height: 2.8;
+
+  transition: 0.5s;
+  transform-origin: bottom;
+}
+footer .f_container .top a:before {
+  content: "∧";
+  color: #f2f2f2;
+  display: block;
+
+  position: absolute;
+  left: 50%;
+  top: 30%;
+
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  transition: 0.5s;
+}
+footer .f_container .top:hover {
+  height: 60px;
+  border-radius: 80px;
+  line-height: 5.65;
+}
+footer .f_container .top:hover a:before {
+  opacity: 1;
+}
+
+
+
+/*---------------------------- Mobile ---------------------------*/
+
+
+@media (min-width: 360px) and (max-width: 767px) {
+
+  /*---------- hamburger menu ---------*/
+
+  .h_container h1 a img {
+    width: 80%;
+  }
+  .h_container nav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding-top: 30vh;
+
+    background: #de2a00;
+
+    text-align: center;
+
+    transition: 0.7s;
+    z-index: 1;
+  }
+  .h_container nav a {
+    text-align: center;
+  }
+  .h_container nav.active {
+    right: 0%;
+  }
+  .h_container nav a {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .h_container .menu-trigger {
+    display: block;
+    transition: 0.5s;
+
+    z-index: 2;
+  }
+  .h_container .menu-trigger span {
+    transition: 0.5s;
+  }
+  .h_container .menu-trigger.active span {
+    background: #1c1c1c;
+  }
+  .h_container .menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(400%) rotate(45deg);
+  }
+  .h_container .menu-trigger.active span:nth-of-type(2) {
+    display: none;
+  }
+  .h_container .menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-300%) rotate(-45deg);
+  }
+
+  
+  footer {
+    padding: 20px 0;
+  }
+  footer .f_container {
+    display: block;
+  }
+  footer .f_container .contact {
+    margin-bottom: 20px;
+  }
+}
+
+/*-------------- Tablet -------------*/
+@media (min-width: 768px) and (max-width: 1180px) {
+
+
+  /*---------- hamburger menu ---------*/
+  .h_container nav {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    width: 70%;
+    height: 100%;
+    margin: 0;
+    padding-top: 30vh;
+
+    background: #de2a00;
+
+    text-align: center;
+
+    transition: 0.7s;
+    z-index: 1;
+  }
+  .h_container nav.active {
+    right: 0;
+  }
+  .h_container nav a {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px 0;
+    margin: 0;
+  }
+
+  .h_container .menu-trigger {
+    display: block;
+    transition: 0.5s;
+
+    z-index: 2;
+  }
+  .h_container .menu-trigger span {
+    transition: 0.5s;
+  }
+  .h_container .menu-trigger.active span {
+    background: #1c1c1c;
+  }
+  .h_container .menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(400%) rotate(45deg);
+  }
+  .h_container .menu-trigger.active span:nth-of-type(2) {
+    display: none;
+  }
+  .h_container .menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-300%) rotate(-45deg);
+  }
 }
