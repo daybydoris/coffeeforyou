@@ -8,8 +8,6 @@ $(function(){
 
     var body = document.querySelector('body');
     var menuList = document.querySelectorAll('.h_container a');
-    var btn = document.querySelectorAll('button');
-
 
     //모바일 트리거 메뉴
     function menuTrigger(){
@@ -22,8 +20,15 @@ $(function(){
             menu.classList.toggle('active');
             nav.classList.toggle('active');
         });
-    }
 
+        //모바일 버거 메뉴 active시 스크롤 막기
+
+        menu.addEventListener('click',function(){
+            body.classList.toggle('disable');
+        });
+
+    }
+    
     //Top 이동 기능
     function scrollTop(){
         setTimeout(function(){
