@@ -2,7 +2,7 @@
   "beans": [
     {
       "country": "tanzania",
-      "backImg":"../img/popup/beantopbg/popup_tanzania.jpg",
+      "backImg": "../img/popup/beantopbg/popup_tanzania.jpg",
       "flag": "../img/popup/flag/flag_tanzania.png",
       "name": "킬리만자로 AA",
       "detail": "“킬리만자로의 선물”로 불리며 칭송받는 스페셜티 커피. 자몽과 비슷한 상큼한 신맛, 흑설탕의 단맛을 느낄 수 있으며 와인처럼 풍부하고 강렬한 맛과 함께 달콤하고 복잡한 향미를 가지고 있음.",
@@ -17,15 +17,18 @@
       "sweetness": 3.5,
       "roasting": "fullcity",
       "note": {
-        "와인":"../img/popup/taste/icon_wine.png",
-        "자몽":"../img/popup/taste/icon_grapefruit.png",
-        "흑설탕":"../img/popup/taste/icon_brownsugar.png"
+        "와인": "../img/popup/taste/icon_wine.png",
+        "자몽": "../img/popup/taste/icon_grapefruit.png",
+        "흑설탕": "../img/popup/taste/icon_brownsugar.png"
       },
-      "recommend":["nutty","strong"]
+      "recommend": [
+        "nutty",
+        "light"
+      ]
     },
     {
       "country": "kenya",
-      "backImg":"../img/popup/beantopbg/popup_kenya.jpg",
+      "backImg": "../img/popup/beantopbg/popup_kenya.jpg",
       "flag": "../img/popup/flag/flag_kenya.png",
       "name": "케냐 AA",
       "detail": "케냐 커피는 풍부한 향과 산미가 좋으며 중후한 와인, 초콜릿의 단맛과 더불어 밸런스가 잘 잡힌 고급 커피로 유명합니다. 아프리카 커피중에서 최고로 손꼽힙니다.",
@@ -40,15 +43,18 @@
       "sweetness": 4,
       "roasting": "fullcity",
       "note": {
-        "자몽":"../img/popup/taste/icon_grapefruit.png",
-        "오렌지":"../img/popup/taste/icon_grapefruit.png",
-        "흑설탕":"../img/popup/taste/icon_brownsugar.png"
+        "자몽": "../img/popup/taste/icon_grapefruit.png",
+        "오렌지": "../img/popup/taste/icon_orange.png",
+        "흑설탕": "../img/popup/taste/icon_brownsugar.png"
       },
-      "recommend":["nutty","strong"]
+      "recommend": [
+        "nutty",
+        "light"
+      ]
     },
     {
       "country": "guatemala",
-      "backImg":"../img/popup/beantopbg/popup_guatemala.jpg",
+      "backImg": "../img/popup/beantopbg/popup_guatemala.jpg",
       "flag": "../img/popup/flag/flag_guatemala.png",
       "name": "과테말라 안티구아 SHB",
       "detail": "진한 스모키향과 복합적인 풍미, 우아하고 뛰어난 감칠맛과 부드러운 단맛, 중후한 바디감을 느낄 수 있음. 고급 스트레이트 커피나 블렌드 커피 모두에 두루 사용되는 커피.",
@@ -63,15 +69,18 @@
       "sweetness": 3,
       "roasting": "fullcity",
       "note": {
-        "다크초콜렛":"../img/popup/taste/icon_darkchocolate.png",
-        "블랙커런트":"../img/popup/taste/icon_blackcurrant.png",
-        "흑설탕":"../img/popup/taste/icon_brownsugar.png"
+        "다크초콜렛": "../img/popup/taste/icon_darkchocolate.png",
+        "블랙커런트": "../img/popup/taste/icon_blackcurrant.png",
+        "흑설탕": "../img/popup/taste/icon_brownsugar.png"
       },
-      "recommend":["nutty","strong"]
+      "recommend": [
+        "bitter",
+        "strong"
+      ]
     },
     {
       "country": "costarica",
-      "backImg":"../img/popup/beantopbg/popup_costarica.jpg",
+      "backImg": "../img/popup/beantopbg/popup_costarica.jpg",
       "flag": "../img/popup/flag/flag_costarica.png",
       "name": "코스타리카 따라주 SHB",
       "detail": "코르타리카 따라주 SHB는 브라운 슈가와 같은 깊은 단 맛과 견과류의 고소함이 특징. 상큼한 과일류의 신맛인 부드러운 산미를 느낄 수 있으며, 균형이 잡혀 있어 스트레이트 커피로도 훌륭한 원두. ",
@@ -85,16 +94,19 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": {"풋사과":"../img/popup/taste/icon_greenapple.png",
-        "사탕수수":"../img/popup/taste/icon_sugarcane.png",
-        "피칸":"../img/popup/taste/icon_pecan.png"
+      "note": {
+        "풋사과": "../img/popup/taste/icon_greenapple.png",
+        "사탕수수": "../img/popup/taste/icon_sugarcane.png",
+        "피칸": "../img/popup/taste/icon_pecan.png"
       },
-      "recommend":["nutty","medium"]
-      
+      "recommend": [
+        "nutty",
+        "light"
+      ]
     },
     {
       "country": "brazil",
-      "backImg":"../img/popup/beantopbg/popup_brazil.jpg",
+      "backImg": "../img/popup/beantopbg/popup_brazil.jpg",
       "flag": "../img/popup/flag/flag_brazil.png",
       "name": "브라질 옐로우 버번",
       "detail": "스페셜티 커피에 근접한 맛과 향을 가진 원두. 균형있는 향미와 산미, 고소함이 특징.",
@@ -108,14 +120,19 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "city",
-      "note": {"땅콩":"../img/popup/taste/icon_peanut.png",
-        "사탕수수":"../img/popup/taste/icon_sugarcane.png",
-        "시리얼":"../img/popup/taste/icon_cereals.png"},
-        "recommend":["sour","strong"]
+      "note": {
+        "땅콩": "../img/popup/taste/icon_peanut.png",
+        "사탕수수": "../img/popup/taste/icon_sugarcane.png",
+        "시리얼": "../img/popup/taste/icon_cereals.png"
+      },
+      "recommend": [
+        "sweet",
+        "medium"
+      ]
     },
     {
       "country": "ethiopia",
-      "backImg":"../img/popup/beantopbg/popup_ethiopia.jpg",
+      "backImg": "../img/popup/beantopbg/popup_ethiopia.jpg",
       "flag": "../img/popup/flag/flag_ethiopia.png",
       "name": "예가체프",
       "detail": "화려한 꽃향기가 특징이며, 부드러운 신 맛을 가지고 있음. 수세식 공법으로 균일한 맛을 느낄 수 있음",
@@ -129,14 +146,19 @@
       "bitterness": 2,
       "sweetness": 3,
       "roasting": "city",
-      "note": {"플로럴":"../img/popup/taste/icon_peanut.png",
-        "레몬":"../img/popup/taste/icon_sugarcane.png",
-        "허니":"../img/popup/taste/icon_cereals.png"},
-        "recommend":["nutty","strong"]
+      "note": {
+        "플로럴": "../img/popup/taste/icon_floral.png",
+        "레몬": "../img/popup/taste/icon_lemon.png",
+        "허니": "../img/popup/taste/icon_honey.png"
+      },
+      "recommend": [
+        "sour",
+        "medium"
+      ]
     },
     {
       "country": "indonesia",
-      "backImg":"../img/popup/beantopbg/popup_indonesia.jpg",
+      "backImg": "../img/popup/beantopbg/popup_indonesia.jpg",
       "flag": "../img/popup/flag/flag_indonesia.png",
       "name": "인도네시아 만델링 G1",
       "detail": "인도네시아 만델링은 바디감이 좋고, 수마트라 섬의 특별한 토양으로 인하여 거친 흙 내음과 스파이시한 향이 있으며 고소하고 달콤한 맛이 특징. 뒷맛의 여운이 오래도록 남는다.",
@@ -150,14 +172,19 @@
       "bitterness": 4,
       "sweetness": 3,
       "roasting": "fullcity",
-      "note": {"다크초콜릿":"../img/popup/taste/icon_darkchocolate.png",
-        "오크":"../img/popup/taste/icon_oak.png",
-        "땅콩":"../img/popup/taste/icon_peanut.png"},
-        "recommend":["nutty","sweet"]
+      "note": {
+        "다크초콜릿": "../img/popup/taste/icon_darkchocolate.png",
+        "오크": "../img/popup/taste/icon_oak.png",
+        "땅콩": "../img/popup/taste/icon_peanut.png"
+      },
+      "recommend": [
+        "nutty",
+        "strong"
+      ]
     },
     {
       "country": "mexico",
-      "backImg":"../img/popup/beantopbg/popup_mexico.jpg",
+      "backImg": "../img/popup/beantopbg/popup_mexico.jpg",
       "flag": "../img/popup/flag/flag_mexico.png",
       "name": "멕시코 치아파스",
       "detail": "가벼운 산미에 적당한 바디감, 풍부한 견과류의 풍미가 있음. 전체적으로는 초콜릿의 맛이 나고 섬세한 바디와 산미, 기분 좋은 쌉쌀함이 특징이며 좋은 화이트 와인 같은 느낌을 받을 수 있음",
@@ -171,14 +198,19 @@
       "bitterness": 3,
       "sweetness": 3,
       "roasting": "fullcity",
-      "note": {"초콜릿":"../img/popup/taste/icon_darkchocolate.png",
-        "아몬드":"../img/popup/taste/icon_oak.png",
-        "시나몬":"../img/popup/taste/icon_peanut.png"},
-        "recommend":["nutty","sweet"]
+      "note": {
+        "초콜릿": "../img/popup/taste/icon_darkchocolate.png",
+        "아몬드": "../img/popup/taste/icon_almond.png",
+        "시나몬": "../img/popup/taste/icon_cinnamon.png"
+      },
+      "recommend": [
+        "nutty",
+        "light"
+      ]
     },
     {
       "country": "rwanda",
-      "backImg":"../img/popup/beantopbg/popup_rwanda.jpg",
+      "backImg": "../img/popup/beantopbg/popup_rwanda.jpg",
       "flag": "../img/popup/flag/flag_rwanda.png",
       "name": "르완다 버번",
       "detail": "전체적으로 다크초콜릿과 과일의 신맛이 어우러진 아프리카 특유의 화려한 맛과 좋은 밸런스를 이루는 원두",
@@ -192,14 +224,19 @@
       "bitterness": 3,
       "sweetness": 3.5,
       "roasting": "fullcity",
-      "note": {"다크초콜릿":"../img/popup/taste/icon_darkchocolate.png",
-        "오렌지":"../img/popup/taste/icon_orange.png",
-        "호두":"../img/popup/taste/icon_peanut.png"},
-        "recommend":["nutty","sweet"]
+      "note": {
+        "다크초콜릿": "../img/popup/taste/icon_darkchocolate.png",
+        "오렌지": "../img/popup/taste/icon_orange.png",
+        "호두": "../img/popup/taste/icon_walnut.png"
+      },
+      "recommend": [
+        "nutty",
+        "light"
+      ]
     },
     {
       "country": "elsalvador",
-      "backImg":"../img/popup/beantopbg/popup_elsalvador.jpg",
+      "backImg": "../img/popup/beantopbg/popup_elsalvador.jpg",
       "flag": "../img/popup/flag/flag_elsalvador.png",
       "name": "엘살바도르 SHG",
       "detail": "풍부한 향미와 오렌지의 산미, 은은한 다크초콜릿의 단맛까지 복합적인 맛을 두루 갖춘 원두.",
@@ -213,10 +250,15 @@
       "bitterness": 2,
       "sweetness": 3,
       "roasting": "city",
-      "note": {"다크초콜릿":"../img/popup/taste/icon_darkchocolate.png",
-        "오렌지":"../img/popup/taste/icon_orange.png",
-        "플로럴":"../img/popup/taste/icon_peanut.png"},
-        "recommend":["nutty","sweet"]
+      "note": {
+        "다크초콜릿": "../img/popup/taste/icon_darkchocolate.png",
+        "오렌지": "../img/popup/taste/icon_orange.png",
+        "플로럴": "../img/popup/taste/icon_floral.png"
+      },
+      "recommend": [
+        "nutty",
+        "light"
+      ]
     }
   ]
 }
