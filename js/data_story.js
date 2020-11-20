@@ -39,6 +39,12 @@ $(function(){
                         contents = contents.replace(contents, contents + "...");
                     }
 
+                    //제목 미리보기 글자 수 제한
+                    if(title.length > 23 ){
+                        title = title.substr(0, 23);
+                        title = title.replace(title, title + "...");
+                    }
+
                     if(tag == hashtag){ //tag와 hashtag가 같은 경우
 
                         createArt(); //해당하는 카테고리 게시글 html 태그 작성

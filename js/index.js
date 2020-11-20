@@ -19,11 +19,19 @@ window.addEventListener('DOMContentLoaded',function(){
                     contents = el.contents;
                     num  = el.num;
                     
+                    //contents에서 태그 제거
+                    contents = contents.replace(/(<([^>]+)>)/ig,"");
 
                     //본문 미리보기 글자 수 제한
-                    if(contents.length > 30 ){
+                    if(contents.length > 70 ){
                         contents = contents.substr(0, 70);
                         contents = contents.replace(contents, contents + "...");
+                    }
+
+                    //제목 미리보기 글자 수 제한
+                    if(title.length > 25 ){
+                        title = title.substr(0, 25);
+                        title = title.replace(title, title + "...");
                     }
 
                     createArt();
