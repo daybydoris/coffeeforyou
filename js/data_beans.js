@@ -384,9 +384,6 @@ $(function () {
           $('.popup').fadeIn(100);
           $('.popup .bean_block').eq(key).fadeIn(100);
           
-          
-          
-
 
           //exit 클릭 이벤트
           exit.forEach(function(btn){

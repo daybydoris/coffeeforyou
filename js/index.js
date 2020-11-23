@@ -63,11 +63,10 @@ window.addEventListener('DOMContentLoaded',function(){
                 //게시글 클릭 이벤트
                 $('.news_container article').on('click',function(e){
                     e.preventDefault();
-                    console.log($(this).attr('id'));
+
                     var viewUrl = $(this).find('a').attr('href');
 
                     localStorage.num = $(this).attr('id');
-
                     location.href = viewUrl;
                 });
             }
